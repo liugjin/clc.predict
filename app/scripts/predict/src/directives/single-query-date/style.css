@@ -1,0 +1,16 @@
+single-query-date {
+  color: black; }
+  single-query-date li span, single-query-date li input {
+    color: white; }
+  single-query-date .datepicker {
+    border: 1px solid #03a8ff !important;
+    height: 38px !important;
+    text-align: center !important;
+    width: 9rem !important; }
+  single-query-date .report-li span {
+    color: #ffffff;
+    font-size: .75rem; }
+
+@media screen and (width: 1024px) {
+  single-query-date .report-li {
+    margin-left: 0 !important; } }

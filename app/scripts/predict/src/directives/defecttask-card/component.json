@@ -1,0 +1,29 @@
+{
+  "id": "defecttask-card",
+  "name": "DefecttaskCard控件",
+  "type": "DefecttaskCardDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": ["初始化"],
+      "0.0.2": ["处理数据逻辑-James"],
+      "0.0.3": ["数据调整-youge"],
+      "0.0.4": ["数据调整-youge"],
+      "0.0.5": ["数据调整-youge"],
+      "0.0.6": ["组件调整-youge"],
+      "0.0.7": ["修改工单数处理-James"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["card-border", "bar-timeline", "capacity-bar", "bar-vertical-stack2"],
+  "css": "",
+  "version": "0.0.7"
+}

@@ -1,0 +1,45 @@
+report-operations .grid-table {
+  height: 78vh;
+  display: block; }
+
+report-operations .standard-report-btn {
+  margin-top: 0.7rem !important; }
+
+report-operations .nav-top ul > li {
+  margin-right: .75rem; }
+
+report-operations .paging-select-box {
+  width: 100%; }
+
+report-operations .btn {
+  font-size: 14px; }
+
+report-operations .nav-left-container {
+  width: 12% !important; }
+
+report-operations .middle-select-box {
+  width: 120px;
+  margin-right: 50px;
+  text-align: center;
+  background-color: rgba(26, 69, 162, 0.4); }
+
+report-operations .report-container {
+  height: 84vh;
+  background: rgba(26, 69, 162, 0.4); }
+
+report-operations .pagination li {
+  height: 36px;
+  line-height: 36px; }
+  report-operations .pagination li i {
+    margin-top: 1px; }
+
+@media screen and (width: 1024px) {
+  report-operations .middle-select-box {
+    margin-right: 10px !important;
+    width: 100px !important; }
+  report-operations .grid-table {
+    height: 80vh; }
+    report-operations .grid-table #grid {
+      width: 100% !important; }
+  report-operations .report-container {
+    height: 81vh; } }

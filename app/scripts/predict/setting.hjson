@@ -1,0 +1,89 @@
+{
+    title: "华新水泥智能巡检POC系统"
+    name: "predict"
+    desc: "predict"
+    videotype:"hik"
+    toastTime: 2000
+    pollingPeriod: 15000
+    # api routes
+    keyword: "predict"
+    namespace: "predict"
+    api: "clc/api/v1"
+    authUrls: {
+        login: "/auth/login"
+        logout: "/auth/logout"
+        register: "/auth/register"
+        changePassword: "/auth/changepassword"
+        forgetPassword: "/auth/forgetpassword"
+        users: "/auth/users"
+        sendSmsCode: "/auth/sendsmscode"
+        loginBySmsCode: "/auth/loginbysmscode"
+        changeToken: "/auth/changetoken"
+    }
+    menus: [
+        {
+          "icon": "res/svg/menu/homepage-overview.svg",
+          "title": "首页概览",
+          "url": "#/dashboard",
+          "submenus": [],
+          "moduleid": "dashboard"
+        },
+        {
+          "icon": "res/svg/menu/asset-manage.svg",
+          "title": "设备列表",
+          "url": "#/inventory-list",
+          "submenus": [],
+          "moduleid": "inventory"
+        },
+        {
+          "icon": "res/svg/menu/warning-management.svg",
+          "title": "告警管理",
+          "moduleid": "alarms",
+          "submenus": [
+            {icon: "res/svg/menu/current-warning.svg",title: "当前告警",url: "#/event-manager","moduleid": "alarm"},
+            {icon: "res/svg/menu/current-warning.svg",title: "告警分析",url: "#/event-analysis","moduleid": "event-analysis"},
+            {icon: "res/svg/menu/warning-record.svg",title: "告警记录",url: "#/alarm-report","moduleid": "alarm-report"}
+          ]
+        },
+        {
+            title: "运维管理",
+            icon: "res/svg/menu/operation-maintenance.svg",
+            moduleid: "operationcenter"
+            #url: "#/main-tasks"
+            submenus: [
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "运维概况", url: "#/work-overview",moduleid: "work-overview"}
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "我的工单", url: "#/work-calendar",moduleid: "work-calendar"}
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "工单查询", url: "#/main-tasks",moduleid: "main-tasks"}
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "工单汇总", url: "#/report-tasksum",moduleid: "report-tasksum"}
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "巡检任务配置", url: "#/work-manager",moduleid: "work-manager"}
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "故障任务配置", url: "#/electric-calendar",moduleid: "electric-calendar"}
+                #{icon:"res/svg/menu/operation-maintenance.svg",title: "维保任务配置", url: "#/predicttask-arrange",moduleid: "predict-arrange"}
+                {icon:"res/svg/menu/operation-maintenance.svg",title: "人员管理", url: "#/work-employee",moduleid: "work-employee"}
+            ]
+        }
+        {
+          "icon": "res/svg/menu/statistic-analysis.svg",
+          "title": "数据查询",
+          "moduleid": "reports",
+          "submenus": [
+            {icon: "res/svg/menu/history-data.svg",title: "历史数据记录",url: "#/signal-report",moduleid: "signal-report"},
+            {icon: "res/svg/menu/history-data.svg",title: "高频数据记录",url: "#/report-stream-signal",moduleid: "report-stream-signal"},
+            {icon: "res/svg/menu/history-data.svg",title: "信息反馈记录",url: "#/message-feedback",moduleid: "report-stream-signal"},
+            {icon: "res/svg/menu/history-data.svg",title: "流式数据对比",url: "#/stream-compare",moduleid: "report-stream-signal"}
+          ]
+        },
+        {
+          "icon": "res/svg/menu/system-manage.svg",
+          "title": "系统管理",
+          "moduleid": "systemsetting",
+          "submenus": [
+            #{icon: "res/svg/menu/asset-manage.svg",title: "资产管理",url: "#/inventory","moduleid": "inventory"},
+            {icon: "res/svg/menu/user-manage.svg",title: "用户管理",url: "#/user-info","moduleid": "user-info"},
+            {icon: "res/svg/menu/system-message.svg",title: "系统信息",url: "#/setting","moduleid": "setting"}
+          ]
+        }
+      ]
+
+
+
+}

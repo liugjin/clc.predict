@@ -1,0 +1,36 @@
+component-tasksum .nav-wrapper ul li {
+  margin-right: 4px; }
+
+component-tasksum .input-field1 {
+  margin-right: 1rem; }
+
+component-tasksum .btn-margin-top {
+  margin-top: 0.7rem !important; }
+
+component-tasksum .component-pie-box {
+  background-color: rgba(26, 69, 162, 0.4);
+  height: 84vh;
+  padding: 1rem; }
+
+component-tasksum .grid-table {
+  height: 84vh;
+  display: block;
+  padding: 0.5rem;
+  background-color: rgba(26, 69, 162, 0.4) !important; }
+  component-tasksum .grid-table .ag-header-cell {
+    border: none !important; }
+  component-tasksum .grid-table .ag-header-viewport {
+    background-color: rgba(1, 166, 255, 0.5) !important; }
+  component-tasksum .grid-table .ag-row-odd {
+    background-color: rgba(26, 69, 162, 0.4) !important; }
+
+@media screen and (width: 1024px) {
+  component-tasksum .standard-report-btn {
+    width: 80px !important; }
+  component-tasksum .btn-margin-top {
+    margin-top: 0.8rem !important; }
+  component-tasksum .component-pie-box {
+    height: 81vh; }
+  component-tasksum .grid-table {
+    height: 81vh;
+    overflow: auto; } }

@@ -1,0 +1,25 @@
+.content
+    .switch-box
+        div.dropdown-trigger(data-target='equipemttypes' data-hover='false' data-constrain-width='false' data-cover-trigger="false" md-dropdown style='width:100%;height:100%;line-height:80px;text-align:center;font-size: 1.2rem;')
+            div(style='padding-left:16px')
+                span(style='display:block;float:left;')
+                    img(ng-src="{{getComponentPath('images/station.svg')}}" style='position:relative;top: 17px;')
+                span(style='display:block;float:left;margin-left: 10px;') {{station.model.name}}
+                span(style='display:block;float:left;margin-left: 10px;')
+                    img(ng-src="{{getComponentPath('images/dropdown.svg')}}" style='position:relative;width:20px;')
+    ul#equipemttypes.dropdown-content(style='width:290px;border-radius:20px;')
+        li(ng-repeat = 'item in stations | filter:filterStation()' style='width:290px;font-size:1.2rem;')
+            a(ng-href='' ng-click="clickStation(item)" style="padding-left: 16px;")
+                //.type-img
+                //    .img-bing(style="top: -5px;position: relative;background:url('{{setting.urls.uploadUrl}}/{{type.image}}');background-repeat: no-repeat;background-position: -183px -22px;")
+                span.first
+                    //img(ng-src="{{getComponentPath('images/station.svg')}}")
+                    img.defaultimg(ng-src="{{getComponentPath('images/cityblue.svg')}}")
+                    img.hoverimg(ng-src="{{getComponentPath('images/citywhite.svg')}}")
+
+                span.second {{item.model.name}}
+                //.listIcon
+                //    .iconBan
+                //        img(ng-src="{{getComponentPath('images/station.svg')}}")
+                //.listContent
+                //    span {{item.model.name}}

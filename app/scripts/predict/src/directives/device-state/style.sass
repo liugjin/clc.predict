@@ -1,0 +1,106 @@
+device-state
+  .content
+    width: 100%
+    height: calc(60% - 0.75rem)
+    padding: 16px
+    background: rgba(4,18,57,1)
+    border-radius: 20px
+    margin-bottom: 0.75rem
+  .contentTitle
+    display: flex
+    align-items: flex-end
+    width: 100%
+    height: 7%
+    padding-bottom: 0.75rem
+  .titleChName
+    font-size: 18px
+  .titleZhName
+    margin-left: 10px
+    font-size: 14px
+    color: #B4B6BF
+  .contentSubject
+    width: 100%
+    height: 93%
+    margin-top: 0
+    overflow: auto
+  .contentSubject li
+    cursor: pointer
+  .centered
+    display: flex
+    align-items: center
+  .progress
+    display: inline-block
+    height: 24px
+    overflow: visible
+    width: 80%
+    margin: 6px 0 20px 0
+    background-color: rgba(2,32,78,1)
+  .progress-bar
+    //line-height: 24px
+    position: relative
+    //border-radius: 2px
+  .progress-bar-striped
+    //background-image: linear-gradient(90deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent)
+    //background-image: linear-gradient(90deg, transparent 25%, rgba(2, 32, 78, 1) 25%, rgba(2, 32, 78, 1) 50%, transparent 50%, transparent 75%, rgba(2, 32, 78, 1) 75%, rgba(2, 32, 78, 1))
+    //background-size: 40px 40px
+  .active
+    //animation: reverse progress-bar-striped 0.40s linear infinite, animate-positive 2s
+  .title
+    font-size: 14px
+    margin-left: 8px
+  .process-wrapper
+    position: absolute
+    width: 100%
+    height: 100%
+    line-height: 24px
+    top: 0
+    left: 0
+    background-image: linear-gradient(90deg, transparent 25%, #041239 25%, #041239 50%, transparent 50%, transparent 75%, #041239 75%, #041239)
+    //background-image: linear-gradient(90deg, rgba(2, 32, 78, 1) 25%, transparent 25%, transparent 50%, rgba(2, 32, 78, 1) 50%, rgba(2, 32, 78, 1) 75%, transparent 75%, transparent)
+    background-size: 10% 10%
+  /* background-color: #02204E;
+  .progress-value
+    text-align: right
+    font-size: 14px
+    margin-left: 8px
+    color: #030d2c
+  .state
+    //margin-left: 4%
+    margin-right: 2%
+    font-size: 14px
+    border: 1px solid
+    border-radius: 4px
+    padding: 2px 8px
+  img
+    width: 18px
+    height: 18px
+  .pro
+      background-image: linear-gradient(90deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent)
+      background-size: 40px 40px
+      background-color: #02204E
+  .excellent
+    background-color: #00D6FF
+  .good
+    background-color: #0094ff
+  .commonly
+    background-color: #F4D601
+  .range
+    background-color: #ff0045
+  
+  .excellent-col
+    color: #00D6FF
+  .good-col
+    color: #0094ff
+  .commonly-col
+    color: #F4D601
+  .range-col
+    color: #ff0045
+  @keyframes progress-bar-striped
+    0%
+      background-position: 40px 0
+    100%
+      background-position: 0 0
+  @keyframes animate-positive
+    0%
+      width: 0
+

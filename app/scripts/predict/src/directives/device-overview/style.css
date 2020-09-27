@@ -1,0 +1,98 @@
+device-overview .content {
+  width: 100%;
+  height: calc(30% - 0.75rem);
+  padding: 16px;
+  background: #041239;
+  border-radius: 20px;
+  margin-bottom: 0.75rem; }
+
+device-overview .center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+device-overview .headerTitle {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 15%;
+  padding-bottom: 0.75rem; }
+
+device-overview .headerTitle span:nth-child(1) {
+  font-size: 18px; }
+
+device-overview .headerTitle span:nth-child(2) {
+  color: #b4b6bf; }
+
+device-overview .deviceBodyBox {
+  width: 100%;
+  height: 85%;
+  margin: 0; }
+
+device-overview .totalBox {
+  display: flex;
+  width: 100%;
+  height: 24%;
+  border: 1px solid #004e8d;
+  border-radius: 6px;
+  background: #02204e; }
+
+device-overview .icon {
+  width: 14%;
+  height: 100%; }
+
+device-overview .deviceNum {
+  display: flex;
+  align-items: center;
+  width: 72%;
+  font-size: 18px; }
+
+device-overview .deviceNum span:nth-child(1) {
+  font-size: 18px; }
+
+device-overview .deviceNum span:nth-child(2) {
+  font-family: 'din';
+  font-size: 28px;
+  margin-left: 10px; }
+
+device-overview .progressTiao {
+  width: 14%;
+  height: 100%; }
+
+device-overview .typeTotalBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(76% - 16px); }
+
+device-overview .totalType {
+  width: 22%;
+  height: 100%;
+  border: 1px solid #004e8d;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #02204e; }
+
+device-overview .numberBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40%;
+  font-size: 28px;
+  font-family: 'din'; }
+
+device-overview .deviceName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 24%;
+  font-size: 14px; }
+
+device-overview .deviceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36%; }

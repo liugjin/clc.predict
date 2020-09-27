@@ -1,0 +1,8 @@
+stream-test .stream-test-container {
+  background-color: rgba(26, 69, 162, 0.4);
+  padding-top: .75rem !important;
+  height: 84vh;
+  width: 100%; }
+  stream-test .stream-test-container #stream-chart {
+    height: 100%;
+    width: 100%; }

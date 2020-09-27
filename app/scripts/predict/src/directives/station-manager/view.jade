@@ -1,0 +1,157 @@
+.row.nav-top
+    .col.l2
+        span(style="font-size: 14px") 站点管理
+    .col.l10
+        nav
+            .nav-wrapper
+                ul.right
+                    li(ng-show="project.model._role.isAdmin || project.model._role.operations[0]=='_all' || project.model._role.operations.indexOf('station-manager-add')>=0" )
+                        .btn(data-target='station-new-modal', ng-click='createStation()', title='新建站点')
+                            span 新建
+
+.row.margin-top-20
+    .col.s12
+        .card.item-list
+            table.responsive-table.highlight.new-table.station-table
+                thead
+                    tr
+                        th 站点ID
+                        th 站点名称
+                        th 上级站点
+                        th 创建时间
+                        th 更新时间
+                        th 描述
+                        th 操作
+                tbody
+                    tr(ng-repeat='station in allStations')
+                        td {{station.model.station}}
+                        td {{station.model.name}}
+                        td {{getStationParentName(station.model.parent) || '-'}}
+                        td {{station.model.createtime | date:'yyyy-MM-dd HH:mm:ss'}}
+                        td {{station.model.updatetime | date:'yyyy-MM-dd HH:mm:ss'}}
+                        td {{station.model.desc}}
+                        td
+                            a.btn.modal-trigger.edit-btn(href='#station-edit-modal', ng-click='selectStation(station)' ,ng-show="project.model._role.isAdmin || project.model._role.operations[0]=='_all' || project.model._role.operations.indexOf('station-manager-edit')>=0") 编辑
+                            a.btn.delete-btn(ng-href='', ng-click='removeStation(station)',ng-show="project.model._role.isAdmin || project.model._role.operations[0]=='_all' || project.model._role.operations.indexOf('station-manager-del')>=0") 删除
+
+
+#station-new-modal.modal.modal-fixed-footer(md-modal, style="width: 80%;")
+    .modal-content
+        .row
+            .col.s12.m6.l3
+                .input-field.col.s12
+                    span 站点ID *
+                    input#station1.validate(type='text', ng-model='station.model.station', ng-disabled='station.model._id', required)
+
+                .input-field.col.s12
+                    span 站点名称 *
+                    input#name1.validate(type='text', ng-model='station.model.name', required)
+
+                .input-field.col.s12
+                    span 上级站点
+                    select(ng-model='station.model.parent', md-select, data='station')
+                        option(value='') 无
+                        option(ng-repeat='station in project.stations.items | filter: filterStation()', value='{{station.model.station}}', ng-selected='station.model.parent == station.model.station') {{station.model.name}}
+                .input-field.col.s12
+                    span 描述
+                    input#desc.validate(type='text', ng-model='station.model.desc')
+            .col.s12.m6.l3
+                .input-field.col.s12
+                    span(title='支持经纬度拷贝格式：114.03956,22.621333') 经度 (°)
+                    input#longitude.validate(type='text', ng-model='station.model.longitude', ng-paste='pasteLon($event)')
+
+                .input-field.col.s12
+                    span(title='支持经纬度拷贝格式：114.03956,22.621333') 纬度 (°)
+                    input#latitude.validate(type='text', ng-model='station.model.latitude', ng-paste='pasteLat($event)')
+
+            .col.s12.m6.l3
+                .input-field
+                    span 站点图片
+                    .img-uploader.model-img-upload
+                        image-uploader(ng-model='station.model.image', dir='{{controller.options.uploadUrl}}')
+
+
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li
+                        a(href='', ng-click='saveStation()', title='保存')
+                            i.material-icons.left save
+                            span.hide-on-med-and-down 保存
+
+                    ul.right
+                        li
+                            a.modal-action.modal-close(href='')
+                                i.material-icons.right close
+                                span.hide-on-med-and-down 关闭
+
+
+#station-edit-modal.modal.modal-fixed-footer(md-modal,style="width: 80%;")
+    .modal-content
+        .row
+            .col.s12.m6.l3
+                .input-field.col.s12
+                    span 站点ID
+                    input#station.validate(type='text', ng-model='station.model.station', ng-disabled='station.model._id')
+
+                .input-field.col.s12
+                    span 站点名称
+                    input#name.validate(type='text', ng-model='station.model.name')
+
+                .input-field.col.s12
+                    span 上级站点
+                    select(ng-model='station.model.parent', md-select, data='station')
+                        option(value='') 无
+                        option(ng-repeat='station in project.stations.items | filter: filterStation()', value='{{station.model.station}}', ng-selected='station.model.parent == station.model.station') {{station.model.name}}
+                .input-field.col.s12
+                    span 描述
+                    input#desc.validate(type='text', ng-model='station.model.desc')
+            .col.s12.m6.l3
+                .input-field.col.s12
+                    span(title='支持经纬度拷贝格式：114.03956,22.621333') 经度 (°)
+                    input#longitude.validate(type='text', ng-model='station.model.longitude', ng-paste='pasteLon($event)')
+                .input-field.col.s12
+                    span(title='支持经纬度拷贝格式：114.03956,22.621333') 纬度 (°)
+                    input#latitude.validate(type='text', ng-model='station.model.latitude', ng-paste='pasteLat($event)')
+
+
+            .col.s12.m6.l3
+                .input-field
+                    span 站点图片
+                    .img-uploader.model-img-upload
+                        image-uploader(ng-model='station.model.image', dir='{{controller.options.uploadUrl}}')
+
+
+
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li
+                        a(href='', ng-click='saveStation()', title='保存')
+                            i.material-icons.left save
+                            span.hide-on-med-and-down 保存
+
+                    ul.right
+                        li
+                            a.modal-action.modal-close(href='')
+                                i.material-icons.right close
+                                span.hide-on-med-and-down 关闭
+
+#station-manager-prompt-modal.modal.modal-fixed-footer(md-modal,style="width: 80%;height: 50%; ")
+    .modal-content.white-text
+        h4 确认删除{{modal.title}}站点吗？
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul.right
+                    li
+                        a(href='', ng-click="modal.confirm(true)")
+                            i.material-icons.right check
+                            span.hide-on-med-and-down 确认
+
+                    li
+                        a.modal-close(href='', ng-click="modal.confirm(false)")
+                            i.material-icons.right close
+                            span.hide-on-med-and-down 关闭

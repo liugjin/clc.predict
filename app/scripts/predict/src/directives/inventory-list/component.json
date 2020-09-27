@@ -1,0 +1,23 @@
+{
+  "id": "inventory-list",
+  "name": "InventoryList控件",
+  "type": "InventoryListDirective",
+  "desc": {
+    "author": "sheen",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["基于资产管理组件修改，用于预测性运维项目","@sheen"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

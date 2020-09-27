@@ -1,0 +1,10 @@
+link(type='text/css', rel='stylesheet', ng-href='{{getComponentPath("swiper/swiper.min.css")}}')
+.mainContent
+    .swiper-container.type-button
+        .swiper-wrapper
+            .swiper-slide.type(ng-repeat="type in types" ng-click='selectType(type)',ng-class='{"selected":type==selectedType}' style="width: calc(25% - 15px);padding:0;;" title='{{devices[type.model.type].length}}个')
+                img.img-type(ng-src="{{getComponentPath('images/'+type.model.icon+'.svg')}}", onerror="angular.element(this).scope().imgError(this)")
+                span {{type.model.name}}
+    .device-details
+        span(ng-repeat="data in devices[selectedType.model.type]", title='{{data.model.name}}')
+           img(ng-src="{{getComponentPath('images/'+selectedType.model.icon+'.svg')}}" ng-click='selectDevice(data)' ng-style="{'filter':'grayscale(100%)drop-shadow('+getColor(signals[data.model.station+'.'+data.model.equipment].severity.value)+' 0px 0)saturate(10)brightness(5)', 'width': (parameters.size || 24)+'px', 'height': (parameters.size || 24)+'px'}" onerror="angular.element(this).scope().imgError(this)")

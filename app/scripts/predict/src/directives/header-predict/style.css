@@ -1,0 +1,30 @@
+header-predict .cool-header {
+  position: fixed;
+  background-color: #041239;
+  border-bottom: 1px solid #0D2C84;
+  border-image: none;
+  z-index: 9999; }
+
+header-predict .logo-img2 {
+  max-width: 150px;
+  height: 46px;
+  margin-top: 9px; }
+
+header-predict .brand-logo {
+  height: 100%; }
+
+header-predict .brand-logo-center {
+  height: 100%;
+  display: flex;
+  align-items: center; }
+  header-predict .brand-logo-center span {
+    font-family: 'ruizi';
+    font-size: 34px;
+    line-height: 38px; }
+
+header-predict .stationPageHeader {
+  background-color: transparent;
+  border-bottom: none; }
+
+header-predict .otherPageHeader {
+  background-color: #041239; }

@@ -1,0 +1,18 @@
+.content
+    .contentTitle
+        span.titleChName 设备主要预测参数
+        span.titleZhName EQUIPMENT MAIN SIGNAL
+    ul.contentSubject
+        li(ng-repeat="(i, data) in signalDataArr",ng-click="singleSeenter(i,data)")
+            .centered
+                img(ng-src="{{data.imgUrl}}")
+                span.title {{data.stateName}}
+            .progress
+                .progress-bar.progress-bar-striped.active(style="width:{{data.setValue}}%;",
+                    ng-class='{"excellent":data.setValue<25,"good":data.setValue>=25 && data.setValue<50,"commonly":data.setValue>=50 && data.setValue<75,"range":data.setValue>=75}',
+                    title="{{data.setValue}}%")
+                    span.progress-value
+                .process-wrapper(title="{{data.stateName}}:{{data.setValue}}%")
+                    span.progress-value
+            div(style='display:inline-block;width:20%;text-align:right;')
+                span.state(ng-class='{"excellent-col":data.setValue<25,"good-col":data.setValue>=25 && data.setValue<50,"commonly-col":data.setValue>=50 && data.setValue<75,"range-col":data.setValue>=75}') {{data.stateValue}}

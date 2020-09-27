@@ -1,0 +1,106 @@
+.row.nav-top
+    .col.s2
+        span 用户信息
+    .col.s10
+    
+div(ng-show = "showFlag")
+    form.col.l12.cool-content
+        .col.s12
+            a.btn.waves-effect.waves-light.right(href='', ng-click='saveUser()', title='保存')
+                i.material-icons.left save
+                span.hide-on-med-and-down 保存
+            //a.btn.waves-effect.waves-light.right(href='', ng-click='delUser()', title='删除')
+                i.material-icons.left delete
+                span.hide-on-med-and-down 删除
+            a.btn.waves-effect.waves-light.right(href='', ng-click='showUserInfo(false)', title='修改密码')
+                i.material-icons.left edit
+                span.hide-on-med-and-down 修改密码
+
+        .col.s12.m6.l12(style='text-align:center')
+            .img-uploader.model-img-upload
+                span.pic-name 照片
+                image-uploader(ng-model='userObject.image', dir='{{setting.urls.uploadUrl}}')
+
+        .col.s12.l12.center(style="margin-top: 1.5rem;")
+            md-switch(ng-model='userObject.private', label-off='公开用户', label-on='私有用户',style="margin-left:10px;" )
+
+        //.col.s8.offset-l2.felx
+            label 访问令牌
+            .input-field
+                input.validate(type='text' ng-model='userObject.token' disabled)
+        .col.s8.offset-l2.felx
+            label 用户ID
+            .input-field
+                input.validate(type='text' ng-model='userObject.user' disabled)
+        .col.s8.offset-l2.felx
+            label 用户名
+            .input-field
+                input.validate(type='text' ng-model='userObject.name' required)
+        .col.s8.offset-l2.felx
+            label 邮件
+            .input-field
+                input.validate(type='email' ng-model='userObject.email' required)
+        .col.s8.offset-l2.felx
+            label 电话
+            .input-field
+                input.validate(type='text' ng-model='userObject.phone' )
+        .col.s8.offset-l2.felx(style="margin-bottom: 1.5rem;")
+            label 微信ID
+            .input-field
+                input.validate(type='text' ng-model='userObject.openid' )
+
+        //.col.s12.l12
+            .btn-group
+
+div(ng-show = "!showFlag")
+
+    .col.l12.cool-content
+        .col.s12
+            .btn-group1
+                a.btn.waves-effect.waves-light(href='', ng-click='showUserInfo(true)', title='用户信息')
+                    i.material-icons.left keyboard_backspace
+                    span.hide-on-med-and-down 用户信息
+                a.btn.waves-effect.waves-light(href='', ng-click='updatePassword()', title='修改密码')
+                    i.material-icons.left save
+                    span.hide-on-med-and-down 保存
+
+        .col.s8.offset-l2.felx
+            label 用户ID
+            .input-field
+                input.validate(type='text' ng-model='userObject.user' disabled)
+        .col.s8.offset-l2.felx
+            label 旧密码
+            .input-field
+                input.validate(type='password' ng-model='oldPassword' required autocomplete='off')
+        .col.s8.offset-l2.felx
+            label 新密码
+            .input-field
+                input.validate(type='password' ng-model='newPassword' required autocomplete='off')
+        .col.s8.offset-l2.felx
+            label 确认密码
+            .input-field
+                input.validate(type='password' ng-model='confirmPassword' required autocomplete='off')
+        //.col.s8.offset-l2.felx(style="margin-bottom: 1.5rem;")
+            a.btn.waves-effect.waves-light(href='', ng-click='updatePassword()', title='修改密码')
+                i.material-icons.left save
+                span.hide-on-med-and-down 保存
+
+
+
+
+#user-manager-prompt-modal.modal.modal-fixed-footer(md-modal, style="width: 80%;height: 50%; ")
+    .modal-content.white-text
+        h4 确定删除此用户吗？
+    .modal-footer.modal-nav
+        nav.green-1
+            .nav-wrapper
+                ul.right
+                    li
+                        a(href='', ng-click="modal.confirm(true)")
+                            i.material-icons.right check
+                            span.hide-on-med-and-down 确认
+
+                    li
+                        a.modal-close(href='', ng-click="modal.confirm(false)")
+                            i.material-icons.right close
+                            span.hide-on-med-and-down 关闭

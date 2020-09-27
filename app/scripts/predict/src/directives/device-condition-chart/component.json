@@ -1,0 +1,29 @@
+{
+  "id": "device-condition-chart",
+  "name": "DeviceConditionChart控件",
+  "type": "DeviceConditionChartDirective",
+  "desc": {
+    "author": "foam",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["设备出现故障数量和正常运行数量的图表"],
+        "0.0.2": ["修复编译不了的bug"],
+        "0.0.3": ["以正确的方式显示图表"],
+        "0.0.4": ["以正确的形式显示图表"],
+        "0.0.5": ["没有设备时,显示的样式"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+    {"id":"deviceCount", "type":"number", "value": 0},
+    {"id":"alarmCount", "type":"number", "value": 0},
+    {"id":"healthCount", "type":"number", "value": 0}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.5"
+}

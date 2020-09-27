@@ -1,0 +1,23 @@
+{
+  "id": "header-predict",
+  "name": "HeaderPredict控件",
+  "type": "HeaderPredictDirective",
+  "desc": {
+    "author": "sheen",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["基于0.0.7版本header做预测性运维的header","@sheen"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

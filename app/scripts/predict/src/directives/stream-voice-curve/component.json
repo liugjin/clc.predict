@@ -1,0 +1,24 @@
+{
+  "id": "stream-voice-curve",
+  "name": "StreamVoiceCurve控件",
+  "type": "StreamVoiceCurveDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

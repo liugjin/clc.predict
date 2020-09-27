@@ -1,0 +1,14 @@
+
+.header
+    .row
+        nav.z-depth-0.header-bg
+            .nav-wrapper
+                .logo
+                    station-breadcrumbs(controller='controller' parameters='{}' ng-if="parameters.breadcrumbs")
+                .title
+                    //img(src="{{setting.urls.uploadUrl}}/{{equipment.image}}")
+                    .main-title {{parameters.title}}
+                    .en-name {{parameters.subtitle}}
+                .time
+
+

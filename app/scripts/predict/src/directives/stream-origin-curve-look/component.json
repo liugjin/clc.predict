@@ -1,0 +1,25 @@
+{
+  "id": "stream-origin-curve-look",
+  "name": "StreamOriginCurveLook控件",
+  "type": "StreamOriginCurveLookDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+          "@Albert","原始流数据查看组件，需要传文件url地址等参数，且文件内容只有一列数字数据"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

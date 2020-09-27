@@ -1,0 +1,50 @@
+.taskworkline(style="margin: 24px 0;")
+    .row
+        div(style="width:55%;float:left;margin-top: 50px;")
+            .task-vertex
+                span 开始
+            .row(style="margin: 12px 0;font-size: 14px;")
+                .col.s6(style="border-right: 1px dashed;text-align: right;")
+                    ul
+                        li(ng-repeat="(index, item) in data" style="margin: 24px 0;height:30px;font-size:12px;")
+                            span.node-title 节点:&nbsp;&nbsp;
+                            span.node-value {{item.nodeName || '--'}}
+                            span.node-title  /负责人:&nbsp;&nbsp;
+                            span.node-value {{item.manager || '--'}}
+                            span.node-title  /状态:&nbsp;&nbsp;
+                            span.node-value {{item.state || '--'}}
+                            a.node-icon(data-activates="taskDetail" ng-click="openDetail(item, index)")
+                                i.material-icons(ng-if="index != selectNodeId") arrow_drop_down
+                                i.material-icons(ng-if="index == selectNodeId") arrow_drop_up
+                            .node-img
+                .col.s6
+                    ul
+                        li.node-title(ng-repeat="(index2, item2) in data" style="margin: 24px 0;height:30px;line-height: 3;") {{item2.time}}
+            .task-vertex
+                span 完成
+        div(style="width:45%;float:left;")
+            span(style="color:#AAC9F4;font-family:PingFangSC-Regular;font-size:14px;") 工作内容
+            .row(ng-repeat="(index, details) in currentContent" ng-if="index == 'ups' || index == 'environmental'" style="margin-right: 20%;")
+                table(border="0" style="background: rgba(21, 52, 115, 0.4);")
+                    tr(ng-repeat="(i, detail) in details" style="line-height: 33px;")
+                        th(style="width:33%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);" ng-if="i == 0" rowspan="{{details.length}}") {{detail.typeName}}
+                        td(style="width:33%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);" ng-if="detail.equipment" rowspan="{{detail.row}}") {{detail.equipmentName}}
+                        td(style="width:33%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);") {{detail.value}}
+            .row(ng-repeat="(index, details) in currentContent" ng-if="index == 'meter'" style="margin-right: 20%;")
+                table(border="0" style="background: rgba(21, 52, 115, 0.4);")
+                    tr(ng-repeat="(i, detail) in details" style="line-height: 33px;")
+                        th(style="width:33%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);") {{detail.typeName}}
+                        td(style="width:66%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);") {{detail.value}}
+            .row(ng-repeat="(index, details) in currentContent" ng-if="index == 'systemstatus'" style="margin-right: 20%;")
+                table(border="0" style="background: rgba(21, 52, 115, 0.4);")
+                    tr(style="line-height: 66px;")
+                        th(style="width: 33%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);") {{details[0].typeName}}
+                        td(style="width: 66%;padding: 0;border: 1px solid rgb(26, 69, 162);")
+                            .col.s4(ng-repeat="(i, detail) in details")
+                                span {{detail.equipmentName}}
+                                i.material-icons(style="font-size: 16px; position: relative; top: 3px; left: 6px; color: #10EBF8;") done
+            .row(ng-repeat="(index, details) in currentContent" ng-if="index == 'memo'" style="margin-right: 20%;")
+                table(border="0" style="background: rgba(21, 52, 115, 0.4);")
+                    tr(style="line-height: 33px;")
+                        th(style="width: 33%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);") {{details[0].typeName}}
+                        td(style="width: 66%;padding: 0;text-align: center;border: 1px solid rgb(26, 69, 162);") {{details[0].value}}

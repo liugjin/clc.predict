@@ -1,0 +1,103 @@
+<style>body {
+    background-image: url("res/img/login/bg.png");
+    background-position-y: -48px;
+}
+.no-margin-bottom {
+    margin-bottom: 0;
+    padding: 0 20%;
+}
+
+.side-title {
+    text-align: center;
+    font-size: 30px;
+    color: #9ddfff;
+    margin-bottom: 2.7rem !important;
+}
+
+.cool-input {
+    color: #9ddfff;
+    border: 1px solid #9ddfff !important;
+    margin-bottom: 2.7rem !important;
+    width: calc(100% - 60px - 1.5rem) !important;
+    border-radius: 3px !important;
+}
+
+.modal {
+    background-color: rgba(17, 50, 122, 0.9)
+}
+.modal .modal-content {
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+label {
+    color: #9ddfff;
+}
+input {
+    color: #9ddfff;
+    border: 1px solid #9ddfff !important;
+    padding: 0 0.75rem !important;
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+    height: 60px !important;
+    line-height: 60px !important;
+}
+.modal .modal-content input {
+    width: calc(100% - 1.5rem) !important;
+}
+.switch label .lever {
+    background-color: rgba(26, 69, 162, 1)
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: rgba(26, 69, 162, 1)
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: rgba(1, 166, 255, 1)
+}
+
+.bg-circle {
+    background-image: url('res/img/login/circle.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.login-button {
+    background-image: url('res/img/login/login.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.name-logo, .psw-logo {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #9ddfff;
+    margin-right: .75rem;
+    box-sizing: content-box;
+}
+
+.name-logo {
+    background-image: url('res/img/login/name.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.psw-logo {
+    background-image: url('res/img/login/psw.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.flex {
+    display: flex;
+}
+
+</style><div style="height: calc(100vh - 64px);" class="container"><div class="row bg-circle"><div class="col s12 l12 side-title">华新水泥智能巡检POC系统</div><div class="col s12 m12 l6 offset-l3"><div class="row no-margin-bottom"><div class="col s12 flex"><div class="name-logo"></div><input id="user" type="text" ng-model="vm.user.username" placeholder="用户名" class="cool-input"/></div><div class="col s12 flex"><div class="psw-logo"></div><input id="password" type="password" ng-model="vm.user.password" ng-keyup="vm.onKeyUp($event)" placeholder="密码" class="cool-input"/></div><div class="col s12"><div ng-click="vm.logon()" class="login-button"><span>登录</span></div></div><div class="col s12"><a style="color: #9ddfff;" href="#userregister-modal" ng-click="selectStation(station)" class="right modal-trigger"><span>注册</span></a></div></div></div></div></div><div id="userregister-modal" md-modal="md-modal" style="width: 80%;" class="modal modal-fixed-footer"><div class="modal-content"><div class="row"><div class="col s12 m6 l6"><label>用户ID</label><div class="input-field"><input type="text" ng-model="vm.user.user" required="required" class="validate"/></div></div><div class="col s12 m6 l6"><label>用户名</label><div class="input-field"><input type="text" ng-model="vm.user.name" required="required" class="validate"/></div></div><div class="col s12 m6 l6"><label>邮件</label><div class="input-field"><input type="email" ng-model="vm.user.email" required="required" class="validate"/></div></div><div class="col s12 m6 l6"><label>电话</label><div class="input-field"><input type="text" ng-model="vm.user.phone" required="required" class="validate"/></div></div><div class="col s12"><label>密码</label><div class="input-field"><input type="password" ng-model="vm.user.password" required="required" class="validate"/></div></div><div class="col s12"><label>确认密码</label><div class="input-field"><input type="password" ng-model="vm.user.confirmPassword" required="required" class="validate"/></div></div><div class="col s12 m6 l12"><md-switch ng-model="vm.user.private" label-off="公开用户" label-on="私有用户" style="margin-left:10px;"></md-switch></div><div style="margin-top: 2%;" class="col s12 m6 l12"><div class="btn-group center"><a href="" ng-click="vm.register()" title="注册" class="btn cool-btn waves-effect waves-light"><i class="material-icons left">save</i><span class="hide-on-med-and-down">注册</span></a><a href="" title="关闭" class="btn cool-btn waves-effect waves-light modal-action modal-close"><i class="material-icons left">close</i><span class="hide-on-med-and-down">关闭</span></a></div></div></div></div></div>

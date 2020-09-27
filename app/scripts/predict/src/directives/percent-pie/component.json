@@ -1,0 +1,47 @@
+{
+  "id": "percent-pie",
+  "name": "百分信号饼图",
+  "type": "PercentPieDirective",
+  "desc": {
+    "author": "bingo",
+    "comment": "单位是百分信号的饼图，展示了信号的占比",
+    "version": {
+      "0.0.1": [
+        "初始化"
+      ],
+      "0.0.2": [
+        "更新页面标准化样式","@Albert"
+      ]
+    }
+  },
+  "group": "数据点组件",
+  "parameters": [
+    {
+      "id": "station",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "id": "equipment",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "id": "signal",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "id": "color",
+      "type": "string",
+      "value": ""
+    }
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.2"
+}

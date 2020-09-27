@@ -1,0 +1,91 @@
+link(rel='stylesheet', href='/lib/gl-datepicker/styles/glDatePicker.default.css')
+.content
+    .time-button
+        .time(ng-click='clickTime(1)',ng-class='{"ck":1==focus}')
+            img(ng-show='1!=focus',ng-src="{{getComponentPath('images/1-1.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            img(ng-show='1==focus',ng-src="{{getComponentPath('images/1-2.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            span 故障预测告警窗口
+        .time(ng-click='clickTime(2)',ng-class='{"ck":2==focus}')
+            img(ng-show='2!=focus',ng-src="{{getComponentPath('images/2-1.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            img(ng-show='2==focus',ng-src="{{getComponentPath('images/2-2.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            span 智能运维窗口
+    .time-choice
+        span 开始时间
+        span.margin-choice 结束时间
+        span.empty.margin-choice
+    .choice-box
+        .deviceType
+            .input-field
+                input#start-time-input.datepicker(type='text', ng-model='query.startTime')
+        .deviceType.choice-margin
+            .input-field
+                input#end-time-input.datepicker(type='text', ng-model='query.endTime')
+        .btn-box.choice-margin
+            .btn(href='', ng-click='getReportData()', title='查询')
+                span.hide-on-med-and-down 查询
+    .list-box(ng-if="!showBox")
+        .table-thead
+            table(ng-if="focus==1 && !showBox")
+                thead
+                    tr
+                        th 日期
+                        th 时间
+                        th 设备名称
+                        th 故障类型
+                        th 故障级别
+                        //th 处理方式
+            table(ng-if="focus==2 && !showBox")
+                thead
+                    tr
+                        th 日期
+                        th 时间
+                        th 维护设备
+                        th 维护项目
+                        th 维护方式
+        .table-tbody
+            table(ng-if="focus==1 && !showBox")
+                tbody
+                    tr(ng-repeat="data in eventRecords")
+                        td {{data.createtime | date:'yyyy-MM-dd'}}
+                        td {{data.createtime | date:'HH:mm:ss'}}
+                        td {{data.equipmentName}}
+                        td {{data.eventName}}
+                        td(ng-class="data.textColor") {{data.severityName}}
+                        //td {{data.title}}
+            table(ng-if="focus==2 && !showBox")
+                thead
+                    tr(ng-repeat="d in intellect")
+                        td {{d.createtime | date:'yyyy-MM-dd'}}
+                        td {{d.createtime | date:'HH:mm:ss'}}
+                        td {{d.equipmentName}}
+                        td {{d.eventName}}
+                        td {{d.title}}
+        .paging
+            ul.pagination.page-box(ng-show='pagination.pageCount > 1')
+                li(ng-class='{disabled: pagination.page <= 1, "waves-effect": pagination.page > 1}', ng-click='queryPage("previous")')
+                    a(href='')
+                        i.material-icons chevron_left
+                li(ng-class='{active: page == pagination.page, "waves-effect": page != pagination.page}', ng-repeat='page in pagination.pages', ng-click='queryPage(page)')
+                    a(href='')
+                        | {{(($index == 1 && pagination.page > 4)||($index == pagination.pages.length-2 && pagination.page < pagination.pageCount-3)) ? "..":page}}
+                li(ng-class='{disabled: pagination.page >= pagination.pageCount, "waves-effect": pagination.page < pagination.pageCount}', ng-click='queryPage("next")')
+                    a(href='')
+                        i.material-icons chevron_right
+    .list-box(ng-if="showBox")
+        .device-box
+            .title 电机设备{{allMotorNumber}}台
+            .box
+                .card-box(ng-repeat="motorData in motor",ng-click='deviceClick(motorData.index,motorData)',ng-class='{"ck":clickNum == motorData.index}')
+                    .device-img
+                        img(ng-show="clickNum != motorData.index",ng-src="{{getComponentPath('images/d1-1.svg')}}")
+                        img(ng-show="clickNum == motorData.index",ng-src="{{getComponentPath('images/d1-2.svg')}}")
+                    .device-name {{motorData.model.name}}
+        .device-box
+            .title 变频器设备{{allInverterNumber}}台
+            .box
+                .card-box(ng-repeat="inverterData in inverter",ng-click='deviceClick(inverterData.index,inverterData)',ng-class='{"ck":clickNum == inverterData.index}')
+                    .device-img
+                        img(ng-show="clickNum != inverterData.index",ng-src="{{getComponentPath('images/b1-1.svg')}}")
+                        img(ng-show="clickNum == inverterData.index",ng-src="{{getComponentPath('images/b1-2.svg')}}")
+                    .device-name {{inverterData.model.name}}
+    .small-button(ng-click='switchClick()',ng-class='{"small-bac1":showBox == true}')

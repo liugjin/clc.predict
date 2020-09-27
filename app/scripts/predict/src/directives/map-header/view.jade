@@ -1,0 +1,12 @@
+.page-header
+    .left-box
+    .middle-box
+        .picture
+        h5.title(ng-show='headerType=="map"'){{centerName}}智能巡检poc系统
+        h5.title(ng-show='headerType=="scene"') {{parentStation}}&nbsp;&nbsp;·&nbsp;&nbsp;{{centerName}}
+        h5.title(ng-show='headerType=="device"') {{station.model.name}}&nbsp;&nbsp;·&nbsp;&nbsp;{{equipment.model.name}}
+        h5.title(ng-show='headerType=="device-info"') 设备信息配置
+        .picture
+    .right-box
+        a.btn.little-box.z-depth-0.right-logo-box(ng-click="fullscreen()")
+        i.material-icons.left zoom_out_map

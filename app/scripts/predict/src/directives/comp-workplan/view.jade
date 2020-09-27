@@ -1,0 +1,237 @@
+style.
+    input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown{
+        box-shadow:0 1px 0 0 #0050A0;
+    }
+    [type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        z-index: 0;
+        border: 2px solid #FFFFFFFF;
+        border-radius: 1px;
+        margin-top: 3px;
+        -webkit-transition: .2s;
+        transition: .2s;
+    }
+    [type="checkbox"]+span:not(.lever){
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.9rem;
+        user-select: none;
+    }
+    ul.fancytree-container{
+        height:100% !important;
+    }
+    .tree{
+        height:43vh;
+    }
+.row.user-groups(style="height: 93vh;overflow-x:hidden;")
+
+    .row(style="height: 76px;line-height: 5;background-color: rgba(26, 69, 162, 0.4);")
+        .usergroups-title 任务安排
+
+    .row.usergroups-content(style="height: calc(100% - 96px);background-color: rgba(26, 69, 162, 0.4);margin: 10px;padding: 0;")
+        <!-- 右上角 点击按钮 --!>
+        //.col.s12(style="height: 76px;padding: 18px;margin-bottom: 24px;")
+        //    a.btn.right.usergroups-button(ng-repeat="(index1, btn) in textinfo.btns" ng-click="btnClick(index1)" ng-show="btn.show") {{btn.title}}
+        <!-- 左下角 值班信息 --!>
+        .col.s6.m4.l4(style="margin-top:50px;padding-right:50px;")
+            .row(style="padding: 0 0px;")
+                .row
+                    .col.s3(style="ext-align: left;margin-bottom: 40px;line-height: 3;font-size: 0.9rem;color: #fcf5e8;padding: 0;text-align:center;") 任务信息
+                    .col.s9(style="min-height: 600px;border: 1px solid #0050A0;padding: 0;")
+                        .col.s12(style="padding: 0;background: #112d69;height: 40px;line-height: 3;text-align: center;")
+                            .col.s2
+                            .col.s5 工班ID
+                            .col.s5 工班名称
+                        .col.s12.item-selects(style="padding: 0;text-align: center;" ng-repeat="(index3, shiftItem) in shiftList"
+                        ng-click="selectShift(index3, shiftItem)" ng-style="{'background':selectNodeId==index3?'#356bde':''}")
+                            .col.s2.item-select
+                                i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") access_alarms
+                            .col.s5.item-select
+                                span {{shiftItem.shift || '--'}}
+                            .col.s5.item-select
+                                span {{shiftItem.name || '--'}}
+
+                .row
+                    .col.s12(style="padding-top: 10px;margin-left: 15px;")
+                        a.btn.right.usergroups-button(ng-repeat="(index1, btn) in textinfo.btns" ng-click="btnClick(index1)" ng-show="btn.show") {{btn.title}}
+                            i.material-icons.left(style="line-height:2;") {{btn.icon}}
+
+        <!-- 右下角 表单信息 --!>
+        .col.s12.m8.l8(style="padding: 0 0 0 20px;margin-top:50px;")
+            <!-- 上四行 --!>
+            .row.usergroups-list
+                //.col.s6(style="height: 76px;padding: 0;")
+                //    .col.l3.list-title {{item.title}}
+                //    .col.l9(style="padding: 0;")
+                //        input.list-input(ng-if="item.type != 'select' && item.type != 'day'" ng-model="groupInfo[item.field]")
+                //        input.datepickerInput.list-input.z-depth-0(ng-if="item.type == 'day'" ng-model="groupInfo[item.field]" readonly="readonly")
+                //        select.browser-default.filled-in.list-input.list-select(ng-if="item.type == 'select'" ng-model="groupInfo[item.field]")
+                //            option(value="") --请选择--
+                //            option(value="{{option.value}}" ng-repeat="(y, option) in item.option") {{option.name}}
+                //        i.material-icons.list-icon(ng-if="item.type") arrow_drop_down
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title 工班ID
+                    .col.l9(style="padding: 0;")
+                        input.list-input(ng-model="groupInfo.shift" ng-show="editState" required pattern="[^ [A-Za-z0-9-]+$]{1,20}" )
+                        input.list-input(ng-model="groupInfo.shift" ng-show="!editState" disabled="disabled" style="cursor: default;background: rgba(75,166,248,0.2);")
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title 工班名称
+                    .col.l9(style="padding: 0;")
+                        input.list-input(ng-model="groupInfo.name")
+            .row.usergroups-list
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title 计划生效时间
+                    .col.l9(style="padding: 0;")
+                        input.datepickerInput.list-input.z-depth-0(ng-model="groupInfo.startTime" readonly="readonly" ng-click="setDrop(0)")
+                        i.material-icons.list-icon arrow_drop_down
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title 计划失效时间
+                    .col.l9(style="padding: 0;")
+                        input.datepickerInput.list-input.z-depth-0(ng-model="groupInfo.endTime" readonly="readonly" ng-click="setDrop(1)")
+                        i.material-icons.list-icon arrow_drop_down
+            .row.usergroups-list
+                .col.s12(style="height: 76px;padding: 0;")
+                    .col.l2.list-title 计划触发周期
+                    .col.l9(style="padding: 0 0 10px 0;margin-left: -45px;border: 1px solid #0050A0;width: 82%;")
+                        .col.s12(style="margin:10px;")
+                            span(ng-repeat='day in weekdays')
+                                //md-checkbox(ng-model='vm.current.weekdays[$index]', label='{{day.name}}', ng-true-value='{{day.value}}', ng-false-value='{{0}}')
+                                md-checkbox(ng-model='day.chkstatus', label='{{day.name}}')
+                                span &nbsp;&nbsp;&nbsp;&nbsp;
+                        .col.s12.m12.l3
+                            input.validate.list-input(type='time', ng-model='groupInfo.onTime', input-format)
+                        //i.material-icons.list-icon arrow_drop_down
+                //.col.s6(style="height: 76px;padding: 0;")
+                //    .col.l3.list-title 下班时间
+                //    .col.l9(style="padding: 0;")
+                //        input.list-input(ng-model="groupInfo.offTime" type="time")
+                //        //i.material-icons.list-icon arrow_drop_down
+            .row.usergroups-list(style="height: 80px;")
+                .col.s6
+                .col.s6
+                    .row
+                        .col.s6
+                            .row(style="margin-top:50px;margin-left:120px;" )
+                                .col.s4
+                                    a.btn.workcontent-button(title="上移工作内容记录" ng-click="contentMoveup()")
+                                        i.material-icons(style="") keyboard_arrow_up
+                                .col.s4
+                                    a.btn.workcontent-button(title="下移工作内容记录" ng-click="contentMovedown()")
+                                        i.material-icons(style="") keyboard_arrow_down
+                        .col.s6
+                            a.btn.right.usergroups-button.modal-trigger(href='#stationequip-signal-modal' style="margin-top:32px;margin-right:50px;") 工作内容
+                                i.material-icons.right(style="margin-top:-10px;") keyboard_arrow_right
+            <!-- 描述 --!>
+            .row.usergroups-list(style="height: 168px;")
+                .col.s6(style="height: 100%;padding: 0;")
+                    .col.l3.list-title 描述
+                    .col.l9(style="padding: 0;height:100%")
+                        textarea(ng-model="groupInfo.desc",style="width:86%;height:100%;resize: none;border: 1px solid #0050A0 !important;cursor: pointer;color: white;padding: 5px;")
+                .col.s6(style="height: 100%;padding: 0;")
+                    .col.l3.list-title 工作内容
+                    .col.s9(style="width:65%; overflow:auto;  height: 100%;border: 1px solid #0050A0;padding: 0;font-size:14px;")
+                        .col.s12(style="padding: 0;background: #112d69;height: 40px;line-height: 3;text-align: center;")
+                            .col.s2 序号
+                            .col.s3 站点名称
+                            .col.s4 设备名称
+                            .col.s3 作业项
+                        .col.s12.item-selects(style="padding: 0;text-align: left;" ng-repeat="(index3, selectedEquipSignalItem) in selectedEquipSignalList"
+                            ng-click="selectWorkcontent(index3, selectedEquipSignalItem)" ng-style="{'background':workcontentIndex==index3?'#356bde':''}")
+                            .col.s2.item-select
+                                span {{selectedEquipSignalItem.orderno || '--'}}
+                            .col.s3.item-select
+                                span {{selectedEquipSignalItem.stationName || '--'}}
+                            .col.s4.item-select
+                                span {{selectedEquipSignalItem.equipName || '--'}}
+                            .col.s3.item-select
+                                span {{selectedEquipSignalItem.signalName || '--'}}
+            <!-- 工作路线 --!>
+            .row.usergroups-list(style="margin-top:30px;")
+                .col.s1
+                    span.list-title 工作路线
+                .col.s1(ng-repeat="workNode in workRoute" )
+                    div(style="height:7vh;")
+                        span {{workNode.equipId}}
+                    div
+                        img(ng-src="{{workNode.imgurl}}" title="{{workNode.lists}}")
+
+            <!-- 班组成员增减 --!>
+            .row.usergroups-list(style="margin-top:30px;")
+                .col.s6(ng-repeat="(index7, member) in memberList" style="height: 56px;padding: 0;")
+                    .col.l3.list-title
+                        span(ng-show="index7 == 0") 班组成员
+                    .col.l9(style="padding: 0;")
+                        input.list-input(style="float:left;cursor:default;text-align: center;background: rgba(75,166,248,0.2);" readonly="readonly" value="{{member.name}}")
+                        div(ng-click="updateMember(index7)"
+                        style="color: #4AC0FFFF;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin-top: 10px;margin-left: 3px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") close
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title(ng-show="memberList.length == 0") 班组成员
+                    .col.l3.list-title(ng-hide="memberList.length == 0")
+                    .col.l9(style="height: 40px;padding: 10px 0;" ng-hide="showAddSelect")
+                        div(ng-click="showAddSelect=true"
+                        style="color: white;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin: 1px 7px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") add
+                        span 新添成员
+                    .col.l9(style="height: 40px;padding: 0;" ng-show="showAddSelect")
+                        select.browser-default.filled-in.list-input.list-select(ng-model="groupInfo.addUser" style="float:left" ng-change="updateMember(groupInfo.addUser)")
+                            option(value="") --请选择--
+                            option(value="{{user.value}}" ng-repeat="(index8, user) in userList") {{user.name}}
+                        div(ng-click="showAddSelect=false"
+                        style="color: #4AC0FFFF;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin: 10px 0px 0 3px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") close
+                        i.material-icons.list-icon(style="top: -20px;") arrow_drop_down
+
+#stationequip-signal-modal.modal.modal-fixed-footer(md-modal,style="width: 80%;")
+    .modal-content
+        .container
+            .row(style="text-align:center")
+                span.title(style="color:rgba(170,201,244,1);") 作业内容
+            .row(style="margin-top:50px;font-size:14px;")
+                .col.s12.m6.l5
+                    device-tree.col.tree-style(controller='controller',parameters='{"checkbox":true,"filter":true}' style="height:85%;width:100%;")
+
+                .col.s12.m6.l7(style="height: 49vh;border: 1px solid #0050A0;padding: 0;overflow:auto;position: relative;")
+                    .col.s12(style="padding: 0;background: #112d69;height: 40px;line-height: 3;text-align: center;")
+                        .col.s2(style="text-align:left;")
+                            md-checkbox(ng-model='allSelectStatus', label='全选' ng-change="selectAllSignals()" )
+                        .col.s3 站点名称
+                        .col.s4 设备名称
+                        .col.s3 作业项
+                    .col.s12.item-selects(style="padding: 0;text-align: left;" ng-repeat="(index3, equipSignalItem) in equipSignalList"
+                    ng-click="selectEquipSignal(index3, equipSignalItem)" ng-style="{'background':selectSignalNodeId==index3?'#356bde':''}")
+                        .col.s2.item-select
+                            md-checkbox(ng-model='equipSignalItem.chkstatus', label='')
+                        .col.s3.item-select
+                            span {{equipSignalItem.stationName || '--'}}
+                        .col.s4.item-select
+                            span {{equipSignalItem.equipName || '--'}}
+                        .col.s3.item-select
+                            span {{equipSignalItem.signalName || '--'}}
+
+
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li
+                        a(href='', ng-click='saveWorkItems()', title='确认')
+                            i.material-icons.left playlist_add_check
+                            span.hide-on-med-and-down 确认
+
+                    ul.right
+                        li
+                            a.modal-action.modal-close(href='')
+                                i.material-icons.right close
+                                span.hide-on-med-and-down 关闭
+
+link(rel="stylesheet" href="/lib/gl-datepicker/styles/glDatePicker.default.css")

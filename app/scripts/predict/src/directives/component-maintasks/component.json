@@ -1,0 +1,37 @@
+{
+  "id": "component-maintasks",
+  "name": "ComponentMaintasks控件",
+  "type": "ComponentMaintasksDirective",
+  "desc": {
+    "author": "James",
+    "comment": "运维工单主页面自定义组件",
+    "version": {
+        "0.0.6": [
+          "新增工单打印及查询功能---James"
+        ],
+      "0.0.7": [
+        "实时值保留两位小数---James"
+      ],
+      "0.0.8": [
+        "更新具体设备订阅、更新电池房配置---James"
+      ],
+      "0.0.9": [
+        "2019-08-08: 更新了 快照 查看， 格式参照 mobile-order-handle和mobile-order-info"
+      ],
+      "0.0.10": [
+        "更新页面标准化样式","@Albert"
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["task-timeline","report-query-time","work-button"],
+  "css": "",
+  "version": "0.0.10"
+}

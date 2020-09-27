@@ -1,0 +1,25 @@
+{
+  "id": "stream-compare",
+  "name": "StreamCompare控件",
+  "type": "StreamCompareDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+          "@Albert","流数据对比组件第一版"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

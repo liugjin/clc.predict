@@ -1,0 +1,96 @@
+device-state {
+  /* background-color: #02204E; */ }
+  device-state .content {
+    width: 100%;
+    height: calc(60% - 0.75rem);
+    padding: 16px;
+    background: #041239;
+    border-radius: 20px;
+    margin-bottom: 0.75rem; }
+  device-state .contentTitle {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 7%;
+    padding-bottom: 0.75rem; }
+  device-state .titleChName {
+    font-size: 18px; }
+  device-state .titleZhName {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #B4B6BF; }
+  device-state .contentSubject {
+    width: 100%;
+    height: 93%;
+    margin-top: 0;
+    overflow: auto; }
+  device-state .contentSubject li {
+    cursor: pointer; }
+  device-state .centered {
+    display: flex;
+    align-items: center; }
+  device-state .progress {
+    display: inline-block;
+    height: 24px;
+    overflow: visible;
+    width: 80%;
+    margin: 6px 0 20px 0;
+    background-color: #02204e; }
+  device-state .progress-bar {
+    position: relative; }
+  device-state .title {
+    font-size: 14px;
+    margin-left: 8px; }
+  device-state .process-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 24px;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, transparent 25%, #041239 25%, #041239 50%, transparent 50%, transparent 75%, #041239 75%, #041239);
+    background-size: 10% 10%; }
+  device-state .progress-value {
+    text-align: right;
+    font-size: 14px;
+    margin-left: 8px;
+    color: #030d2c; }
+  device-state .state {
+    margin-right: 2%;
+    font-size: 14px;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 2px 8px; }
+  device-state img {
+    width: 18px;
+    height: 18px; }
+  device-state .pro {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    background-color: #02204E; }
+  device-state .excellent {
+    background-color: #00D6FF; }
+  device-state .good {
+    background-color: #0094ff; }
+  device-state .commonly {
+    background-color: #F4D601; }
+  device-state .range {
+    background-color: #ff0045; }
+  device-state .excellent-col {
+    color: #00D6FF; }
+  device-state .good-col {
+    color: #0094ff; }
+  device-state .commonly-col {
+    color: #F4D601; }
+  device-state .range-col {
+    color: #ff0045; }
+
+@keyframes progress-bar-striped {
+  0% {
+    background-position: 40px 0; }
+  100% {
+    background-position: 0 0; } }
+
+@keyframes animate-positive {
+  0% {
+    width: 0; } }

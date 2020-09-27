@@ -1,0 +1,31 @@
+{
+  "id": "component-tasksum",
+  "name": "ComponentTasksum控件",
+  "type": "ComponentTasksumDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.2": [
+          "调整饼图样式---James"
+        ],
+        "0.0.3": [
+          "更新页面标准化样式","@Albert"
+        ],
+        "0.0.4": [
+          "适配1024x768分辨率","@Albert"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["component-pie","grid-table"],
+  "css": "",
+  "version": "0.0.4"
+}

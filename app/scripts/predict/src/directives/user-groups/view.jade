@@ -1,0 +1,70 @@
+.row.user-groups
+
+    .row(style="height: 76px;line-height: 5;background-color: rgba(26, 69, 162, 0.4);")
+        .usergroups-title 人员管理
+
+    .row.usergroups-content
+        <!-- 左下角 人员信息 --!>
+        .col.s5.user-detail-box-left
+            .row.user-detial
+                .col.s3.user-box 人员信息
+                .col.s9.user-msg
+                    .col.s12.detail-box(style="padding: 0;background: #112d69;height: 40px;line-height: 3;text-align: center;")
+                        .col.s1
+                        .col.s3 名称
+                        .col.s5 负责人
+                        .col.s3 上级
+                    .col.s12.item-selects(style="padding: 0;text-align: center;" ng-repeat="(index3, group) in groupList"
+                        ng-click="selectGroup(index3, group)" ng-style="{'background':selectNodeId==index3?'#356bde':''}")
+                        .col.s1.item-select
+                            i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") perm_identity
+                        .col.s3.item-select {{group.name || '--'}}
+                        .col.s5.item-select {{group.manager.name || '--'}}
+                        .col.s3.item-select {{group.parentName || '--'}}
+            .row
+                .col.s12.usergroups-button-box
+                    a.btn.usergroups-button(ng-click="btnClick(-1)") 删除
+                        i.material-icons.left delete_forever
+                    a.btn.usergroups-button(ng-click="btnClick(0)") 保存
+                        i.material-icons.left save
+                    a.btn.usergroups-button(ng-click="btnClick(1)") 新增
+                        i.material-icons.left note_add
+        <!-- 右下角 表单信息 --!>
+        .col.s7.user-detail-box-right
+            <!-- 上两行 --!>
+            .row.usergroups-list(ng-repeat="(index5, items) in forminfo")
+                .col.s6(ng-repeat="(index6, item) in items" style="height: 76px;padding: 0;")
+                    .col.l3.list-title {{item.title}}
+                    .col.l9(style="padding: 0;")
+                        input.list-input(maxlength="10" ng-if="item.type != 'select'" ng-show="item.edit" ng-model="groupInfo[item.field]")
+                        input.list-input(maxlength="10" ng-if="item.type != 'select'" ng-show="!item.edit" ng-model="groupInfo[item.field]" disabled="disabled" style="cursor: default;background: rgba(75,166,248,0.2);")
+                        select.browser-default.filled-in.list-input.list-select(ng-if="item.type == 'select'" ng-model="groupInfo[item.field]")
+                            option(value="") --请选择--
+                            option(value="{{option.value}}" ng-repeat="(y, option) in item.option") {{option.name}}
+                        i.material-icons.list-icon(ng-if="item.type") arrow_drop_down
+            <!-- 成员增减 --!>
+            .row.usergroups-list
+                .col.s6(ng-repeat="(index7, member) in memberList" style="height: 76px;padding: 0;")
+                    .col.l3.list-title
+                        span(ng-show="index7 == 0") 成员
+                    .col.l9(style="padding: 0;")
+                        input.list-input(style="float:left;cursor:default;text-align: center;background: rgba(75,166,248,0.2);" readonly="readonly" value="{{member.name}}")
+                        div(ng-click="updateMember(index7)"
+                            style="color: #4AC0FFFF;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin-top: 10px;margin-left: 3px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") close
+                .col.s6(style="height: 76px;padding: 0;")
+                    .col.l3.list-title(ng-show="memberList.length == 0") 成员
+                    .col.l3.list-title(ng-hide="memberList.length == 0")
+                    .col.l9(style="height: 40px;padding: 10px 0;" ng-hide="showAddSelect")
+                        div(ng-click="showAddSelect=true"
+                            style="color: white;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin: 1px 7px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") add
+                        span 新添成员
+                    .col.l9(style="height: 40px;padding: 0;" ng-show="showAddSelect")
+                        select.browser-default.filled-in.list-input.list-select(ng-model="addUser" style="float:left" ng-change="updateMember(addUser)")
+                            option(value="") --请选择--
+                            option(value="{{user.value}}" ng-repeat="(index8, user) in userList") {{user.name}}
+                        div(ng-click="showAddSelect=false"
+                            style="color: #4AC0FFFF;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin: 10px 0px 0 3px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") close
+                        i.material-icons.list-icon(style="top: -20px;") arrow_drop_down

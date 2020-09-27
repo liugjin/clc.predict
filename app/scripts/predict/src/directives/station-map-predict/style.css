@@ -1,0 +1,5 @@
+station-map-predict .content {
+    width: 100%;
+    height: calc(100% - 0.75rem);
+    border-radius: 20px;
+    background: #041239; }

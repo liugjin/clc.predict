@@ -1,0 +1,70 @@
+report-stream-signal device-tree .tree {
+  height: 78.7vh; }
+
+report-stream-signal .nav-top {
+  height: auto; }
+  report-stream-signal .nav-top span {
+    font-size: 14px; }
+  report-stream-signal .nav-top report-query-time .report-time li.report-li:nth-of-type(2) {
+    margin: 0 4px; }
+
+report-stream-signal .nav-wrapper ul li {
+  margin-right: 4px; }
+
+report-stream-signal .nav-wrapper .right-wrapper-box {
+  float: right;
+  display: flex; }
+
+report-stream-signal .input-field1 {
+  margin-right: 1rem; }
+
+report-stream-signal .report-query-time {
+  margin: 0 10px; }
+
+report-stream-signal .paging-select-box {
+  margin-left: 20%;
+  background-color: rgba(26, 69, 162, 0.4) !important;
+  height: 5.9vh;
+  width: calc( 80% - 0.75rem); }
+
+report-stream-signal .page-button {
+  border: 1px solid #0066ff;
+  border-radius: 0; }
+
+report-stream-signal .device-tree {
+  width: 20%;
+  height: 85%; }
+
+report-stream-signal .grid-table-contaner {
+  width: 80%;
+  overflow: auto;
+  height: 84.5vh;
+  background-color: rgba(26, 69, 162, 0.4) !important; }
+  report-stream-signal .grid-table-contaner table tbody tr {
+    height: 60px !important; }
+    report-stream-signal .grid-table-contaner table tbody tr .stream-textarea:focus {
+      outline: none; }
+    report-stream-signal .grid-table-contaner table tbody tr .stream-textarea {
+      color: #FFFFFF;
+      border: none;
+      display: block;
+      height: 54px;
+      word-break: break-all;
+      resize: none; }
+  report-stream-signal .grid-table-contaner .eventpagination {
+    position: absolute;
+    bottom: 1rem;
+    width: 85% !important; }
+    report-stream-signal .grid-table-contaner .eventpagination i {
+      margin-top: 1px; }
+
+report-stream-signal #stream-chart-modal {
+  background-color: #02204e;
+  border-radius: 6px;
+  border: 1px solid #00a7ff; }
+
+@media screen and (max-width: 1300px) {
+  report-stream-signal .device-tree {
+    width: 200px !important; }
+  report-stream-signal .grid-table-contaner {
+    width: calc(100% - 200px) !important; } }

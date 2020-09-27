@@ -1,0 +1,89 @@
+.stream-card#streambox
+    .stream-title-box
+        .left-button-box
+            .stream-title
+                span {{parameters.signalName}}
+            .btn.stream-btn.play-pause-button(ng-click='chartPlayPause()')
+                img(ng-src="{{getComponentPath('images/play.png')}}")
+                span 播放/暂停
+            .btn.stream-btn.cancle-button(ng-click='chartShowAll()')
+                img(ng-src="{{getComponentPath('images/play.png')}}")
+                span 全部展示
+        .text-file-box
+            .search-legend-classify
+                .data-select-name(ng-show='streamLegendList.length > 1 || abcSeriesList.length > 1')
+                    span 数据选择:
+                a.signal-legend-classify.series-selections.dropdown-trigger(href='' data-target='abcSeriesList' data-hover='true'
+                    data-constrain-width='false' data-cover-trigger="false"
+                    md-dropdown ng-show='abcSeriesList.length > 1')
+                    span.left-equip-box {{chartOpts.currentAbcSeries.name}}
+                    span.right-equip-box
+                        img(ng-src="{{getComponentPath('images/triangle1.png')}}")
+                ul#abcSeriesList.dropdown-content
+                    li(ng-repeat = '(index, type) in abcSeriesList')
+                        a(ng-href='' ng-click='selectSeriesData(type, index)' style="padding-left: 8px;")
+                            span {{type.name}}
+                a.signal-legend-classify.dropdown-trigger(href='' data-target='streamLegendList' data-hover='true'
+                    data-constrain-width='false' data-cover-trigger="false"
+                    md-dropdown ng-show='streamLegendList.length > 1')
+                    span.left-equip-box {{chartOpts.currentLegends.name}}
+                    span.right-equip-box
+                        img(ng-src="{{getComponentPath('images/triangle1.png')}}")
+                ul#streamLegendList.dropdown-content
+                    li(ng-repeat = '(index, type) in currentDisplayList')
+                        a(ng-href='' ng-click='selectLegend(type, index)' style="padding-left: 8px;")
+                            span {{type.name}}
+    .fullscreen
+        a(ng-click='fullscreen("#streambox")', title='全屏显示')
+            img(src="res/svg/fullscreen2.svg")
+    .stream-content-box
+        .left-stream-content
+            .stream-content-item
+                span.item-title 时域数据分析
+                .item-content
+                    span {{chartOpts.currentLegends.legend1}}
+            .stream-content-item
+                span.item-title 最大值
+                .stream-signal-max-num.item-content
+                    span {{ currentMinAndMax[0][1] }}
+            .stream-content-item
+                span.item-title 最小值
+                .stream-signal-min-num.item-content
+                    span {{ currentMinAndMax[0][0] }}
+            .stream-content-item
+                span.item-title 正常数据区间
+                .stream-signal-arranges.item-content
+                    span {{ chartOpts.normalDatas[0]}}
+                    .strong-red 注: 超出正常区间的点显示红色
+            //.stream-content-item
+            //    span 采集时间
+            //    .stream-signal-min-num
+            //        span {{ collectTime }}
+        .right-stream-content
+            .stream-content-item
+                span.item-title 频域数据分析
+                .item-content
+                    span {{chartOpts.currentLegends.legend2}}
+            .stream-content-item
+                span.item-title 最大值
+                .stream-signal-max-num.item-content
+                    span {{ currentMinAndMax[1][1] }}
+            .stream-content-item
+                span.item-title 最小值
+                .stream-signal-min-num.item-content
+                    span {{ currentMinAndMax[1][0] }}
+            .stream-content-item
+                span.item-title 正常数据区间
+                .stream-signal-arranges.item-content
+                    span {{ chartOpts.normalDatas[1] }}
+        //.no-stream-data(ng-show="!dataFlag")
+        //    .no-title-box
+        //        span 暂无数据
+        .stream-card-content1.no-padding
+            #ss-chart1
+        .stream-card-content2.no-padding
+            #ss-chart2
+
+
+
+

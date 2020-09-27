@@ -1,0 +1,25 @@
+//.row.show-3d
+//    //img.responsive-img(src="{{getComponentPath('images/yangxin.jpg')}}" )
+//    img.responsive-img(ng-src="{{bg}}" )
+.row.dashboard-mobile
+    .col.s3.m3.l3(style="height:100%")
+        equipment-assets(controller="controller" parameters="{}")
+        station-key-signal(controller="controller" parameters="{}")
+        station-describe(controller="controller" parameters="{}")
+    .col.s6.m6.l6(style="display: flex;flex-direction:column;justify-content:space-between;height:100%")
+        station-switch(controller="controller" parameters="{}",style="width:100%;height:14%")
+        station-device(controller="controller" parameters="{}",style="width:100%;height:20%")
+    .col.s3.m3.l3(style="height:100%")
+        station-alarm-summary(controller="controller" parameters="{}")
+        prediction-alarm(controller="controller" parameters="{}")
+        forecast-results-list(controller="controller" parameters="{}")
+
+
+
+
+
+
+
+
+
+

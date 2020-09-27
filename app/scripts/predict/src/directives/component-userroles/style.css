@@ -1,0 +1,84 @@
+component-userroles span {
+  font-size: 14px !important; }
+
+component-userroles .repeat-label {
+  margin-bottom: .5rem; }
+
+component-userroles .switch label .lever {
+  background-color: #1a45a2; }
+
+component-userroles .switch label input[type=checkbox]:checked + .lever {
+  background-color: #1a45a2; }
+
+component-userroles .switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #01a6ff; }
+
+component-userroles [type="checkbox"]:not(:checked):disabled + span:not(.lever):before {
+  border: 2px solid #cdd2d4; }
+
+component-userroles [type="checkbox"] + span:not(.lever):before, component-userroles [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+  border: 2px solid #cdd2d4; }
+
+component-userroles [type="checkbox"].filled-in:not(:checked) + span:not(.lever):after {
+  border: 2px solid #cdd2d4;
+  top: 2px; }
+
+component-userroles [type="checkbox"].filled-in:checked + span:not(.lever):after {
+  background: #00ac4c;
+  border: 2px solid #00ac4c;
+  top: 2px; }
+
+component-userroles [type="checkbox"].filled-in:checked + span:not(.lever):before {
+  top: 2px; }
+
+component-userroles label {
+  color: #ffffff !important; }
+
+component-userroles .cool-title {
+  background-color: rgba(1, 166, 255, 0.65);
+  color: #ffffff;
+  padding: .75rem;
+  font-size: 14px; }
+
+component-userroles .cool-content {
+  height: 230px;
+  padding: .75rem;
+  background-color: rgba(26, 69, 162, 0.4); }
+
+component-userroles .cool-content-inside {
+  background-color: rgba(26, 69, 162, 0.4); }
+
+component-userroles .view-body {
+  margin: .75rem 0 !important; }
+
+component-userroles .no-margin-bottom {
+  margin-bottom: 0; }
+
+component-userroles .collection {
+  margin: 0;
+  border: none;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative; }
+  component-userroles .collection li {
+    color: #ffffff !important; }
+  component-userroles .collection .collection-item {
+    border-bottom: none;
+    color: #ffffff !important;
+    background-color: transparent; }
+  component-userroles .collection .collection-item.active {
+    background-color: rgba(1, 166, 255, 0.65) !important; }
+  component-userroles .collection .collection-item:not(.active):hover {
+    background-color: rgba(26, 69, 162, 0.4) !important; }
+
+component-userroles .circle {
+  border-radius: 50%; }
+
+component-userroles .secondary-content {
+  position: absolute;
+  top: 16px;
+  right: 16px; }
+
+component-userroles .collection-item.active {
+  background-color: #26a69a;
+  color: #eafaf9; }

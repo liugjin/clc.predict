@@ -1,0 +1,56 @@
+link(rel='stylesheet', href='/lib/gl-datepicker/styles/glDatePicker.default.css')
+.content
+    .contentTitle
+        span.titleChName 故障预测告警
+        span.titleZhName EQUIPMENT MAIN SIGNAL
+    .contentSubject
+        .dateBox
+            .time-choice
+                span 开始时间
+                span 结束时间
+            .choice-box
+                .deviceType
+                    .input-field
+                        input#start-time-input.datepicker(type='text', ng-model='query.startTime')
+                .deviceType
+                    .input-field
+                        input#end-time-input.datepicker(type='text', ng-model='query.endTime')
+                .btn-box
+                    .btn(href='', ng-click='getReportData()', title='查询')
+                        span.hide-on-med-and-down 查询
+        .contentBox
+            //.table-thead
+            //    table
+            //        thead
+            //            tr
+            //                th 告警名称
+            //                th 告警含义
+            //                th 告警级别
+            //                th 告警时间
+            .table-tbody
+                table.highlight
+                    thead
+                        tr
+                            th 告警级别
+                            th 告警名称
+                            th 告警含义
+                            th 告警时间
+                    tbody
+                        tr(ng-repeat='event in eventRecords' ng-click='clickEvent(event)')
+                            td
+                                //a.waves-effect.waves-light(style='margin-top:0.8rem')
+                                i.material-icons.small(style='position:relative;top:8px;' ng-style='{color: event.color}', title='{{event.severityName}}, 点击查看告警细节') {{event.phase == "start" && "notifications_on" || event.phase == "confirm" && "notifications_paused" || event.phase == "end" && "notifications_off" || event.phase == "completed" && "notifications" || "notifications_none"}}
+                            td {{event.eventName}}
+                            td {{event.title}}
+                            td(title="{{event.startTime | date:'yyyy-MM-dd HH:mm:ss'}}") {{event.startTime | date:'MM-dd HH:mm:ss'}}
+            .paging
+                ul.pagination.page-box(ng-show='pagination.pageCount > 1')
+                    li(ng-class='{disabled: pagination.page <= 1, "waves-effect": pagination.page > 1}', ng-click='queryPage("previous")')
+                        a(href='')
+                            i.material-icons chevron_left
+                    li(ng-class='{active: page == pagination.page, "waves-effect": page != pagination.page}', ng-repeat='page in pagination.pages', ng-click='queryPage(page)')
+                        a(href='')
+                            | {{(($index == 1 && pagination.page > 4)||($index == pagination.pages.length-2 && pagination.page < pagination.pageCount-3)) ? "..":page}}
+                    li(ng-class='{disabled: pagination.page >= pagination.pageCount, "waves-effect": pagination.page < pagination.pageCount}', ng-click='queryPage("next")')
+                        a(href='')
+                            i.material-icons chevron_right

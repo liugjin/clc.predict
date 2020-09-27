@@ -1,0 +1,26 @@
+{
+  "id": "bar-vertical-stack",
+  "name": "BarVerticalStack控件",
+  "type": "BarVerticalStackDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["初始化", "@youge"],
+        "0.0.2": ["修复切换时变形的问题", "@youge"],
+        "0.0.3": ["修复自适应", "@youge"],
+        "0.0.4": ["适配新的数据格式", "@youge"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.4"
+}

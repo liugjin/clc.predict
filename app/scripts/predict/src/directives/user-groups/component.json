@@ -1,0 +1,29 @@
+{
+  "id": "user-groups",
+  "name": "UserGroups控件",
+  "type": "UserGroupsDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["@youge"],
+        "0.0.2": ["调整了css和js","@youge"],
+        "0.0.3": ["调整页面边距","@James"],
+        "0.0.4": ["修改保存、删除bug以及增加操作提示","@James"],
+        "0.0.6": ["按钮增加图标","@James"],
+        "0.0.7": ["修改负责人不能保存以及显示bug，增加删除提示","@James"],
+        "0.0.8": ["适配1024分辨率，增加删除提示","@vera"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.8"
+}

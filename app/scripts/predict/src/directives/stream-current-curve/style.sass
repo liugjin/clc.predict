@@ -1,0 +1,274 @@
+stream-current-curve
+  ul#signalDataArr
+    background-color: rgba(2,32,78,1)
+    border-radius: 4px
+    border: 1px solid rgba(0,167,255,1)
+    li:hover
+      background-color: rgba(0,167,255,1)
+  ul#streamLegendList
+    background-color: rgba(2,32,78,1)
+    border-radius: 4px
+    border: 1px solid rgba(0,167,255,1)
+    li:hover
+      background-color: rgba(0,167,255,1)
+  ul#abcSeriesList
+    background-color: rgba(2,32,78,1)
+    border-radius: 4px
+    border: 1px solid rgba(0,167,255,1)
+    li:hover
+      background-color: rgba(0,167,255,1)
+  #stream-predict-modal
+    background-color: rgba(2,32,78,1)
+    border-radius: 6px
+    border: 1px solid rgba(0,167,255,1)
+  .submit-form-box
+    width: 100%
+    padding-left: 15px
+    .stream-btn:hover
+      background: rgba(0,167,255,1)
+    .stream-btn
+      margin-right: 10px
+      border-radius: 4px
+      height: 38px !important
+      background-color: rgba(0,167,255,1)
+      border: none !important
+      img
+        margin-right: 5px
+        height: 22px
+        vertical-align: middle
+      span
+        font-size: 16px
+        color: rgba(244,247,255,1)
+    .tr-text-item
+      height: 160px
+      font-size: 18px
+      color: rgba(244,247,255,1)
+      margin-top: 1.6rem
+      .left-name
+        width: 31%
+        float: left
+      .right-content
+        width: 69%
+        height: 100%
+        float: right
+        #predict-signal-text:focus
+          outline: none !important
+        #predict-signal-text
+          width: 260px
+          height: 150px
+          color: rgba(244,247,255,1)
+          overflow: auto
+          border: 1px solid #0652a2
+    .tr-item
+      height: 50px
+      font-size: 18px
+      color: rgba(244,247,255,1)
+      margin: 1rem 0
+      .left-name
+        width: 31%
+        height: 100%
+        line-height: 50px
+        float: left
+      .right-content
+        width: 69%
+        height: 100%
+        float: right
+        padding-top: 6px
+        input#predict-signal-num
+          width: 248px !important
+          height: 38px !important
+          padding-left: 10px
+      .search-streamsig-classify
+        .dropdown-content
+          width: 260px
+          li
+            font-size: 16px
+        .signal-stream-classify:focus
+          outline: none !important
+        .signal-stream-classify
+          background-color: rgba(26,69,162,0.4)
+          border: 1px solid rgba(0,167,255,1)
+          border-radius: 4px
+          color: #ffffff
+          height: 38px
+          display: inline-block
+          box-shadow: none
+          span:focus
+            outline: none !important
+          span
+            text-align: center
+            display: inline-block
+            line-height: 38px
+            font-size: 14px
+            color: rgba(244,247,255,1)
+            height: 38px
+          .left-equip-box
+            width: 220px
+          //border-right: 1px solid rgba(16,235,244,1)
+          .right-equip-box
+            width: 38px
+            color: rgba(0,213,255,1)
+  .stream-card
+    box-shadow: none !important
+    margin-top: 0
+    //border: 1px solid #173169
+    width: 100%
+    height: 100%
+    .fullscreen
+      cursor: pointer
+      position: absolute
+      bottom: 0.5rem
+      right: 0.6rem
+      width: 3rem
+      height: 3rem
+      text-align: center
+      border-radius: 50%
+      background-color: rgba(26, 69, 162, 0.4)
+    .stream-title-box
+      width: 100%
+      height: 12%
+      .left-button-box
+        float: left
+        height: 100%
+        padding-top: 15px
+        .stream-btn:hover
+          background: rgba(0,167,255,1)
+        .stream-btn
+          margin-right: 10px
+          border-radius: 4px
+          height: 38px !important
+          border: 1px solid rgba(0,167,255,1) !important
+          img
+            margin-right: 5px
+            height: 22px
+            margin-bottom: 2px
+            vertical-align: middle
+          span
+            font-size: 16px
+            color: rgba(244,247,255,1)
+        .stream-title
+          float: left
+          width: 180px
+          font-size: 22px
+          height: 100%
+          text-align: center
+      .text-file-box
+        float: right
+        height: 100%
+
+        .search-legend-classify
+          height: 38px
+          margin-top: 15px
+          font-size: 14px
+          font-weight: 400
+          margin-right: 30px
+          #abcSeriesList
+            width: 160px
+            li
+              font-size: 16px
+          #streamLegendList
+            width: 200px
+            li
+              font-size: 16px
+          .data-select-name
+            margin-right: 10px
+            height: 40px
+            line-height: 38px
+            vertical-align: middle
+            float: left
+            span
+              font-size: 16px
+
+          .signal-legend-classify:focus
+            outline: none !important
+          .signal-legend-classify
+            margin-right: 20px
+            background-color: rgba(26,69,162,0.4)
+            border: 1px solid rgba(0,167,255,1)
+            border-radius: 4px
+            color: rgba(244,247,255,1)
+            height: 38px
+            display: inline-block
+            box-shadow: none
+            span:focus
+              outline: none !important
+            span
+              text-align: center
+              display: inline-block
+              line-height: 38px
+              height: 38px
+            .left-equip-box
+              width: 160px
+              overflow: hidden
+              text-overflow: ellipsis
+              white-space: nowrap
+
+            .right-equip-box
+              width: 38px
+              float: right
+              color: rgba(0,213,255,1)
+          .series-selections
+            .left-equip-box
+              width: 120px !important
+
+    .stream-content-box
+      width: 100%
+      height: 88%
+      .left-stream-content
+        float: left
+        height: 100%
+        width: 15%
+        padding-left: 1%
+        padding-top: 2%
+      .stream-content-item
+        width: 100%
+        height: 18%
+        .item-title
+          font-size: 14px
+          color: rgba(156,165,193,1)
+        .item-content
+          width: 100%
+          height: 4rem
+          span
+            font-size: 16px
+            color: rgba(235,238,247,1)
+          .strong-red
+            color: red
+      .right-stream-content
+        float: right
+        height: 100%
+        width: 12%
+        padding-top: 2%
+      .no-stream-data
+        width: 70%
+        float: left
+        height: 100%
+        .no-title-box
+          margin-top: 25%
+          width: 100%
+          text-align: center
+          height: 15%
+          span
+            font-size: 18px
+      .stream-card-content1
+        width: 70%
+        float: left
+        height: 49%
+        #ss-chart1
+          display: block
+          width: 100%
+          height: 100%
+      .stream-card-content2
+        width: 70%
+        float: left
+        height: 49%
+        margin-top: 10px
+        #ss-chart2
+          display: block
+          width: 100%
+          height: 100%
+
+
+
+
+

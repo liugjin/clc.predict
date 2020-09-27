@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="15px" viewBox="0 0 25 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.9434 0.2501 18.5964 0.2501 18.5964 1 0.9434 1"></polygon>
+        <polygon id="path-3" points="1 0.0119 1.75 0.0119 1.75 3.1749 1 3.1749"></polygon>
+        <polygon id="path-5" points="0.7901 0.0119 1.54 0.0119 1.54 3.1749 0.7901 3.1749"></polygon>
+        <polygon id="path-7" points="0.9434 0.345 18.5964 0.345 18.5964 1.0949 0.9434 1.0949"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon">
+            <g id="Group-35" transform="translate(0.000000, 0.655000)">
+                <g id="Group-3" transform="translate(3.000000, 12.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M0.9434,0.7501 L18.5964,0.7501" id="Stroke-1" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M1.25,5.0119 L3.943,5.0119" id="Stroke-4" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <g id="Group-8" transform="translate(0.000000, 5.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-7"></g>
+                    <path d="M1.25,0.0119 L1.25,3.1749" id="Stroke-6" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-4)"></path>
+                </g>
+                <path d="M3.9434,8.1749 L1.2504,8.1749" id="Stroke-9" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.2901,5.0119 L21.5971,5.0119" id="Stroke-11" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <g id="Group-15" transform="translate(23.000000, 5.000000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="Clip-14"></g>
+                    <path d="M1.2901,0.0119 L1.2901,3.1749" id="Stroke-13" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-6)"></path>
+                </g>
+                <path d="M21.5967,8.1749 L24.2897,8.1749" id="Stroke-16" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3.9434,12.5919 L3.9434,0.5949" id="Stroke-18" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M21.5967,12.7501 L21.5967,0.5951" id="Stroke-20" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <g id="Group-24" transform="translate(3.000000, 0.000000)">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="Clip-23"></g>
+                    <path d="M0.9434,0.5949 L18.5964,0.5949" id="Stroke-22" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-8)"></path>
+                </g>
+                <path d="M6.3711,0.5949 L6.3711,12.7499" id="Stroke-25" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M19.1685,0.5949 L19.1685,12.7499" id="Stroke-27" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6.3711,3.7794 L11.2421,0.5944" id="Stroke-29" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6.3711,6.5822 L15.5531,0.5952" id="Stroke-31" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6.3711,9.108 L19.1681,0.769" id="Stroke-33" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+            <path d="M6.3711,12.3929 L19.1681,4.0549" id="Stroke-36" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Group-43" transform="translate(8.000000, 5.655000)" stroke="#E2EDF2" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6">
+                <path d="M0.6504,7.7501 L11.1684,0.8961" id="Stroke-37"></path>
+                <path d="M5.2603,7.7501 L11.1683,3.8971" id="Stroke-39"></path>
+                <path d="M9.187,7.7501 L11.168,6.4541" id="Stroke-41"></path>
+            </g>
+        </g>
+    </g>
+</svg>

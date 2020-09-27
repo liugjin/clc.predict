@@ -1,0 +1,49 @@
+
+.map
+    .station-map
+    .station-list
+        .search-wrapper
+            i.material-icons search
+            input.search-input(type="text" placeholder="搜索" ng-model="searchLists" required)
+            i.material-icons(style="left: 290px;" ng-click="searchLists = '';" ng-show='searchLists') close
+        .station-item(ng-show='searchLists')
+            .item-list(ng-repeat="station in stationData | filter: filterStation()" ng-click="selectStation(station)" ng-class="{active: station.station == current.station}")
+                a(ng-class="{'state-offalarm': !station.alarms, 'state-onalarm': station.alarms}")
+                    label(ng-click='jumpPage(station); $event.stopPropagation();')
+                        input.with-gap(type="radio" checked)
+                        span {{station.name}}
+                    | （设备总数{{station.equips}}，在线设备{{station.online}}）
+    .statistic-list
+        .statistic-item
+            .title
+                span 设备总数
+                span.subtitle &nbsp;&nbsp;(台)
+            .line-horizontal
+            .statistic-quantity.total {{statisticEquips.equips}}
+        .statistic-item
+            .title
+                span 在线设备
+                span.subtitle &nbsp;&nbsp;(台)
+            .line-horizontal
+            .statistic-quantity.online {{statisticEquips.online}}
+        .statistic-item
+            .title
+                span 告警设备
+                span.subtitle &nbsp;&nbsp;(台)
+            .line-horizontal
+            .statistic-quantity.alarm {{statisticEquips.alarm}}
+        .statistic-item
+            .title
+                span 待机设备
+                span.subtitle &nbsp;&nbsp;(台)
+            .line-horizontal
+            .statistic-quantity.standby {{statisticEquips.standby}}
+        .statistic-item
+            .title
+                span 停机设备
+                span.subtitle &nbsp;&nbsp;(台)
+            .line-horizontal
+            .statistic-quantity.stop {{statisticEquips.offline}}
+
+
+

@@ -1,0 +1,55 @@
+stream-data-chart .signal-select {
+  width: 200px;
+  height: 50px;
+  padding-left: 60px;
+  padding-top: 20px; }
+
+stream-data-chart .eletic-title {
+  padding-left: 25px;
+  height: 86px;
+  line-height: 5;
+  background-color: rgba(26, 69, 162, 0.4);
+  margin-bottom: 12px;
+  font-size: 16px; }
+
+stream-data-chart .search-stream-data-classify {
+  height: 38px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 1rem;
+  margin-top: 1rem; }
+  stream-data-chart .search-stream-data-classify .dropdown-content {
+    width: 160px; }
+    stream-data-chart .search-stream-data-classify .dropdown-content li {
+      font-size: 16px; }
+  stream-data-chart .search-stream-data-classify .stream-data-classify:focus {
+    outline: none !important; }
+  stream-data-chart .search-stream-data-classify .stream-data-classify {
+    margin-right: 20px;
+    background-color: rgba(26, 69, 162, 0.4);
+    border: 1px solid #10ebf4;
+    color: #ffffff;
+    width: 160px;
+    height: 38px;
+    display: inline-block;
+    box-shadow: none; }
+    stream-data-chart .search-stream-data-classify .stream-data-classify span:focus {
+      outline: none !important; }
+    stream-data-chart .search-stream-data-classify .stream-data-classify span {
+      text-align: center;
+      display: inline-block;
+      line-height: 37px;
+      height: 37px; }
+    stream-data-chart .search-stream-data-classify .stream-data-classify .left-equip-box {
+      width: 120px;
+      border-right: 1px solid #10ebf4; }
+    stream-data-chart .search-stream-data-classify .stream-data-classify .right-equip-box {
+      width: 38px;
+      color: #00d5ff; }
+
+stream-data-chart .component-line-box {
+  height: 60vh; }
+
+@media screen and (width: 1024px) {
+  stream-data-chart .component-line-box {
+    height: 53vh; } }

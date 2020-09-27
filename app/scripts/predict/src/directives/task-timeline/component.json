@@ -1,0 +1,32 @@
+{
+  "id": "task-timeline",
+  "name": "TaskTimeline控件",
+  "type": "TaskTimelineDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["工单时间轴展示", "@youge"],
+        "0.0.2": ["取消数据查看", "@youge"],
+        "0.0.3": ["1.修改新建为开始；2.状态修改{ reject:拒绝, cancel:取消, approval:接受 }；3.将工作反馈情况从节点取值", "@youge"],
+        "0.0.4": ["提换代码", "@youge"],
+        "0.0.5": ["增加电压值和系统状态", "@youge"],
+        "0.0.6": ["增加电压值和系统状态", "@youge"],
+        "0.0.7": ["1.增加电压默认值； 2.修复系统状态栏 设备数量不全", "@youge"],
+        "0.0.8": ["1.变量字符错误", "@youge"],
+        "0.0.9": ["传参结构变化，css调整", "@youge"],
+        "0.0.10": ["调整", "@youge"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+    {"id":"datas", "type":"object", "value":"{task:'task'}"}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.10"
+}

@@ -1,0 +1,90 @@
+.stream-card
+    .stream-title-box
+        .left-button-box
+            .stream-title
+                span {{parameters.currentName}}
+            .btn.play-pause-button(ng-click='chartPlayPause()')
+                span 播放/暂停
+            .btn.cancle-button(ng-click='chartShowAll()')
+                span 全部展示
+            .btn.cancle-button(data-target='stream-predict-modal' ng-click='openModal()')
+                span 信息反馈
+        .text-file-box
+            //.input-field.import-input-box(title='导入文件')
+            //    input.validate.index1(type='text')
+            //    .file-a-btn 选择文件
+            //        input.file-input-ctrl(id='index1' type="file" onchange='angular.element(this).scope().signalDataImport(this)')
+            .search-legend-classify
+                a.signal-legend-classify.dropdown-trigger(href='' data-target='streamLegendList' data-hover='true'
+                    data-constrain-width='false' data-cover-trigger="false"
+                    md-dropdown ng-show='streamLegendList.length > 1')
+                    span.left-equip-box 数据选择
+                    span.right-equip-box ▼
+                a.signal-legend-classify.dropdown-trigger(ng-show='streamLegendList.length == 1')
+                    span.left-equip-box {{streamLegendList[0].name}}
+                    span.right-equip-box ▼
+                ul#streamLegendList.dropdown-content
+                    li(ng-repeat = '(index, type) in streamLegendList')
+                        a(ng-href='' ng-click='selectLegend(type, index)' style="padding-left: 8px;")
+                            i.material-icons.left {{type.check ? 'check' : 'crop_din'}}
+                            span {{type.name}}
+    .fullscreen
+        a(ng-click='fullscreen("#streambox")', title='全屏显示')
+            img(src="res/svg/fullscreen2.svg")
+    .stream-content-box
+        .left-stream-content
+            .stream-content-item
+                .left-stream-name
+                    span 震动数据分析
+            .stream-content-item
+                span 最大值
+                .stream-signal-max-num
+                    span {{ chartOpts.yData1MinAndMax[1] }}
+            .stream-content-item
+                span 最小值
+                .stream-signal-min-num
+                    span {{ chartOpts.yData1MinAndMax[0] }}
+            .stream-content-item
+                span 正常数据区间
+                .stream-signal-arranges
+                    span [0,100]
+                    .strong-red 注: 超出正常区间的点显示红色
+        .stream-card-content.no-padding
+            #ss-chart
+        .right-stream-content
+#stream-predict-modal.modal.modal-fixed-footer(md-modal,style="width: 500px;height:500px;margin-top:10px;")
+    .modal-content(style="height:100% !important;padding:0 !important;")
+        .closepart(style="position:absolute;right:5px;top:5px;z-index:999;")
+            div(style="width:30px;height:30px;line-height:30px;display:block;text-align:center;cursor:pointer;" ng-click="hidemodal()")
+                span.white-text(style="font-size:22px;" ng-click="hidemodal()") ×
+        .modal-title(style="font-size: 18px;padding-left:20px;height: 50px;line-height:50px") 故障预测反馈
+        .submit-form-box
+            .tr-item
+                .left-name
+                    span 故障信息选择:
+                .right-content.search-streamsig-classify
+                    a.signal-stream-classify.dropdown-trigger(href='' data-target='signalDataArr' data-hover='true'
+                        data-constrain-width='false' data-cover-trigger="false"
+                        md-dropdown ng-show='signalDataArr.length > 1')
+                        span.left-equip-box {{submitDatas.currentSignal.name}}
+                        span.right-equip-box ▼
+                    ul#signalDataArr.dropdown-content
+                        li(ng-repeat = '(index, type) in signalDataArr')
+                            a(ng-href='' ng-click='selectStreamSig(type, index)' style="padding-left: 8px;")
+                                //i.material-icons.left {{type.check ? 'check' : 'crop_din'}}
+                                span {{type.name}}
+            .tr-item
+                .left-name
+                    span 预测值(0~100):
+                .right-content
+                    input.input-field(id="predict-signal-num" type="number" ng-model="submitDatas.predictNum")
+            .tr-text-item
+                .left-name
+                    span 故障描述:
+                .right-content
+                    textarea(id="predict-signal-text" ng-model="submitDatas.predictText")
+            .btn.right.submit-btn(style="margin-right:20px" ng-click="submitMessage()")
+                span 提交
+
+
+

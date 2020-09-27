@@ -1,0 +1,46 @@
+{
+  "id": "task-statistics-chart",
+  "name": "TaskStatisticsChart控件",
+  "type": "TaskStatisticsChartDirective",
+  "desc": {
+    "author": "foam",
+    "comment": "当前站点运维工单的统计图表",
+    "version": {
+      "0.0.1": ["工作流运维工单图表"],
+      "0.0.2": ["优化组件"],
+      "0.0.3": ["修改样式"],
+      "0.0.4": ["修改样式"],
+      "0.0.5": ["修改样式,发布工单类型"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+    {
+      "id": "barColor",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "id": "name",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "id": "value",
+      "type": "number",
+      "value": ""
+    },
+    {
+      "id": "total",
+      "type": "number",
+      "value": ""
+    }
+  ],
+  "interact": {
+    "pubs": ["orderType"],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.5"
+}

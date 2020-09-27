@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23px" height="22px" viewBox="0 0 23 22" version="1.1">
+    
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="icon" transform="translate(1.000000, 1.000000)" stroke="#E2EDF2">
+            <g id="分组">
+                <path d="M2.58582759,0.172413793 L2.58582759,19.8275862" id="Stroke-1"/>
+                <path d="M2.58582759,0.172413793 L10.5175517,0.172413793" id="Stroke-3"/>
+                <path d="M10.5168621,19.8275862 L10.5168621,0.172413793" id="Stroke-5"/>
+                <path d="M0.17237931,19.8275862 L20.861,19.8275862" id="Stroke-7"/>
+            </g>
+            <path d="M10.5168621,7.03896552 L18.4485862,7.03896552" id="Stroke-9"/>
+            <path d="M18.4485862,19.8275862 L18.4485862,7.03896552" id="Stroke-10"/>
+            <path d="M12.4874828,10.4225862 L16.365069,10.4225862" id="Stroke-12"/>
+            <path d="M12.4874828,13.5499655 L16.365069,13.5499655" id="Stroke-13"/>
+            <path d="M12.4874828,16.6769655 L16.365069,16.6769655" id="Stroke-14"/>
+            <path d="M4.61268966,3.47889655 L8.48993103,3.47889655" id="Stroke-15"/>
+            <path d="M4.61268966,6.60593103 L8.48993103,6.60593103" id="Stroke-16"/>
+            <path d="M4.61268966,9.73293103 L8.48993103,9.73293103" id="Stroke-17"/>
+            <path d="M4.61268966,13.216931 L8.48993103,13.216931" id="Stroke-18"/>
+            <path d="M4.61268966,16.343931 L8.48993103,16.343931" id="Stroke-19"/>
+        </g>
+    </g>
+</svg>

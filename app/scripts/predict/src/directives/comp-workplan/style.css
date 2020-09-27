@@ -1,0 +1,73 @@
+.user-groups .usergroups-title {
+  margin-left: 24px;
+  font-size: 14px; }
+
+.user-groups .usergroups-button {
+  height: 40px;
+  line-height: 3;
+  width: 128px;
+  margin-right: 5px; }
+
+.user-groups .workcontent-button {
+  height: 22px;
+  line-height: 1;
+  width: 50px; }
+
+.user-groups .usergroups-content {
+  padding: 24px 0;
+  font-size: 14px; }
+  .user-groups .usergroups-content .usergroups-list {
+    font-size: 14px; }
+    .user-groups .usergroups-content .usergroups-list .list-title {
+      text-align: left;
+      margin-bottom: 40px;
+      line-height: 3;
+      font-size: 0.9rem;
+      color: #fcf5e8;
+      padding: 0; }
+    .user-groups .usergroups-content .usergroups-list .list-input {
+      padding: 5px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      margin-bottom: 0px;
+      margin-top: 0;
+      height: 40px;
+      width: 86%;
+      border: 1px solid #0050A0 !important;
+      color: #e2edf2 !important;
+      font-size: 14px !important;
+      background-color: transparent;
+      cursor: pointer; }
+    .user-groups .usergroups-content .usergroups-list .list-select {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      margin-top: 0;
+      height: 40px;
+      width: 86%;
+      padding-left: 8px;
+      border: 1px solid #0050A0 !important;
+      color: #e2edf2 !important;
+      font-size: 14px !important;
+      background-color: transparent;
+      cursor: pointer;
+      display: inline; }
+      .user-groups .usergroups-content .usergroups-list .list-select option {
+        color: white;
+        background-color: #162950;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none; }
+      .user-groups .usergroups-content .usergroups-list .list-select option:hover {
+        background-color: #1a45a2; }
+      .user-groups .usergroups-content .usergroups-list .list-select option::-ms-expand {
+        display: none; }
+    .user-groups .usergroups-content .usergroups-list .list-select::-ms-expand {
+      display: none; }
+    .user-groups .usergroups-content .usergroups-list .list-icon {
+      cursor: pointer;
+      position: relative;
+      right: 32px;
+      top: 8px;
+      z-index: -1; }

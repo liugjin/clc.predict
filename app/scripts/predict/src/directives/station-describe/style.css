@@ -1,0 +1,39 @@
+station-describe .content {
+  width: 100%;
+  height: calc(33.3% - 0.75rem);
+  padding: 16px;
+  background: rgba(4, 18, 57, 0.7);
+  border-radius: 20px;
+  margin-bottom: 0.75rem; }
+
+station-describe .contentTitle {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 14%;
+  border-bottom: 1px solid #00A7FF;
+  padding-bottom: 2%; }
+
+station-describe .titleChName {
+  font-size: 18px; }
+
+station-describe .titleZhName {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #b4b6bf; }
+
+station-describe .contentSubject {
+  width: 100%;
+  height: 86%; }
+
+station-describe .contentSubject textarea {
+  margin-top: 3%;
+  width: 100%;
+  height: 96%;
+  color: #F5FCFF;
+  border: none;
+  resize: none;
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px; }

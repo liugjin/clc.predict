@@ -1,0 +1,60 @@
+task-table
+    .noleft
+        border-left-width: 0
+    table
+        margin: 12px 24px
+        width: calc(100% - 48px)
+        thead
+            tr
+                height: 40px
+                background: #01a6ff80
+                th
+                    text-align: center
+                    min-width: 10px
+                    font-size: 14px
+                    font-family: PingFang SC
+                    font-weight: 400
+                    color: #e2edf2
+        tbody
+            tr
+                td
+                    text-align: center
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    min-width: 55px
+                    font-size: 14px
+                    span
+                        padding: 5px
+                        border-radius: 5px
+                .time
+                    width: 165px
+                .icon
+                    cursor: pointer
+                .name
+                    width: 60px
+                .task
+                    width: 220px
+            tr:nth-of-type(even)
+                background: rgba(26, 69, 162, .4)
+    .page-list
+        padding-right: 24px 
+        .page-item
+            float: right
+            margin-left: 10px
+            
+    .button-item
+        color: white
+        font-size: .8rem
+        width: 100px
+        margin-left: 12px 
+        float: right
+    
+    .btn-select
+        font-size: 14px
+        color: white
+
+    .btn-unselect
+        font-size: 14px
+        color: #7DBFFA
+        border: 1px solid #7DBFFA

@@ -1,0 +1,39 @@
+{
+  "id": "report-alarm-records",
+  "name": "告警记录页面组件",
+  "type": "ReportAlarmRecordsDirective",
+  "desc": {
+    "author": "david",
+    "comment": "告警记录报表页面",
+    "version": {
+        "0.0.1": [
+        ],
+      "0.0.2": [
+        "处理记录不能导出问题---James"
+      ],
+      "0.0.3": [
+        "更新页面标准化样式","@Albert"
+      ],
+      "0.0.4": [
+        "适配1024x768分辨率","@Albert"
+      ],
+      "0.0.5": [
+        "调整设备树宽度","@Albert"
+      ],
+      "0.0.6": [
+        "修改sass缩进问题","@sheen"
+      ]
+    }
+  },
+  "group": "模块组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["device-tree"],
+  "css": "",
+  "version": "0.0.6"
+}

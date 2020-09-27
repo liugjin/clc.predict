@@ -1,0 +1,40 @@
+<style>.show-3d {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+.webui-popover {
+    border: 1px solid #004e8d;
+    background-color: #01204E;
+}
+
+.webui-popover-title {
+    border-bottom: 1px solid #004e8d;
+    background-color: #01204E;
+}
+
+.webui-popover-inverse .webui-popover-title {
+    background-color: transparent;
+    border-bottom: 1px solid #004e8d !important;
+}
+
+.webui-popover.bottom > .webui-arrow:after, .webui-popover.bottom-right > .webui-arrow:after, .webui-popover.bottom-left > .webui-arrow:after {
+    border-bottom-color: #1a45a2 !important;
+}
+.webui-popover.top > .webui-arrow:after, .webui-popover.top-right > .webui-arrow:after, .webui-popover.top-left > .webui-arrow:after {
+    border-top-color: #1a45a2;
+}
+.webui-popover.right>.webui-arrow:after, .webui-popover.right-top>.webui-arrow:after, .webui-popover.right-bottom>.webui-arrow:after{
+    border-right-color: #1a45a2;
+}
+.webui-popover.left > .webui-arrow:after, .webui-popover.left-top > .webui-arrow:after, .webui-popover.left-bottom > .webui-arrow:after {
+    border-left-color: #1a45a2;
+}
+
+.webui-popover-inverse.right > .webui-arrow, .webui-popover-inverse.right-top > .webui-arrow, .webui-popover-inverse.right-bottom > .webui-arrow, .webui-popover-inverse.right > .webui-arrow:after, .webui-popover-inverse.right-top > .webui-arrow:after, .webui-popover-inverse.right-bottom > .webui-arrow:after {
+    border-right-color: #1a45a2 !important;
+}
+</style><div class="row no-margin"><div ng-if="vm.$routeParams.station=='yangxin'" class="row show-3d"><img ng-src="/predict/res/img/bg/yangxin.png" class="responsive-img"/></div><div ng-if="vm.$routeParams.station=='kunming'" class="row show-3d"><img ng-src="/predict/res/img/bg/kunming.png" class="responsive-img"/></div><station-info controller="vm" parameters="{}" class="col l12 no-padding"></station-info></div>

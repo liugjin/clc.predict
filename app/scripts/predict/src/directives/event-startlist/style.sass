@@ -1,0 +1,49 @@
+event-startlist
+  table:hover
+    box-shadow: none !important
+    outline: none !important
+  table
+    margin-top: 0.75rem
+    overflow: auto
+    thead
+      th
+        padding: 0 !important
+    tbody
+      tr
+        line-height: 20px !important
+        td
+          padding: 1px !important
+  .progress
+    margin: 0 0 0.2rem 0 !important
+  .page-button
+    border: 1px solid #3A85E4
+    border-radius: 0
+    i
+      margin-top: 1px
+  .pagination
+    position: absolute
+    bottom: 1rem
+    margin-left: 24%
+    li
+      height: 32px
+      a
+        line-height: 36px
+
+  .text-align-left
+    text-align: left !important
+@media screen and (width: 1024px)
+  event-startlist
+    table.new-table
+      width: 150% !important
+      thead tr th
+
+        font-size: 12px
+      tbody
+        tr td
+          line-height: 15px
+          font-size: 12px
+    .pagination
+      margin-left: 15%
+    .page-button
+      i
+        margin-top: 4px

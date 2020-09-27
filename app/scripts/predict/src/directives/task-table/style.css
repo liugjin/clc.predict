@@ -1,0 +1,55 @@
+task-table .noleft {
+  border-left-width: 0; }
+task-table table {
+  margin: 12px 24px;
+  width: calc(100% - 48px); }
+  task-table table thead tr {
+    height: 40px;
+    background: #01a6ff80; }
+    task-table table thead tr th {
+      text-align: center;
+      min-width: 10px;
+      font-size: 14px;
+      font-family: PingFang SC;
+      font-weight: 400;
+      color: #e2edf2; }
+  task-table table tbody tr td {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 55px;
+    font-size: 14px; }
+    task-table table tbody tr td span {
+      padding: 5px;
+      border-radius: 5px; }
+  task-table table tbody tr .time {
+    width: 165px; }
+  task-table table tbody tr .icon {
+    cursor: pointer; }
+  task-table table tbody tr .name {
+    width: 60px; }
+  task-table table tbody tr .task {
+    width: 220px; }
+  task-table table tbody tr:nth-of-type(even) {
+    background: rgba(26, 69, 162, 0.4); }
+task-table .page-list {
+  padding-right: 24px; }
+  task-table .page-list .page-item {
+    float: right;
+    margin-left: 10px; }
+task-table .button-item {
+  color: white;
+  font-size: 0.8rem;
+  width: 100px;
+  margin-left: 12px;
+  float: right; }
+task-table .btn-select {
+  font-size: 14px;
+  color: white; }
+task-table .btn-unselect {
+  font-size: 14px;
+  color: #7DBFFA;
+  border: 1px solid #7DBFFA; }
+
+/*# sourceMappingURL=style.css.map */

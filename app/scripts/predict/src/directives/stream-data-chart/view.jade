@@ -1,0 +1,21 @@
+.row.stream-data(style="height:100%;margin-right: 12px;margin-left: 12px;")
+    .card(style="width:100%;height:100%;background-color: transparent;box-shadow: 0 0 0 0;")
+        .row(style="background-color: transparent;")
+            .col.s2
+                div.search-stream-data-classify
+                    a.stream-data-classify.dropdown-trigger(href='' data-target='streamSignalList' data-hover='true'
+                        data-constrain-width='false' data-cover-trigger="false"
+                        md-dropdown ng-show='streamSignalList.length > 0')
+                        span.left-equip-box {{currentSignalName}}
+
+                        span.right-equip-box ▼
+                    ul#streamSignalList.dropdown-content
+                        li(ng-repeat = '(index, type) in streamSignalList')
+                            a(ng-href='' ng-click='selectSignal(type, index)' style="padding-left: 8px;")
+                                i.material-icons.left {{type.check ? 'check' : 'crop_din'}}
+                                span {{type.name}}
+            //.col.s10
+            //    equipment-timefilter(controller='vm',parameters='{}')
+        .row.component-line-box
+            //stream-line(controller='vm',parameters='{test:test,urls:urls,selectedSignal:selectedSignal,streamSignalList:streamSignalList,width:"57vw"}')
+            .stream-line(ng-style='{"height":parameters.height || "60vh","width": parameters.width || "100%"}')

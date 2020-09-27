@@ -1,0 +1,43 @@
+{
+    id: "features"
+    name: "应用模块"
+    modules: [
+        {module: "projects", name: "选择项目"}
+        {module: "dashboard", name: "首页概览"}
+        {module: "station-3d", name: "3D展示"}
+        {module: "monitoring", name: "监控管理"}
+        {module: "device-monitoring", name: "设备监控", parent: "monitoring"}
+        {module: "distribute", name: "配电管理", parent: "monitoring"}
+        {module: "temperature-cloud", name: "温度云场", parent: "monitoring"}
+        {module: "cooling", name: "制冷系统", parent: "monitoring"}
+        {module: "alarms", name: "告警管理"}
+        {module: "alarm", name: "当前告警", parent: "alarms"}
+        {module: "notification", name: "告警通知", parent: "alarms"}
+        {module: "operations", name: "运维管理"}
+        {module: "inventory", name: "资产管理", parent: "operations"}
+        {module: "capacity", name: "3D容量管理", parent: "operations"}
+        {module: "capacity-2d", name: "2D容量管理", parent: "operations"}
+        {module: "energy", name: "能效管理", parent: "operations"}
+        {module: "inspect", name: "巡检管理", parent: "operations"}
+        {module: "job", name: "工单管理", parent: "operations"}
+        {module: "knowledge", name: "知识库管理", parent: "operations"}
+        {module: "schedule", name: "排班管理", parent: "operations"}
+        {module: "reports", name: "统计分析"}
+        {module: "asset-report", name: "资产报表", parent: "reports"}
+        {module: "signal-report", name: "历史数据", parent: "reports"}
+        {module: "alarm-report", name: "告警记录", parent: "reports"}
+        {module: "door-report", name: "刷卡记录", parent: "reports"}
+        {module: "configuration", name: "配置管理"}
+        {module: "door", name: "门禁管理", parent: "configuration"}
+        {module: "video", name: "视频管理", parent: "configuration"}
+        {module: "link", name: "联动管理", parent: "configuration"}
+        {module: "alarm-setting", name: "告警设置", parent: "configuration"}
+        {module: "systemsetting", name: "系统管理"}
+        {module: "user-info", name: "用户管理", parent: "systemsetting"}
+        {module: "log", name: "日志管理", parent: "systemsetting"}
+        {module: "station-setting", name: "站点管理", parent: "systemsetting"}
+        {module: "setting", name: "系统信息", parent: "systemsetting"}
+        {module: "mobile", name: "移动端", parent: "mobile"}
+    ]
+}
+    

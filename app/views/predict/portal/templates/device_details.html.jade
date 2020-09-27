@@ -1,0 +1,45 @@
+style.
+    .webui-popover{
+        border: 1px solid #004e8d;
+        background-color: #01204E;
+    }
+    .webui-popover-title {
+        border-bottom: 1px solid #004e8d;
+        background-color: #01204E;
+    }
+    .webui-popover.bottom > .webui-arrow:after, .webui-popover.bottom-right > .webui-arrow:after, .webui-popover.bottom-left > .webui-arrow:after {
+        border-bottom-color: #1a45a2 !important;
+    }
+    .webui-popover.top > .webui-arrow:after, .webui-popover.top-right > .webui-arrow:after, .webui-popover.top-left > .webui-arrow:after {
+        border-top-color: #1a45a2;
+    }
+    .webui-popover.right>.webui-arrow:after, .webui-popover.right-top>.webui-arrow:after, .webui-popover.right-bottom>.webui-arrow:after{
+        border-right-color: #1a45a2;
+    }
+    .webui-popover.left > .webui-arrow:after, .webui-popover.left-top > .webui-arrow:after, .webui-popover.left-bottom > .webui-arrow:after {
+        border-left-color: #1a45a2;
+    }
+    /*.webui-popover .input-group-addon {*/
+    /*    border: 1px solid #004e8d;*/
+    /*}*/
+    /*.webui-popover .left1 {*/
+    /*    background-color: transparent;*/
+    /*    border-right-width: 0;*/
+    /*}*/
+    /*.webui-popover .right1 {*/
+    /*    color: white !important;*/
+    /*    background-color: transparent;*/
+    /*}*/
+
+.row.no-margin
+    //device-details-component.col.s12.no-padding(controller="vm", parameters='{}')
+    .row.dashboard-mobile(style="margin-left: auto !important;margin-right: auto !important;width: 100%;height: 92.2vh;margin-top: 0.75rem")
+        .col.s3.m3.l3(style="height:100%")
+            device-main-signal(controller="vm" parameters="{}")
+            device-state(controller="vm" parameters="{}")
+        .col.s6.m6.l6(style="height:100%;padding:0")
+            device-configuration(controller="vm" parameters="{}")
+        .col.s3.m3.l3(style="height:100%")
+            //device-alarm-chart(controller="vm" parameters="{}")
+            bathtub-curve(controller='vm',parameters='{}')
+            device-information(controller="vm" parameters="{}")

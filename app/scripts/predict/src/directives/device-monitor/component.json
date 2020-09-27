@@ -1,0 +1,25 @@
+{
+  "id": "device-monitor",
+  "name": "DeviceMonitor控件",
+  "type": "DeviceMonitorDirective",
+  "desc": {
+    "author": "mackie",
+    "comment": "维谛实时监测详情",
+    "version": {
+        "0.0.1": [
+        ],
+        "0.0.2": [ "修改站点id获取方式" ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.2"
+}

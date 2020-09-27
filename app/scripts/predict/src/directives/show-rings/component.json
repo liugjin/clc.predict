@@ -1,0 +1,23 @@
+{
+  "id": "show-rings",
+  "name": "ShowRings控件",
+  "type": "ShowRingsDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": ["初始化", "@youge"],
+      "0.0.2": ["1. tooltip去除 比例； 2. 颜色调整； 3. 固定图像显示； 4. 自适应", "@youge"],
+      "0.0.3": ["增加点击事件---James"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.3"
+}

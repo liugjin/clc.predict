@@ -1,0 +1,27 @@
+{
+	"id": "capacity-bar",
+	"name": "CapacityBar控件",
+	"type": "CapacityBarDirective",
+	"desc": {
+		"author": "",
+		"comment": "自定义组件",
+		"version": {
+			"0.0.1": ["初始化", "@youge"],
+			"0.0.2": ["1. 展示条比例， 2. 接参修改", "@youge"],
+			"0.0.3": ["去除打印和测试数据", "@youge"],
+			"0.0.4": ["顶部数字", "@youge"],
+			"0.0.5": ["底部文字", "@youge"]
+		}
+	},
+	"group": "功能组件",
+	"parameters": [
+
+	],
+	"interact": {
+		"pubs": [],
+		"subs": []
+	},
+	"deps": [],
+	"css": "",
+	"version": "0.0.5"
+}

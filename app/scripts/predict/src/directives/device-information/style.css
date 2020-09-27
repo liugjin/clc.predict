@@ -1,0 +1,155 @@
+device-information .content {
+  width: 100%;
+  height: calc(60% - 0.75rem);
+  padding: 16px;
+  background: #041239;
+  border-radius: 20px; }
+
+device-information .contentTitle {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 7%;
+  padding-bottom: 0.75rem; }
+
+device-information .titleChName {
+  font-size: 18px; }
+
+device-information .titleZhName {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #B4B6BF; }
+
+device-information .contentSubject {
+  width: 100%;
+  height: 90%; }
+
+device-information .dateBox {
+  width: 100%;
+  height: 16%; }
+
+device-information .time-choice {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 30%;
+  font-size: 14px; }
+
+device-information .time-choice span {
+  height: 100%;
+  width: 40%; }
+
+device-information .margin {
+  margin-left: 1.2em; }
+
+device-information .choice-box {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 58%; }
+
+device-information .deviceType {
+  height: 86%;
+  width: 40%; }
+
+device-information .deviceType .input-field input {
+  background: #02204e; }
+
+device-information .btn-box {
+  height: 100%;
+  width: 20%; }
+
+device-information .btn {
+  background: #02204e;
+  border: 1px solid #004e8d;
+  border-radius: 4px;
+  font-size: 14px; }
+
+device-information .input-field {
+  margin: 0; }
+
+device-information .select-wrapper input.select-dropdown {
+  margin: 0;
+  height: 2.1rem; }
+
+device-information .contentBox {
+  width: 100%;
+  height: 81%; }
+
+device-information .table-thead {
+  width: 100%;
+  height: 10%;
+  border: 1px solid #004e8d;
+  border-radius: 4px 4px 0px 0px;
+  background: #02204e; }
+
+device-information .table-tbody {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #004e8d;
+  border-radius: 0px 0px 4px 4px;
+  overflow-y: auto; }
+
+device-information .table-tbody tr {
+  border-bottom: 1px solid #004e8d; }
+
+device-information td, device-information th {
+  text-align: center;
+  font-size: 14px;
+  padding: 0;
+  line-height: 42px;
+  width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+device-information .paging {
+  width: 100%;
+  height: 10%;
+  margin-top: 5px; }
+
+device-information .page-box {
+  display: flex;
+  justify-content: center; }
+
+device-information .paging ul {
+  margin: 0; }
+
+device-information .pagination li.active {
+  border: 1px solid #00a7ff !important;
+  background: none !important; }
+
+device-information input[type=text]:not(.browser-default) {
+  font-size: 14px; }
+
+.datepicker {
+  width: 8rem !important;
+  height: 34px !important;
+  border: 1px solid #004e8d !important;
+  border-radius: 4px !important; }
+
+.gldp-default {
+  border: 1px solid #003D7A !important;
+  border-radius: 4px !important; }
+
+.gldp-default .core {
+  background: #051134 !important;
+  color: #e2edf2 !important;
+  text-shadow: none !important; }
+
+.gldp-default .prev-arrow, .gldp-default .next-arrow {
+  color: #e2edf2 !important; }
+
+.gldp-default .border {
+  border: none !important; }
+
+.gldp-default .selected {
+  background-color: #10ebf4 !important;
+  border-radius: 50% !important;
+  color: #000 !important; }
+
+.gldp-default .outday {
+  color: #c0c0c0 !important; }
+
+.gldp-default .monyear, .gldp-default .monyear select {
+  font-size: 12px !important; }

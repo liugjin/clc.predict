@@ -1,0 +1,92 @@
+{
+  "id": "predict",
+  "mongodb": {
+    "id": "mongodb-model",
+    "env": "development",
+    "urls": {
+      "default": "mongodb://localhost:27017/clc-dev?authSource=admin",
+      "development": "mongodb://localhost:27017/clc-dev?authSource=admin",
+      "production": "mongodb://localhost:27017/clc-dev?authSource=admin"
+    },
+    "options": {
+      "user": "clc",
+      "pass": "Clcdata8803",
+      "autoReconnect": true,
+      "reconnectTries": 3153600000,
+      "reconnectInterval": 1000,
+      "auth": {
+        "authdb": "admin"
+      },
+      "useNewUrlParser": true,
+      "useCreateIndex": true,
+      "useFindAndModify": false
+    },
+    "connectRetryTimeout": 5000
+  },
+  "mqtt": {
+    "url": "mqtt://localhost:1883",
+    "options": {
+      "qos": 0,
+      "retain": true
+    }
+  },
+  "web": {
+    "address": "0.0.0.0",
+    "port": 9658,
+    "env": "development",
+    "crossdomain": false,
+    "limit": "500mb",
+    "secret": "pu",
+    "maxAge": 604800000,
+    "urls": {
+      "views": "./app/views",
+      "favicon": "./public/favicon.ico",
+      "static": "./public",
+      "style": "./app/styles",
+      "scripts": "./app/scripts",
+      "lib": "../clc.share/lib",
+      "upload": "../clc.share/upload",
+      "userImage": "../clc.share/upload/img/users"
+    },
+    "httpSchema": "http"
+  },
+  "routes": {
+    "login": "http://localhost:7200/login",
+    "api": "clc/api/v1"
+  },
+  "daemon": {
+    "id": "daemon-predict",
+    "heartbeat": 900000,
+    "domain": "sample-values",
+    "monitoringUnit": "daemon-unit",
+    "sampleUnit": "predict-services",
+    "channel": "predict",
+    "value": {
+      "url": "http://localhost/predict"
+    }
+  },
+  "options": {
+    "logFile": "/log/predict.log",
+    "simplePassword": false
+  },
+  "register": {
+    "topic": "gateway/register",
+    "throttle": 1000,
+    "predict": {
+      "id": "register-predict",
+      "filename": "./app/scripts/predict/setting.json"
+    }
+  },
+  "services": {
+    "auth": {
+      "token": "fa5d09d0-af61-11e8-acd7-937b5970daac"
+    }
+  },
+  "myproject": {
+    "user": "hyiot",
+    "project": "huaxin"
+  },
+  "host": "lab.huayuan-iot.com",
+  "author": "sheen",
+  "token": "b2b8ec80-8a3a-11e8-9083-afae74b81b2b"
+}

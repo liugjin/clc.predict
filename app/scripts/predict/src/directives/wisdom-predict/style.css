@@ -1,0 +1,204 @@
+wisdom-predict .content {
+  height: 58vh;
+  position: relative; }
+
+wisdom-predict .centered {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 24px;
+  margin: 1em 0 0.5em 0; }
+
+wisdom-predict .time-button {
+  display: flex;
+  width: 100%;
+  height: 34px;
+  margin-bottom: 0.8em;
+  background-color: rgba(26, 42, 82, 0.4);
+  border: 1px solid #004fa0;
+  cursor: pointer;
+  font-size: 0.875rem; }
+
+wisdom-predict .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  color: #b4b6bf; }
+
+wisdom-predict .time span {
+  margin-left: 4px; }
+
+wisdom-predict .time-choice {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 4%;
+  font-size: 0.875rem; }
+
+wisdom-predict .time-choice span {
+  height: 100%;
+  flex-grow: 2; }
+
+wisdom-predict .empty {
+  height: 100%;
+  flex-grow: 1; }
+
+wisdom-predict .margin {
+  margin-left: 1.2em; }
+
+wisdom-predict .margin-choice {
+  margin-left: 5.6em; }
+
+wisdom-predict .choice-margin {
+  margin-left: 1em; }
+
+wisdom-predict .choice-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 6%;
+  margin-bottom: 0.8em; }
+
+wisdom-predict .deviceType {
+  height: 100%;
+  background-color: rgba(26, 42, 82, 0.4);
+  flex-grow: 2; }
+
+wisdom-predict .btn-box {
+  height: 100%;
+  margin-left: 0.4rem !important; }
+
+wisdom-predict .btn {
+  border: 1px solid #10EBF4;
+  background: rgba(16, 235, 244, 0.6); }
+
+wisdom-predict .input-field {
+  margin: 0; }
+
+wisdom-predict .select-wrapper input.select-dropdown {
+  margin: 0;
+  height: 2.1rem; }
+
+wisdom-predict td, wisdom-predict th {
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 12px 5px;
+  width: 16.6%; }
+
+wisdom-predict .list-box {
+  height: 46vh;
+  border: 1px solid #003D7A;
+  border-radius: 4px;
+  background-color: rgba(26, 42, 82, 0.4); }
+
+wisdom-predict .table-thead {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid #003D7A; }
+
+wisdom-predict .table-tbody {
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll; }
+
+wisdom-predict .paging {
+  width: 100%;
+  height: 10%; }
+
+wisdom-predict .page-box {
+  display: flex;
+  justify-content: center; }
+
+wisdom-predict .paging ul {
+  margin: 0; }
+
+wisdom-predict .small-button {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("~images/screen.svg~"); }
+
+wisdom-predict .small-bac1 {
+  background-image: url("~images/close.svg~"); }
+
+wisdom-predict .device-box {
+  margin-top: 1.6vh;
+  width: 100%;
+  height: 44%; }
+
+wisdom-predict .title {
+  width: 100%;
+  line-height: 24px;
+  margin-left: 0.6em;
+  font-size: 1rem; }
+
+wisdom-predict .box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  height: 90%;
+  overflow-y: auto; }
+
+wisdom-predict .card-box {
+  width: 30%;
+  height: 30%;
+  margin: 0.22em 0.44em;
+  padding-left: 0.8em;
+  border-radius: 4px;
+  background: #061c51;
+  cursor: pointer; }
+
+wisdom-predict .device-img {
+  height: 50%;
+  display: flex;
+  align-items: center; }
+
+wisdom-predict .device-name {
+  display: flex;
+  align-items: center;
+  height: 40%; }
+
+wisdom-predict .ico-color1 {
+  color: #f3bc0f; }
+
+wisdom-predict .ico-color3 {
+  color: #ff0045; }
+
+wisdom-predict .ck {
+  background: rgba(31, 247, 255, 0.4);
+  color: #fff; }
+
+.gldp-default {
+  border: 1px solid #003D7A !important;
+  border-radius: 4px !important; }
+
+.gldp-default .core {
+  background: #051134 !important;
+  color: #e2edf2 !important;
+  text-shadow: none !important; }
+
+.gldp-default .prev-arrow, .gldp-default .next-arrow {
+  color: #e2edf2 !important; }
+
+.gldp-default .border {
+  border: none !important; }
+
+.gldp-default .selected {
+  background-color: #10ebf4 !important;
+  border-radius: 50% !important;
+  color: #000 !important; }
+
+.gldp-default .outday {
+  color: #c0c0c0 !important; }
+
+.gldp-default .monyear, .gldp-default .monyear select {
+  font-size: 12px !important; }

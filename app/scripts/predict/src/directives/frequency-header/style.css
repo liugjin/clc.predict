@@ -1,0 +1,58 @@
+frequency-header station-breadcrumbs .truncate {
+  margin-left: 0 !important; }
+  frequency-header station-breadcrumbs .truncate a {
+    color: #ffffff; }
+
+frequency-header .no-bg-color {
+  background-color: transparent; }
+
+frequency-header .dropdown-content {
+  background-color: rgba(26, 69, 162, 0.6); }
+  frequency-header .dropdown-content li a {
+    color: #ffffff; }
+
+frequency-header .dropdown-content li:hover, frequency-header .dropdown-content li.active {
+  background-color: #1a45a2 !important; }
+
+frequency-header .header-bg {
+  background-color: transparent !important;
+  background-image: url("~image/header-background.png~");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 9rem; }
+
+frequency-header .nav-wrapper {
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  frequency-header .nav-wrapper .title, frequency-header .nav-wrapper .logo, frequency-header .nav-wrapper .time {
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem; }
+  frequency-header .nav-wrapper .logo {
+    width: 30% !important; }
+    frequency-header .nav-wrapper .logo nav {
+      box-shadow: none; }
+    frequency-header .nav-wrapper .logo img {
+      vertical-align: middle;
+      height: 3rem;
+      margin-left: 0.4rem; }
+  frequency-header .nav-wrapper .time {
+    width: 30% !important;
+    font-size: 1.4rem;
+    font-family: "impact", serif; }
+  frequency-header .nav-wrapper .title {
+    text-align: center;
+    padding-top: .5rem; }
+    frequency-header .nav-wrapper .title .main-title {
+      font-size: 42px;
+      font-weight: bold; }
+    frequency-header .nav-wrapper .title img {
+      height: auto; }
+    frequency-header .nav-wrapper .title .en-name {
+      display: block;
+      height: 1rem;
+      font-size: 0.9rem;
+      line-height: 0;
+      margin-top: 0.4rem; }

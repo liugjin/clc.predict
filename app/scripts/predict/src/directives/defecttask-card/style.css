@@ -1,0 +1,22 @@
+defecttask-card .card {
+  height: calc(50vh - 77px);
+  margin: 8px 4px 0 8px;
+  padding: 12px; }
+
+defecttask-card .contents {
+  padding: 0;
+  height: calc(42vh - 4rem); }
+  defecttask-card .contents .row1 {
+    height: 100%;
+    padding: 0 6px 0 0; }
+  defecttask-card .contents .row2 {
+    height: 100%;
+    padding: 0 0 0 6px; }
+  defecttask-card .contents .item-1 {
+    height: 30%; }
+  defecttask-card .contents .item-2 {
+    height: 70%; }
+  defecttask-card .contents .circel-item {
+    width: 50%;
+    height: 50%;
+    float: left; }

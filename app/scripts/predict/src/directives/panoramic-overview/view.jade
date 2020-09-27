@@ -1,0 +1,31 @@
+map-header(controller="vm" parameters="{headerType:'scene'}")
+.row(style="position: relative")
+    .col.l12.scene-box
+        scene-3d-component(controller="vm",parameters="{stationId:station.model.station,scene:scene,options:{'hideDataBoxName':true}}",style="width: 100%;height: 100%;")
+.row(style="position: relative")
+    .col.l3.component-box(style="left: 0")
+        station-device-list(controller="vm" parameters="{}",style="width: 100%;height: 100%")
+    .col.l6.component-box(style="left:50%;transform: translate(-50%, -50%)")
+        .scenebtn.scenebtn1
+            .push-button(ng-click='clickTime(1)',ng-class='{"ck-time":focus== 1}')
+                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span 显示设备
+            .push-button(ng-click='clickTime(2)',ng-class='{"ck-time":focus== 2}')
+                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span 自动旋转
+            .push-button(ng-click='clickTime(3)',ng-class='{"ck-time":focus== 3}')
+                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span 默认场景
+        .scenebtn.scenebtn2
+            .push-button1
+                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span 右键拖动
+            .push-button1
+                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span 左键旋转
+            .push-button1
+                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span 滚动缩放
+    .col.l3.component-box(style='right: 0')
+        station-device-status(controller="vm" parameters="{}",style="width: 100%;height: 100%")
+        wisdom-predict(controller="vm" parameters="{}",style="width: 100%;height: 100%")

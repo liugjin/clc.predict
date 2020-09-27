@@ -1,0 +1,128 @@
+.stream-origin-card#streamoriginbox
+    .stream-title-box
+        .left-button-box
+            .stream-title
+                span {{parameters.currentName}}
+            .btn.stream-btn.play-pause-button(ng-click='chartPlayPause()')
+                img(ng-src="{{getComponentPath('image/play.png')}}")
+                span 播放/暂停
+            .btn.stream-btn.cancle-button(ng-click='chartShowAll()')
+                img(ng-src="{{getComponentPath('image/all.png')}}")
+                span 全部展示
+            .btn.stream-btn.play-pause-button(data-target='command-execution-modal', ng-click='updateOriginData()')
+                img(ng-src="{{getComponentPath('image/message.png')}}")
+                span 更新采集数据
+            .btn.stream-btn.cancle-button(ng-click='downLoadStream()' ng-show="dataFlag")
+                img(ng-src="{{getComponentPath('image/download.png')}}")
+                span 下载
+            .btn.stream-btn.cancle-button(ng-click='originalStream()')
+                span 查看算法处理数据
+    .fullscreen
+        a(ng-click='fullscreen("#streamoriginbox")', title='全屏显示')
+            img(src="res/svg/fullscreen2.svg")
+    .stream-content-box
+        .left-stream-content
+            .stream-content-item
+                span.item-title 采集数据分析
+                .item-content
+                    span {{chartOpts.currentLegends.legend1}}
+            .stream-content-item
+                span.item-title 最大值
+                .stream-signal-max-num.item-content
+                    span {{ currentMinAndMax[1] }}
+            .stream-content-item
+                span.item-title 最小值
+                .stream-signal-min-num.item-content
+                    span {{ currentMinAndMax[0] }}
+            //.stream-content-item
+            //    span 采集时间
+            //    .stream-signal-min-num.item-content
+            //        span {{ collectTime }}
+        .stream-card-content2(ng-show="!dataFlag")
+            .no-data-display
+                span 暂无数据
+        .stream-card-content1.no-padding(ng-show="dataFlag")
+            #ss-origin-chart
+
+
+
+#command-execution-modal.modal.bottom-sheet2.modal-fixed-footer(md-modal,style="width: 800px;max-height:800px;height:600px;")
+    .modal-content
+        .row
+            .col.s12
+                p.equipment-item-title
+                    | {{streamCommands.schedule.station.model.name}} / {{streamCommands.schedule.equipment.model.name}} / {{streamCommands.schedule.instance.name}}
+            .col.s6
+                table.hoverable.responsive-table.highlight
+                    tbody
+                        tr
+                            td
+                                label 控制ID
+                            td
+                                span {{streamCommands.schedule.model.command}}
+                        tr
+                            td
+                                label 控制超时
+                            td
+                                span {{streamCommands.schedule.model.timeout}}
+                            td
+                                label 毫秒
+                        tr
+                            td
+                                label 控制状态
+                            td
+                                i.material-icons.small {{!streamCommands.schedule.data && "share" || streamCommands.schedule.data.phase == "executing" && "send" || streamCommands.schedule.data.phase == "timeout" && "access_time" || streamCommands.schedule.data.phase == "complete" && "done" || streamCommands.schedule.data.phase == "cancel" && "not_interested" || streamCommands.schedule.data.phase == "error" && "error" || "send"}}
+                                .progress(ng-show='streamCommands.schedule.data.phase == "executing"')
+                                    .indeterminate
+                            td
+                                span {{streamCommands.schedule.data.phase}}
+            .col.s6
+                div(ng-repeat='parameter in streamCommands.schedule.model.parameters', ng-switch='parameter.type')
+                    .input-field.col.s12(ng-switch-when='int')
+                        input.validate(type='number', step='1', ng-model='parameter.value')
+                        label.active {{parameter.name}} ({{parameter.key}})
+                    .input-field.col.s12(ng-switch-when='float')
+                        input.validate(type='number', step='any', ng-model='parameter.value')
+                        label.active {{parameter.name}} ({{parameter.key}})
+                    .input-field.col.s12(ng-switch-when='bool')
+                        p
+                            input(type='checkbox', id='p-{{parameter.key}}', ng-model='parameter.value')
+                            label(for='p-{{parameter.key}}')
+                    .input-field.col.s12(ng-switch-when='enum')
+                        label.active {{parameter.name}} ({{parameter.key}})
+                        select(ng-model='parameter.value', md-select, data='parameter')
+                            option(ng-repeat='kv in parameter.enums', value='{{kv.value}}', ng-selected='parameter.value == kv.value') {{kv.key}}
+                    .input-field.col.s12(ng-switch-when='content')
+                        textarea.validate(ng-model='parameter.value')
+                        label.active {{parameter.name}} ({{parameter.key}})
+                    .input-field.col.s12(ng-switch-when='signal')
+                        input.validate(type='text', ng-model='parameter.value')
+                        label.active {{parameter.name}} ({{parameter.key}})
+                    .input-field.col.s12(ng-switch-default)
+                        input.validate(type='text', ng-model='parameter.value')
+                        label.active {{parameter.name}} ({{parameter.key}})
+                .input-field.col.s12
+                    input.validate(id="remark" type='text', ng-model='streamCommands.schedule.model.comment')
+                    label(for="remark" ng-class='{active: streamCommands.schedule.model.comment}') 执行备注
+            .col.s6
+                .card-panel.no-padding.yellow(ng-show='commandError')
+                    span.grey-text {{commandError}}
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li
+                        a(href='', ng-click='queryToExecuteCommand(streamCommands.schedule)', title='执行控制命令', ng-show='streamCommands.schedule.data.phase != "executing"')
+                            i.material-icons.left send
+                            span.hide-on-med-and-down 执行控制
+                        a(href='', ng-click='queryToCancelCommand(streamCommands.schedule)', title='终止控制命令', ng-show='streamCommands.schedule.data.phase == "executing"')
+                            i.material-icons.left cancel
+                            span.hide-on-med-and-down
+
+                    ul.right
+                        li
+                            a.modal-action(href='' ng-click='executionCommandClose()')
+                                i.material-icons.left close
+                                span.hide-on-med-and-down 关闭
+
+

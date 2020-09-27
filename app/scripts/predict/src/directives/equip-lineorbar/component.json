@@ -1,0 +1,34 @@
+{
+  "id": "equip-lineorbar",
+  "name": "EquipLineorbar控件",
+  "type": "EquipLineorbarDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": ["@youge"],
+      "0.0.2": ["增加多选，修改样式","@youge"],
+      "0.0.3": ["增加未查询为空的情况","@youge"],
+      "0.0.4": ["修复了bug","@youge"],
+      "0.0.5": ["修复了bug:1.采用格林治时间；2.tip不显示;3.修复订阅到新信号的报错","@youge"],
+      "0.0.6": ["修复了数据曲线无法呈现的bug","@youge"],
+      "0.0.7": ["将周模式的按顺序排列","@region"],
+      "0.0.8": ["修复当选择两个以上信号时，图表会卡死的bug","@Albert"],
+      "0.0.9": ["修复图表时间顺序问题，由从大到小改成从小到大","@Albert"],
+      "0.0.10": ["修复图表有些信号没有数据，在图表上没有tooltip显示得bug","@Albert"],
+      "0.0.11": ["页面标准化","@Albert"],
+      "0.0.12": ["适配1024x768分辨率","@Albert"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["equipment-timefilter", "component-line"],
+  "css": "",
+  "version": "0.0.12"
+}

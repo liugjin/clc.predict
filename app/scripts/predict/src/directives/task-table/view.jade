@@ -1,0 +1,50 @@
+.row.col.s12.task-padding(style="margin: 0 24px; width: calc(100% - 48px);")
+    .btn(ng-repeat="(type, name) in processtypes" 
+        ng-class="currentType == type ? 'btn-select' : 'btn-unselect'"
+        ng-click="changeType(type)") {{name}}({{count[type]}})
+    .btn.button-item(ng-click="export()") 导出
+
+.row.col.s12.task-padding
+    table
+        thead
+            tr
+                th(ng-repeat="(index, item) in tableConfig") {{item.title}}
+                th 操作
+        tbody
+            tr(ng-if="data.length == 0")
+                td(colspan="{{tableConfig.length + 1}}") 暂无数据
+            tr(ng-repeat="(index, item) in data" ng-if="data.length > 0")
+                td(ng-repeat="(i, d) in tableConfig" ng-class="d.class") 
+                    span(ng-if="d.id == 'type'"
+                        title="{{processtypes[item[d.id]] || '未知'}}") {{processtypes[item[d.id]] || '--'}}
+                    span(ng-if="d.id == 'phase'"
+                        ng-style="{ 'background': d.color[d.formate(item[d.id])] }") {{ stateMap[d.formate(item[d.id])] || '--'}}
+                    span(ng-if="d.id == 'priority'"
+                        ng-style="{ 'background': d.color[item[d.id]] }") {{ d.formate(item[d.id]) || '--'}}
+                    span(ng-if="d.id == 'source' && d.class == 'colorItem'"
+                        ng-style="{ 'background': d.color[item[d.id].severity] }") {{ item[d.id].severityName || '--'}}
+                    span(
+                        ng-if="d.id != 'type' && d.class != 'colorItem' && d.formate"
+                        title="{{d.formate(item[d.id]) || '未知'}}"
+                    ) {{d.formate(item[d.id]) || "--"}}
+                    span(
+                        ng-if="d.id != 'type' && d.class != 'colorItem' && !d.formate"
+                        title="{{item[d.id] || '未知'}}"
+                    ) {{item[d.id] || "--"}}
+                td
+                    span.label-icon(title="查看工单")
+                        i.material-icons.icon(ng-click="info(item)") search
+                    span.label-icon(title="处理工单")
+                        i.material-icons.icon(ng-click="edit(item)") edit
+                    span.label-icon(title="删除工单")
+                        i.material-icons.icon(ng-click="delete(item)") close
+ 
+.row.page-list(ng-show="pages.page.length > 1")
+    .page-item(
+        ng-repeat="n in pages.page track by $index" 
+        ng-click="update(n)"       
+    )
+        .btn(
+            ng-show="n > 0" 
+            ng-style="{'background': pages.current == n ? '#00bcd4cc' : '#1a45a266'}") {{n}}
+        div(ng-show="n <= 0" style="height: 36px; line-height: 3; cursor: pointer;") ...

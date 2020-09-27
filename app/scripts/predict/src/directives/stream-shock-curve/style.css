@@ -1,0 +1,171 @@
+stream-shock-curve .submit-form-box {
+  height: 80%;
+  width: 100%; }
+  stream-shock-curve .submit-form-box .tr-text-item {
+    height: 180px;
+    font-size: 16px;
+    margin-top: 1.6rem; }
+    stream-shock-curve .submit-form-box .tr-text-item .left-name {
+      width: 30%;
+      padding-left: 20px;
+      float: left; }
+    stream-shock-curve .submit-form-box .tr-text-item .right-content {
+      width: 70%;
+      height: 100%;
+      float: right; }
+      stream-shock-curve .submit-form-box .tr-text-item .right-content #predict-signal-text:focus {
+        outline: none !important; }
+      stream-shock-curve .submit-form-box .tr-text-item .right-content #predict-signal-text {
+        width: 300px;
+        height: 150px;
+        color: #fff;
+        overflow: auto;
+        border: 1px solid #0652a2; }
+  stream-shock-curve .submit-form-box .tr-item {
+    height: 50px;
+    font-size: 16px;
+    margin: 1rem 0; }
+    stream-shock-curve .submit-form-box .tr-item .left-name {
+      width: 30%;
+      height: 100%;
+      line-height: 50px;
+      padding-left: 20px;
+      float: left; }
+    stream-shock-curve .submit-form-box .tr-item .right-content {
+      width: 70%;
+      height: 100%;
+      float: right;
+      padding-top: 6px; }
+      stream-shock-curve .submit-form-box .tr-item .right-content input#predict-signal-num {
+        width: 288px !important;
+        height: 38px !important;
+        padding-left: 10px; }
+    stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .dropdown-content {
+      width: 300px; }
+      stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .dropdown-content li {
+        font-size: 16px; }
+    stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .signal-stream-classify:focus {
+      outline: none !important; }
+    stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .signal-stream-classify {
+      background-color: rgba(26, 69, 162, 0.4);
+      border: 1px solid #10ebf4;
+      color: #ffffff;
+      height: 38px;
+      display: inline-block;
+      box-shadow: none; }
+      stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .signal-stream-classify span:focus {
+        outline: none !important; }
+      stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .signal-stream-classify span {
+        text-align: center;
+        display: inline-block;
+        line-height: 37px;
+        height: 37px; }
+      stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .signal-stream-classify .left-equip-box {
+        width: 260px;
+        border-right: 1px solid #10ebf4; }
+      stream-shock-curve .submit-form-box .tr-item .search-streamsig-classify .signal-stream-classify .right-equip-box {
+        width: 38px;
+        color: #00d5ff; }
+
+stream-shock-curve .stream-card {
+  box-shadow: none !important;
+  margin-top: 0;
+  border: 1px solid #173169;
+  width: 100%;
+  height: 100%; }
+  stream-shock-curve .stream-card .fullscreen {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.6rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(26, 69, 162, 0.4); }
+  stream-shock-curve .stream-card .stream-title-box {
+    width: 100%;
+    height: 16%; }
+    stream-shock-curve .stream-card .stream-title-box .left-button-box {
+      float: left;
+      height: 100%;
+      width: 50%; }
+      stream-shock-curve .stream-card .stream-title-box .left-button-box .btn {
+        margin-top: 15px;
+        margin-left: 20px; }
+      stream-shock-curve .stream-card .stream-title-box .left-button-box .stream-title {
+        float: left;
+        width: 180px;
+        margin-left: 15px;
+        font-size: 18px;
+        height: 100%;
+        text-align: center;
+        padding-top: 20px; }
+    stream-shock-curve .stream-card .stream-title-box .search-legend-classify {
+      height: 38px;
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: 400;
+      margin-right: 20px; }
+      stream-shock-curve .stream-card .stream-title-box .search-legend-classify .dropdown-content {
+        width: 160px; }
+        stream-shock-curve .stream-card .stream-title-box .search-legend-classify .dropdown-content li {
+          font-size: 16px; }
+      stream-shock-curve .stream-card .stream-title-box .search-legend-classify .signal-legend-classify:focus {
+        outline: none !important; }
+      stream-shock-curve .stream-card .stream-title-box .search-legend-classify .signal-legend-classify {
+        margin-right: 20px;
+        background-color: rgba(26, 69, 162, 0.4);
+        border: 1px solid #10ebf4;
+        color: #ffffff;
+        width: 160px;
+        height: 38px;
+        display: inline-block;
+        box-shadow: none; }
+        stream-shock-curve .stream-card .stream-title-box .search-legend-classify .signal-legend-classify span:focus {
+          outline: none !important; }
+        stream-shock-curve .stream-card .stream-title-box .search-legend-classify .signal-legend-classify span {
+          text-align: center;
+          display: inline-block;
+          line-height: 37px;
+          height: 37px; }
+        stream-shock-curve .stream-card .stream-title-box .search-legend-classify .signal-legend-classify .left-equip-box {
+          width: 120px;
+          border-right: 1px solid #10ebf4; }
+        stream-shock-curve .stream-card .stream-title-box .search-legend-classify .signal-legend-classify .right-equip-box {
+          width: 38px;
+          color: #00d5ff; }
+    stream-shock-curve .stream-card .stream-title-box .text-file-box {
+      float: right;
+      height: 100%;
+      width: 30%; }
+  stream-shock-curve .stream-card .stream-content-box {
+    width: 100%;
+    height: 84%; }
+    stream-shock-curve .stream-card .stream-content-box .left-stream-content {
+      float: left;
+      height: 100%;
+      width: 18%;
+      padding-left: 4%; }
+    stream-shock-curve .stream-card .stream-content-box .stream-content-item {
+      width: 100%;
+      height: 20%; }
+      stream-shock-curve .stream-card .stream-content-box .stream-content-item div {
+        width: 100%;
+        height: 4rem; }
+        stream-shock-curve .stream-card .stream-content-box .stream-content-item div span {
+          font-size: 16px; }
+        stream-shock-curve .stream-card .stream-content-box .stream-content-item div .strong-red {
+          color: red; }
+    stream-shock-curve .stream-card .stream-content-box .right-stream-content {
+      float: right;
+      height: 100%;
+      width: 12%; }
+    stream-shock-curve .stream-card .stream-content-box .stream-card-content {
+      width: 68%;
+      float: left;
+      height: 100%; }
+      stream-shock-curve .stream-card .stream-content-box .stream-card-content #ss-chart {
+        display: block;
+        width: 80vh;
+        height: 58vh; }

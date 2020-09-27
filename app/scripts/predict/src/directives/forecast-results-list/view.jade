@@ -1,0 +1,14 @@
+.content
+    .contentTitle
+        span.titleChName 预测结果列表
+        span.titleZhName LIST OF PREDICTION RESUITS
+    ul.contentSubject
+        li.resultList(ng-repeat="data in eventsArray" ng-click='clickEvent(data)')
+            .listIcon
+                .iconBan
+                    img.responsive-img(ng-src="{{(data.typeImg)}}" style='height:80%')
+            .listContent(title="{{data.equipmentName}} - {{data.eventName}}{{data.title}}")
+                span {{data.equipmentName}} - {{data.eventName}}{{data.title}}
+            .contentTime
+                span(title="{{data.startTime | date:'yyyy-MM-dd HH:mm:ss'}}" style="width:100%;white-space:nowrap;text-align:right;") {{data.startTime | date:'yyyy-MM-dd'}}
+        

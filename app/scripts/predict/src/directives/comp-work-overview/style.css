@@ -1,0 +1,11 @@
+comp-work-overview .title {
+  margin-left: 10px; }
+
+comp-work-overview .func-background {
+  background-color: rgba(24, 66, 152, 0.4);
+  height: 41vh;
+  font-size: 0.9rem;
+  line-height: 5.9vh;
+  margin-bottom: 1vh;
+  margin-left: 5px;
+  margin-right: 5px; }

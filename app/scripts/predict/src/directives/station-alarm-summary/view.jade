@@ -1,0 +1,15 @@
+.content
+    .contentTitle
+        span.titleChName 厂区告警汇总
+        span.titleZhName SITE ALARM SUMMARY
+    .contentSubject
+        .alarmInformation
+            .alarmInfoIcon.autoCenter
+                img(src="{{getComponentPath('images/alarm-horn.svg')}}" width="22px" height="22px")
+            .alarmContent {{eventReal.equipmentName}} - {{eventReal.eventName}}
+        ul.alarmLevel
+            li.alarmLevelBox(ng-repeat="data in alarmDataArr")
+                .alarmNum.autoCenter {{data.alarmNum}}
+                .alarname.autoCenter {{data.alarmName}}
+                .alaricon.autoCenter
+                    img(ng-src="{{data.imgUrl}}" width="26px" height="26px")

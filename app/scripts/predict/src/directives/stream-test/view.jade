@@ -1,0 +1,10 @@
+.row.nav-top
+    .col.s2
+        span 流数据测试
+    .col.s10
+        .right.import-input-box
+            .file-a-btn 选择文件
+                input.file-input-ctrl(id='stream' type="file" onchange='angular.element(this).scope().streamDataAnalysis(this)')
+
+.col.l12.stream-test-container
+    #stream-chart

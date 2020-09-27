@@ -1,0 +1,39 @@
+.card
+  card-border(controller="vm" parameters='{ title: " 总体概况", desc: ["工单总数（单）", count, "单"] }')
+  //img(
+  //  title="切换视图"
+  //  ng-src='{{getComponentPath("image/changeRotation.png")}}'
+  //  ng-click="changeVertical()"
+  //  style="width:32px;height:15px;float:right;z-index:99;position: absolute;bottom: 24px;right: 24px;cursor: pointer;"
+  //)
+  .col.s12.l12.contents
+    bar-stack(controller="vm" parameters='{ data }' ng-show="!showVertical")
+    bar-vertical-stack(controller="vm" parameters='{ data, show: showVertical }' ng-show="showVertical")
+
+
+
+
+#totaltask-reportdetail-modal.modal.modal-fixed-footer(md-modal, style="width: 80%;")
+  nav
+    .nav-wrapper
+      ul(style="padding-left: 10px;")
+        li
+          span {{reportTitle}}
+
+        ul.right
+          li
+            .btn(ng-click='exportReport(headers,reportTitle)', title='导出')
+              span.hide-on-med-and-down 导出
+          li
+            a.modal-action.modal-close(href='',title="关闭")
+              i.material-icons.right(style="margin-top:-14px;") close
+              span.hide-on-med-and-down
+  .modal-content
+    grid-table.grid-table( controller='controller',parameters='{header:headers,data:garddatas}')
+
+#singletask-detail-modal.modal.modal-fixed-footer(md-modal, style="width: 1200px;")
+  .modal-header(style="text-align: center; font-size: 14px; color: #AAC9F4; margin: 12px 0; font-weight: 300;") 工单号:&nbsp;&nbsp;
+    span(style="font-size: 26px; color: white; ") {{task || '--'}}
+  task-new-model(controller="controller" parameters="{}")
+
+

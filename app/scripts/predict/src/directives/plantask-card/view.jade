@@ -1,0 +1,33 @@
+.card.contents
+  card-border(controller="vm" parameters='{ title: "巡检运维情况", desc: ["巡检总单数（单）", count, "单"] }')
+  .col.s12.l12.content
+    .col.s7.l7.content-left
+      //- bar-timeline(controller="vm" parameters="{ type: 2, series: workSeries, data: workData, date }") 
+      bar-line-time(controller="vm" parameters="{ series: workSeries, data: workData, date }") 
+    .col.s5.l5.content-right
+      show-rings(controller="vm" parameters="{ data: rignData }")
+
+#plantask-reportdetail-modal.modal.modal-fixed-footer(md-modal, style="width: 80%;")
+  nav
+    .nav-wrapper
+      ul(style="padding-left: 10px;")
+        li
+          span {{reportTitle}}
+
+        ul.right
+          li
+            .btn(ng-click='exportReport(headers,reportTitle)', title='导出')
+              span.hide-on-med-and-down 导出
+          li
+            a.modal-action.modal-close(href='',title="关闭")
+              i.material-icons.right(style="margin-top:-14px;") close
+              span.hide-on-med-and-down
+  .modal-content
+    .row
+      .col(style="height: 58vh;width: 100%;padding-left: 0;")
+        #plantask.ag-blue(style="width: 100%;height: 100%;")
+
+#singletask-detail-modal.modal.modal-fixed-footer(md-modal, style="width: 1200px;")
+  .modal-header(style="text-align: center; font-size: 14px; color: #AAC9F4; margin: 12px 0; font-weight: 300;") 工单号:&nbsp;&nbsp;
+    span(style="font-size: 26px; color: white; ") {{task || '--'}}
+  task-new-model(controller="controller" parameters="{}")

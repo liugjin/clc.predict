@@ -1,0 +1,25 @@
+{
+  "id": "stream-curve-look",
+  "name": "StreamCurveLook控件",
+  "type": "StreamCurveLookDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+          "@Albert","流数据查看组件，需要传文件url地址等参数，且文件内容分为7列或21列"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

@@ -1,0 +1,109 @@
+#task-new-modal.modal.modal-fixed-footer(md-modal, style="width: 60%;")
+    .modal-content
+        style.
+           .workrow{
+                height: 89px;
+                border:1px solid #4BA5F8;
+                margin:0px !important;
+            }
+           .worksheetrow{
+               border:1px solid #4BA5F8;
+           }
+           .pdworkrow{
+                height: 36px !important;
+                border: 1px solid #4BA5F8;
+                margin: 0px !important;
+           }
+
+        .row
+            .container
+                .col.s12.m12.l12
+                    .input-field.col.s12
+                        span 工单号 *
+                        input(type='text', ng-model='currTask.name', ng-disabled='currTask._id', required)
+                .col.s12.m12.l12
+                    .input-field.col.s12
+                        span 工作内容
+                        .row.workrow
+                            .col.s12.m4.l2(style="padding:0px;height:100%;background-color:#F86066")
+                                div(style="text-align:center;line-height:80px;")
+                                    span {{checkContent[0].equiptypeName}}
+                            .col.s12.m4.l10
+                                .row.worksheetrow
+                                    .col.s12.m6.l6
+                                        span {{checkContent[0].equips[0].equipmentName}}
+                                    .col.s12.m6.l6
+                                        span {{checkContent[0].equips[0].value[0].name}}
+                                        div
+                                            span {{checkContent[0].equips[0].value[1].name}}
+                                .row.worksheetrow
+                                    .col.s12.m6.l6
+                                        span {{checkContent[0].equips[1].equipmentName}}
+                                    .col.s12.m6.l6
+                                        span {{checkContent[0].equips[1].value[0].name}}
+                                        div
+                                            span {{checkContent[0].equips[1].value[1].name}}
+                        .row.workrow
+                            .col.s12.m4.l2(style="padding:0px;height:100%;background-color:#1B95F5")
+                                div(style="text-align:center;line-height:80px;")
+                                    span {{checkContent[1].equiptypeName}}
+                            .col.s12.m4.l10
+                                .row.worksheetrow
+                                    .col.s12.m6.l6
+                                        span {{checkContent[1].equips[0].equipmentName}}
+                                    .col.s12.m6.l6
+                                        span {{checkContent[1].equips[0].value[0].name}}
+                                        div
+                                            span {{checkContent[1].equips[0].value[1].name}}
+                                .row.worksheetrow
+                                    .col.s12.m6.l6
+                                        span {{checkContent[1].equips[1].equipmentName}}
+                                    .col.s12.m6.l6
+                                        span {{checkContent[1].equips[1].value[0].name}}
+                                        div
+                                            span {{checkContent[1].equips[1].value[1].name}}
+                        .row.pdworkrow
+                            .col.s12.m4.l2(style="padding:0px;height:100%;background-color:#1B95F5")
+                                div(style="text-align:center;line-height:25px;")
+                                    span {{checkContent[2].equiptypeName}}
+                            .col.s12.m4.l10
+                                .col.s12.m12.l12
+                                    span {{checkContent[2].equips[0].equipmentName}}
+                        .row.workrow
+                            .col.s12.m4.l2(style="padding:0px;height:100%;background-color:#1B95F5")
+                                div(style="text-align:center;line-height:80px;")
+                                    span {{checkContent[3].equiptypeName}}
+                            .col.s12.m8.l10
+                                .col.s12.m6.l6
+                                    span {{checkContent[3].equips[0].equipmentName}}
+                                .col.s12.m6.l6
+                                    span {{checkContent[3].equips[1].equipmentName}}
+                                .col.s12.m6.l6
+                                    span {{checkContent[3].equips[2].equipmentName}}
+                                .col.s12.m6.l6
+                                    span {{checkContent[3].equips[3].equipmentName}}
+                                .col.s12.m6.l6
+                                    span {{checkContent[3].equips[4].equipmentName}}
+                                .col.s12.m6.l6
+                                    span {{checkContent[3].equips[5].equipmentName}}
+                        .row.workrow
+                            .col.s12.m4.l2(style="padding:0px;height:100%;background-color:#1B95F5")
+                                div(style="text-align:center;line-height:80px;")
+                                    span 工作反馈情况
+                            .col.s12.m8.l10(style="padding-right:0px;padding-left:0px;")
+                                textarea.validate(type='text',placeholder="无反馈情况" , ng-model='currTask.memo', required style="border: solid 0px #0652a2;height:89px;width:100%;color:white" )
+
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li
+                        a(href='', ng-click='saveTask()', title='保存')
+                            i.material-icons.left save
+                            span.hide-on-med-and-down 保存
+
+                    ul.right
+                        li
+                            a.modal-action.modal-close(href='')
+                                i.material-icons.right close
+                                span.hide-on-med-and-down 关闭

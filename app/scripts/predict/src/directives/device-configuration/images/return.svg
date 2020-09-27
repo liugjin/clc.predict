@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="设备详情---部件详情弹窗" transform="translate(-696.000000, -967.000000)" stroke="#9CA5C1" stroke-width="1.4">
+            <g id="返回" transform="translate(697.000000, 968.000000)">
+                <g id="icon">
+                    <path d="M26.016768,31.59168 L6.215168,31.59168 C3.135488,31.59168 0.639488,29.09568 0.639488,26.016 L0.639488,6.2144 C0.639488,3.13728 3.135488,0.64128 6.215168,0.64128 L26.016768,0.64128 C29.093888,0.64128 31.592448,3.13728 31.592448,6.2144 L31.592448,26.016 C31.592448,29.09568 29.093888,31.59168 26.016768,31.59168 Z" id="Stroke-1"></path>
+                    <path d="M9.09184,18.192896 L23.13856,18.192896" id="Stroke-3"></path>
+                    <path d="M9.09184,18.192896 L12.75008,14.038016" id="Stroke-5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

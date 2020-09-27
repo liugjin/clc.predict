@@ -1,0 +1,71 @@
+.row.nav-top
+    .col.s2
+        span 工单管理
+    .col.s10
+        nav
+            .right(style="display:flex;")
+                report-query-time(controller='vm',parameters='{}',style="margin-right:10px;")
+                ul
+                    li
+                        .btn.standard-report-btn(style="margin-right: 1rem;" ng-click='queryReport()' title='查询')
+                            span.hide-on-med-and-down 查询
+                    li
+                        work-button(controller="vm",parameters='{}')
+
+
+
+.row.inventory(style="margin: 0px;")
+    .col.s12.m12.l12.invent-list(style="overflow:auto;padding:0.5rem")
+        // 列表视图
+        table.responsive-table.centered.highlight.new-table
+            thead
+                tr
+                    th(style="width:200px;")
+                        .col-header(ng-click='station.equipments.sortBy("model.name")')
+                            span 单号
+                            span.right(ng-show='station.equipments.predicate == "model.name"') {{station.equipments.reverse && "▽" || "△"}}
+                    th(style="width:150px;")
+                        .col-header(ng-click='station.equipments.sortBy("model.equipment")')
+                            span 工单类型
+                            span.right(ng-show='station.equipments.predicate == "model.equipment"') {{station.equipments.reverse && "▽" || "△"}}
+                    th(style="width:120px;")
+                        .col-header(ng-click='station.equipments.sortBy("model.stationName")')
+                            span 工单状态
+                            span.right(ng-show='station.equipments.predicate == "model.stationName"') {{station.equipments.reverse && "▽" || "△"}}
+                    th(style="width:150px;")
+                        .col-header()
+                            span 当前执行时间
+                            span.right(ng-show='station.equipments.predicate == "model.tag"') {{station.equipments.reverse && "▽" || "△"}}
+                    th(style="width:150px;")
+                        .col-header(ng-click='station.equipments.sortBy("model.templateName")')
+                            span 负责人
+                            span.right(ng-show='station.equipments.predicate == "model.templateName"') {{station.equipments.reverse && "▽" || "△"}}
+                    th(style="width:150px;")
+                        .col-header(ng-click='station.equipments.sortBy("model.typeName")')
+                            span 创建时间
+                            span.right(ng-show='station.equipments.predicate == "model.typeName"') {{station.equipments.reverse && "▽" || "△"}}
+                    th(style="width:150px;")
+                        .col-header(ng-click='station.equipments.sortBy("model.creator")')
+                            span 创建人
+                            span.right(ng-show='station.equipments.predicate == "model.creator"') {{station.equipments.reverse && "▽" || "△"}}
+                    th
+                        .col-header
+                            span 操作
+            tbody
+                tr(ng-repeat='taskItem in tasks ')
+                    td {{taskItem.name}}
+                    td {{taskItem.typeName}}
+                    td {{taskItem.statusName || '-'}}
+                    td {{taskItem.currexcutetime || '-'}}
+                    td {{taskItem.excutor}}
+                    td {{taskItem.createtime || '-'}}
+                    td {{taskItem.creator}}
+                    td
+                        a.waves-effect.waves-light.modal-trigger(href='#task-handle-modal' ng-click='handleTask(taskItem);' title='处理工单')
+                            img(ng-src="{{editGreenImg}}")
+                        a.waves-effect.waves-light(href='' ng-click='deleteTask(taskItem); $event.stopPropagation();' title='删除工单')
+                            img(ng-src="{{deleteGreenImg}}")
+
+
+include ./taskmodal/task_new.jade
+include ./taskmodal/task_handle2.jade

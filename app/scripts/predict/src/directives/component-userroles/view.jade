@@ -1,0 +1,31 @@
+style.
+    body{
+        overflow: hidden;
+    }
+.row.nav-top
+    .col.l2
+        span 权限管理
+    .col.l10
+
+.row
+    .col.s12.m6.l3
+        .cool-title
+            span 角色信息列表
+            .right
+                a(ng-click="saveRoles()",title="保存",href="")
+                    i.material-icons(style="vertical-align: bottom;color: #ffffff;") save
+                a(ng-href="#/user_roles/{{project.model.user}}/{{project.model.project}}",title="角色管理")
+                    i.material-icons(style="vertical-align: bottom;color: #ffffff;") more_horiz
+        .cool-content(style="padding: 0;overflow:auto;")
+            .collection#userList
+                a.collection-item.roles-active(ng-repeat="(key,roleItem) in roles",ng-click="userRoleDetails(roleItem,key)",id="roles{{key}}" style="cursor:pointer;")
+                    span {{roleItem.role}}
+                    span.right {{roleItem.name}}
+
+    .col.s12.m6.l3(style="padding-left: 0;")
+        .cool-title 用户列表
+        .cool-content
+            md-switch(ng-model='allUserFlag', label-off='定制', label-on='全部',style="margin:0 0 .5rem 10px;" )
+            .station-panel(style="padding-left:10px;height:85%;overflow:auto;position: relative;")
+                .repeat-label(ng-repeat="userItem in users")
+                    md-checkbox(ng-model='allUserCheckFlags[userItem.user]', id='role-{{userItem.user}}', ng-disabled='allUserFlag', with-gap=false, filled-in=false label='{{userItem.name}}')

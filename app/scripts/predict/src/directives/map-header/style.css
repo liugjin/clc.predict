@@ -1,0 +1,61 @@
+map-header .page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 6.54vh;
+  width: 100%;
+  background: #030e2e;
+  border-bottom: 1px solid #0050a0; }
+
+map-header .middle-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("~images/title-box.svg~"); }
+
+map-header .picture {
+  width: 33.3%;
+  height: 100%; }
+
+map-header .title {
+  width: 33.3%;
+  text-align: center;
+  margin: 0;
+  font-family: 'GBK'; }
+
+map-header .left-box {
+  width: 10%;
+  height: 100%;
+  margin-left: 16px; }
+
+map-header .right-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 100%; }
+
+map-header .btn-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 6.54vh;
+  cursor: pointer; }
+
+map-header a {
+  color: #e2edf2; }
+
+map-header .nav {
+  cursor: pointer; }
+
+map-header .little-box {
+  position: absolute;
+  background-color: transparent !important;
+  border: 1px solid transparent; }

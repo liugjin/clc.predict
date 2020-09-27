@@ -1,0 +1,29 @@
+{
+  "id": "ops-info",
+  "name": "OpsInfo控件",
+  "type": "OpsInfoDirective",
+  "desc": {
+    "author": "foam",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [],
+        "0.0.2": ["首次完成页面"],
+        "0.0.3": ["修复设备运行情况无告警时数据显示错误的bug"],
+        "0.0.4": ["修复设备运行情况无告警时数据显示错误的bug"],
+        "0.0.5": ["完善样式"],
+        "0.0.6": ["代码优化"],
+        "0.0.7": ["完善功能"]
+    }
+  },
+  "group": "框架组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": ["orderType"],
+    "subs": []
+  },
+  "deps": ["device-condition-chart", "failure-rank-chart", "order-situation", "three-quarter-pie"],
+  "css": "",
+  "version": "0.0.7"
+}

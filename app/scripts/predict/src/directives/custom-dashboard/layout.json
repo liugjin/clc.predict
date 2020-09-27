@@ -1,0 +1,33 @@
+{
+  "dashboard": [
+
+    {
+      "class": "row",
+      "children": [
+        {
+          "class": "col m12 s12",
+          "children": [
+            {
+              "component": "main-dashboard",
+              "parameters": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mobile":[
+    {
+      "class": "col s12",
+      "component": "app-qrcode",
+      "parameters": {"'url'":"'http://www.huayuan-iot.com/homepage/app/solutions/predict/app.html?title=APP监控&apk=hyiot.apk'"}
+    }
+  ],
+  "monitoring":[
+    {
+      "class": "col s12",
+      "component": "monitoring",
+      "parameters": {"'filterType'":"true"}
+    }
+  ]
+}

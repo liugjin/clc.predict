@@ -1,0 +1,47 @@
+station-manager
+  .btn
+    margin-right: .75rem
+    width: 100px
+    height: 40px
+    color: #ffffff
+    font-size: 14px
+    line-height: 40px
+  label.active
+    color: #e2edf2 !important
+
+  input
+    width: calc(100% - 1.5rem) !important
+    padding: 0 .75rem !important
+
+  .input-field
+    margin: 0
+    >span
+      font-size: 14px
+
+  input.invalid[type=text]:not(.browser-default)
+    border: 1px solid #F44336 !important
+    box-shadow: none !important
+
+  .item-list
+    padding: 0 0.75rem
+    height: 84vh
+
+
+@media screen and (width: 1024px)
+  station-manager
+    .item-list
+      height: 81vh
+      overflow: auto
+      .station-table tbody  tr
+        height: 50px !important
+        line-height: 15px !important
+      .station-table tbody  tr td
+        font-size: 12px
+    .edit-btn,.delete-btn
+      width: 70px
+      height: 30px
+      line-height: 30px
+      font-size: 12px
+      margin: 5px 0
+
+

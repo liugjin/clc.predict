@@ -1,0 +1,15 @@
+task-statistic-title(controller="vm" parameters="{ title: '运维概况', typeName: '日期', typeList }")
+
+//- 第一行
+.row.col.s12.l12
+  .col.s6.l6(style="padding: 0;")
+    totaltask-card(controller="controller" parameters="{ data: total, date: dateArr }")
+  .col.s6.l6(style="padding: 0;")
+    plantask-card(controller="controller" parameters="{ data: plan, date: dateArr, type }")
+
+//- 第二行
+.row.col.s12.l12
+  .col.s6.l6(style="padding: 0;")
+    predicttask-card(controller="controller" parameters="{ data: predict, date: dateArr, type }")
+  .col.s6.l6(style="padding: 0;")
+    defecttask-card(controller="controller" parameters="{ data: defect, date: dateArr, type }")

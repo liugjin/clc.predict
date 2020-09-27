@@ -1,0 +1,7 @@
+link(rel='stylesheet', href='/lib/gl-datepicker/styles/glDatePicker.default.css')
+ul.report-time
+    li.report-li(ng-hide="time.mode=='day'" style="margin: 0 4px;")
+        span 选择日期
+    li.report-li(ng-hide="time.mode=='day'")
+        .input-field
+            input#enddate.datepicker(type='text' ng-model="time.endTime" ng-change="formatDate('enddate')" ng-mouseenter="myenter('enddate')" readonly)

@@ -1,0 +1,72 @@
+station-overview
+  .content
+    width: 100%
+    height: calc(70% - 0.75rem)
+    padding: 16px
+    background: rgba(4,18,57,1)
+    border-radius: 20px
+    margin-bottom: 0.75rem
+  .headerTitle
+    display: flex
+    align-items: flex-end
+    width: 100%
+    height: 6%
+    padding-bottom: 0.75rem
+  .headerTitle span:nth-child(1)
+    font-size: 18px
+  .headerTitle span:nth-child(2)
+    color: rgba(180,182,191,1)
+  .bodyContent
+    width: 100%
+    margin-top: 0
+    height: 94%
+  .stationContent
+    display: flex
+    width: 100%
+    height: 12%
+    border: 1px solid rgba(0,78,141,1)
+    background: rgba(2,32,78,1)
+    margin-bottom: 0.75rem
+    border-radius: 6px
+  .defaultimg
+    display: block
+  .hoverimg
+    display: none
+  .stationContent:hover
+    //background: rgba(0,167,255,0.5)
+    background: #00A7FF
+    cursor: pointer
+    .defaultimg
+      display: none
+    .hoverimg
+      display: block
+
+  .stationIcon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 16%
+    height: 100%
+  .stationDevNum
+    display: flex
+    align-items: center
+    width: 24%
+    height: 100%
+    font-family: 'din'
+    font-size: 28px
+  .stationOperation
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding-right: 4%
+    width: 60%
+    height: 100%
+    font-size: 18px
+  .iconBox
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 46px
+    height: 46px
+    border-radius: 6px
+    background: rgba(0,167,255,1)

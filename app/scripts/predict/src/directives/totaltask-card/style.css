@@ -1,0 +1,14 @@
+totaltask-card .card {
+  height: calc(50vh - 77px);
+  margin: 8px 4px 0 8px;
+  padding: 12px; }
+
+totaltask-card .contents {
+  padding: 0;
+  height: calc(42vh - 4rem); }
+  totaltask-card .contents .row1 {
+    width: 100%;
+    height: 30%; }
+  totaltask-card .contents .row2 {
+    width: 100%;
+    height: 70%; }

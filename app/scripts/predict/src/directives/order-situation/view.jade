@@ -1,0 +1,16 @@
+.order-situation-box
+    .situation-total
+        span 总单数
+        span.total {{typeOrderTotal}}
+        span 单
+    .situation-charts-box
+        three-quarter-pie(controller="controller"
+         parameters="{total: typeOrderTotal, value: opsUnfinish, name: '未完成工单', startColor: '#7EDFD7', endColor: '#5597FC' }")
+        three-quarter-pie(controller="controller"
+         parameters="{total: secondPieChartAllCount, value: secondPieChartCount, name: secondChartName, startColor: '#FF2D2D', endColor: '#5597FC'}")
+        three-quarter-pie(controller="controller"
+         parameters="{total: thirdPieChartAllCount, value: thirdPieChartCount, name: threeCheartName, startColor: '#F2CC53', endColor: '#E37A1D', showMode: showMode}")
+        three-quarter-pie(controller="controller"
+         parameters="{total: opsMonthOrder, value: opsMonthFinish, name: '本月完成率', startColor: '#6293E0', endColor: '#AAC9F4', showMode: 'percent'}")
+        three-quarter-pie(controller="controller"
+         parameters="{total: opsMonthOrder, value: opsMonthUnfinish, name: '本月未完成率', startColor: '#6293E0', endColor: '#AAC9F4', showMode: 'percent'}")

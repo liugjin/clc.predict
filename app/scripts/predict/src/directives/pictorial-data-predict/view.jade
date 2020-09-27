@@ -1,0 +1,27 @@
+link(type='text/css', rel='stylesheet', ng-href='{{getComponentPath("swiper/swiper.min.css")}}')
+.content2(style="width:100%")
+    .swiper-container.type-button
+        .swiper-wrapper
+            .swiper-slide.type(ng-repeat="type in types" ng-click='selectType(type)',ng-class='{"selected":type==selectedType}' style="width: calc(25% - 15px);padding:0;" title='{{devices[type.model.type].length}}个')
+                img.img-type(ng-src="{{getComponentPath('images/'+type.model.icon+'.svg')}}", onerror="angular.element(this).scope().imgError(this)")
+                span {{type.model.name}}
+                //span.number {{devices[type.model.type].length}}个
+    .device-details
+        .device-list
+            span.engine-box(ng-repeat="data in devices[selectedType.model.type]", title='{{data.model.name}}')
+                span
+                    img(ng-src="{{getComponentPath('images/'+selectedType.model.icon+'.svg')}}" ng-click='selectDevice(data)' ng-style="{'filter':'grayscale(100%)drop-shadow('+getColor(signals[data.model.station+'.'+data.model.equipment].severity.severity)+' 0px 0)saturate(10)brightness(5)'}" onerror="angular.element(this).scope().imgError(this)")
+                //span {{getColor(signals[data.model.station+'.'+data.model.equipment].severity.value)}}
+
+#equipment-template(style = "display:none;width:100%; heigth:100%")
+    .equipment-template-header
+       span {{selectDeviceName}}
+       span.close( ng-click = "closeDeviceData()") ×
+    .equipment-info
+       .deviceSignalsBox(ng-repeat="(key, signal) in signals[device.model.station+'.'+device.model.equipment]")
+            span.signalName(style='padding: 5px 5px;') {{signal.name}}
+            span.signalStatus(ng-style="{'color':getColor(signal.severity, false)}") {{signal.formatValue}}{{signal.unitName}}
+    .deviceForMore
+        a(ng-href="#/device-details/{{device.model.user}}/{{device.model.project}}/{{device.model.station}}/{{device.model.equipment}}")
+            span 更多详情
+            i.material-icons.right fast_forward

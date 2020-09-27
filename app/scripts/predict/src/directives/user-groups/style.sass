@@ -1,0 +1,154 @@
+.user-groups
+  height: 93vh
+  .item-selects
+    .item-select
+      height: 28px
+      line-height: 2
+      border-bottom: 1px solid #112d69
+  .item-selects:hover
+    background: #054f94
+  .usergroups-title
+    margin-left: 24px
+    font-size: 14px
+
+  .usergroups-button-box
+    height: 76px
+    padding-right: 13.5%
+    padding-top: 18px
+    margin-bottom: 24px
+
+  .usergroups-button
+    float: right
+    height: 40px
+    line-height: 3
+    width: 120px
+    margin-left: 5px
+    i
+      line-height: 2
+  .usergroups-content
+    height: calc(100% - 96px)
+    background-color: rgba(26, 69, 162, 0.4)
+    margin: 10px
+    padding: 0
+    .user-detail-box-left
+      margin-top: 50px
+    .user-detial
+      padding: 0 70px 0 40px
+    .user-box
+      text-align: right
+      margin-bottom: 40px
+      line-height: 3
+      font-size: 0.9rem
+      color: #fcf5e8
+      padding-right: 30px
+    .user-msg
+      min-height: 600px
+      border: 1px solid #0050A0
+      padding: 0
+      font-size: 0.9rem
+      color: #fcf5e8
+      overflow: auto
+    .user-detail-box-right
+      margin-top: 50px
+    .usergroups-list
+      .list-title
+        text-align: right
+        margin-bottom: 40px
+        line-height: 3
+        font-size: 0.9rem
+        color: #fcf5e8
+        padding-right: 30px
+      .list-input
+        padding: 5px
+        box-sizing: border-box
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        margin-bottom: 0px
+        margin-top: 0
+        height: 40px
+        width: 86%
+        border: 1px solid #0050A0 !important
+        color: #e2edf2 !important
+        font-size: 14px !important
+        background-color: transparent
+        cursor: pointer
+      .list-select
+        appearance: none
+        -moz-appearance: none
+        -webkit-appearance: none
+        margin-top: 0
+        height: 40px
+        width: 86%
+        padding-left: 8px
+        border: 1px solid #0050A0 !important
+        color: #e2edf2 !important
+        font-size: 14px !important
+        background-color: transparent
+        cursor: pointer
+        display: inline
+        option
+          color: white
+          background-color: #162950
+          -moz-appearance: none
+          -webkit-appearance: none
+          appearance: none
+        option:hover
+          background-color: #1a45a2
+        option::-ms-expand
+          display: none
+      .list-select::-ms-expand
+        display: none
+      .list-icon
+        cursor: pointer
+        position: relative
+        right: 32px
+        top: 8px
+        z-index: -1
+
+@media screen and (max-width: 1400px)
+  .user-groups
+    height: 91vh
+    .usergroups-content
+      .user-detail-box-left
+        margin-top: 15px
+        .user-detial
+          padding: 0 40px 0 0
+          height: 65vh
+          overflow: auto
+          .user-box
+            line-height: 1.5
+            padding-right: 35px
+          .user-msg
+            min-height: 360px
+            .detail-box,.item-selects
+              .col
+                padding: 0 !important
+            .item-selects
+              .item-select
+                white-space: nowrap
+                overflow: hidden
+                text-overflow: ellipsis
+
+      .user-detail-box-right
+        margin-top: 15px
+        .usergroups-list
+          .list-title
+            text-align: left
+            line-height: 1.5
+            font-size: 12px
+            padding-right: 15px
+    .usergroups-button-box
+      padding-right: 0
+      padding-left: 45px
+
+    .usergroups-button
+      font-size: 12px
+      float: none !important
+      height: 30px
+      line-height: 30px
+      width: 90px
+      margin-bottom: 5px
+      i
+        line-height: 30px
+        font-size: 14px
+        margin-right: 0

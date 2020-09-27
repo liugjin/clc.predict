@@ -1,0 +1,22 @@
+{
+	"id": "transverse-bar",
+	"name": "TransverseBar控件",
+	"type": "TransverseBarDirective",
+	"desc": {
+		"author": "",
+		"comment": "自定义组件",
+		"version": {
+      "0.0.1": ["初始化"],
+      "0.0.2": ["数据适配"]
+		}
+	},
+	"group": "功能组件",
+	"parameters": [],
+	"interact": {
+		"pubs": [],
+		"subs": []
+	},
+	"deps": [],
+	"css": "",
+	"version": "0.0.2"
+}

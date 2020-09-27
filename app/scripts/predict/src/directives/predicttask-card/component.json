@@ -1,0 +1,22 @@
+{
+	"id": "predicttask-card",
+	"name": "PredicttaskCard控件",
+	"type": "PredicttaskCardDirective",
+	"desc": {
+		"author": "Youge",
+		"comment": "首页概览-运维维保组件",
+		"version": {
+			"0.0.1": ["初始化"],
+			"0.0.2": ["修改展示数据图---James"]
+		}
+	},
+	"group": "功能组件",
+	"parameters": [],
+	"interact": {
+		"pubs": [],
+		"subs": []
+	},
+	"deps": ["card-border", "show-lines", "transverse-bar", "ring-layers"],
+	"css": "",
+	"version": "0.0.2"
+}

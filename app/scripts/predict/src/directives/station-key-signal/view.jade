@@ -1,0 +1,11 @@
+.content
+    .contentTitle
+        span.titleChName 厂区关键信号点
+        span.titleZhName SITE KEY SIGNAL POINT
+    ul.contentSubject
+        li.signalBox(ng-repeat="signalData in signalDataArr" ng-style="{'border-color': signalData.severityColor}")
+            .signalNum(ng-style="{color:signalData.severityColor}")
+                span(title='{{signalData.severityColor}}') {{signalData.setValue}}
+                span {{signalData.unit}}
+            .signalName(ng-style="{color:signalData.severityLabelColor}")
+                span.spanStyle {{signalData.signalName}}

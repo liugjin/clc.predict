@@ -1,0 +1,25 @@
+{
+  "id": "comp-work-overview",
+  "name": "CompWorkOverview控件",
+  "type": "CompWorkOverviewDirective",
+  "desc": {
+    "author": "James",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": [],
+      "0.0.2": ["新增组件"],
+      "0.0.3": ["优化获取工单及工单项统计，增加异常设备、异常工作项统计等算法-James"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["task-statistic-title", "defecttask-card", "plantask-card", "predicttask-card", "totaltask-card"],
+  "css": "",
+  "version": "0.0.3"
+}

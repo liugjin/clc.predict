@@ -1,0 +1,27 @@
+{
+  "id": "event-analysis",
+  "name": "EventAnalysis控件",
+  "type": "EventAnalysisDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+        ],
+        "0.0.2": [
+           "适配1024x768分辨率","@Albert"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.2"
+}

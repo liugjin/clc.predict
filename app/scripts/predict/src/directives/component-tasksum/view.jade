@@ -1,0 +1,29 @@
+.row.nav-top
+    .col.l2
+        span(style="font-size: 14px;color: #fff") 工单汇总
+    .col.l10
+        nav
+            .nav-wrapper
+                .right(style="display:flex;")
+                    report-query-time(controller='vm',parameters='{}',style="margin: 0 10px;")
+                    ul
+                        li(style="margin-right:10px;")
+                            .btn.standard-report-btn.btn-margin-top(ng-click='queryReport()', title='查询' style="margin-left: 1rem; margin-right: 1rem;")
+                                span.hide-on-med-and-down 查询
+
+                        li
+                            .btn.standard-report-btn.btn-margin-top(ng-click='exportReport(headers,"工单汇总")', title='导出')
+                                span.hide-on-med-and-down 导出
+
+.row
+    style.
+        .chart-pie{
+            height: 60vh !important;
+        }
+    .col.s12.m12.l4
+        .component-pie-box
+            span(style="margin-left:0.5rem;margin-top:0.5rem;color:rgba(226,237,242,1);font-size:16px") 汇总信息(总{{taskRecNum}} 单)
+            component-pie(controller='controller', parameters='{"centertitle":"","title":"","piecolors":[{startcolor:"#ff800b",stopcolor:"#fff600"},{startcolor:"#46c19d",stopcolor:"#64e78c"},{startcolor:"#14c3f5",stopcolor:"#7edfd7"}],"legendNames":["进行中","等待处理","已结束"],"chartValue":pieDatas}')
+    .col.s12.m12.l8
+        .row
+            grid-table.grid-table( controller='controller',parameters='{header:headers,data:garddatas}')

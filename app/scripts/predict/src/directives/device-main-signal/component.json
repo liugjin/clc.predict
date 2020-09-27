@@ -1,0 +1,24 @@
+{
+  "id": "device-main-signal",
+  "name": "DeviceMainSignal控件",
+  "type": "DeviceMainSignalDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["opc-curve"],
+  "css": "",
+  "version": "0.0.1"
+}

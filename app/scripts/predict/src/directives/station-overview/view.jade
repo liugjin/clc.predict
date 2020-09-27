@@ -1,0 +1,14 @@
+.content
+    .headerTitle
+        span 厂区分布
+        span(style="font-size: 14px;margin-left: 10px;") PLANT DISTRIBUTION
+    ul.bodyContent
+        li.stationContent(ng-repeat="stationData in stations",ng-click="clickStation(stationData)")
+            .stationIcon
+                .iconBox
+                    img.defaultimg(src="{{getComponentPath('images/cityblue.svg')}}")
+                    img.hoverimg(src="{{getComponentPath('images/citywhite.svg')}}")
+            .stationDevNum {{stationData.model.allDeviceNumber}}
+            .stationOperation
+                |{{stationData.model.name}}&nbsp;
+                img(src="{{getComponentPath('images/icon.png')}}" width="13px" height="6px")

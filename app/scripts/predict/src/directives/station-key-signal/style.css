@@ -1,0 +1,76 @@
+station-key-signal .content {
+  width: 100%;
+  height: calc(33.3% - 0.75rem);
+  padding: 16px;
+  background: rgba(4, 18, 57, 0.7);
+  border-radius: 20px;
+  margin-bottom: 0.75rem; }
+
+station-key-signal .contentTitle {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 14%;
+  border-bottom: 1px solid #00A7FF;
+  padding-bottom: 2%; }
+
+station-key-signal .titleChName {
+  font-size: 18px; }
+
+station-key-signal .titleZhName {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #b4b6bf; }
+
+station-key-signal .contentSubject {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 80%; }
+
+station-key-signal .signalBox {
+  width: 31%;
+  height: 46%;
+  padding: 1%;
+  border: 1px solid #00A7FF;
+  border-radius: 4px;
+  background: rgba(0, 167, 255, 0.1);
+  overflow: hidden; }
+
+station-key-signal .signalBox:hover {
+  background: rgba(0, 167, 255, 0.5); }
+
+station-key-signal .signalNum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%; }
+
+station-key-signal .signalNum span:nth-child(1) {
+  font-family: 'din';
+  font-size: 28px; }
+
+station-key-signal .signalNum span:nth-child(2) {
+  font-size: 14px;
+  margin-left: 2px; }
+
+station-key-signal .signalName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  font-size: 14px; }
+
+station-key-signal .signalName span:nth-child(1) {
+  font-size: 14px; }
+
+station-key-signal .spanStyle {
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1; }

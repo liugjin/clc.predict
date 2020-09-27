@@ -1,0 +1,165 @@
+.row.nav-top
+    .col.l2
+        span(style="color:#fff") 流式数据对比
+    .col.l10
+        nav
+            .col.nav-wrapper.nav-wrap-container
+                ul.left
+                    li(ng-show='signals.length')
+                        a.dropdown-trigger(data-target='mysigs' data-hover='true' md-dropdown title='切换信号' style="")
+                            i.material-icons.left view_list
+                            | {{selectSignals[0].model.name}}
+                    li(ng-hide="signals.length")
+                        a(title='选设备切换数据点' style="font-size: 14px")
+                            i.material-icons.left view_list
+                            | 数据列表
+                    ul#mysigs.dropdown-content(style="height:300px;")
+                        li(ng-repeat='sig in signals')
+                            a(ng-href="" ng-click="selectSignal(sig)")
+                                span {{sig.model.name}}
+            .col.right
+                report-query-time.report-query-time.left(controller='controller',parameters='{}')
+                .right-wrapper-box.left
+                    ul
+                        li.previous-stream(style="margin-left:20px")
+                            .data-select-name
+                                span 往期流数据选择
+                            a.previous-stream-select.dropdown-trigger(href='' data-target='previousData' data-hover='true'
+                                data-constrain-width='false' data-cover-trigger="false"
+                                md-dropdown style='font-size:14px')
+                                span.left-equip-box(ng-show='previousStreamList.length>0') {{currentPreviousStream.timeName}}
+                                span.left-equip-box(ng-show='previousStreamList.length==0') 无数据
+                                span.right-equip-box ▼
+                            ul#previousData.dropdown-content
+                                li(ng-repeat = '(index, type) in previousStreamList')
+                                    a(ng-href='' ng-click='selectCurrentStream(type)' style="padding-left: 8px;")
+                                        span {{type.timeName}}
+                        li(style="margin-right:10px;margin-left:10px")
+                            .btn.standard-report-btn(ng-click='streamDataComparing()', title='对比')
+                                span.hide-on-med-and-down 对比
+
+
+.row
+    device-tree.col.tree-style.device-tree(controller='controller',parameters='{"checkbox":false,"filter":true,"reportName":"高频数据"}')
+    .col.stream-chart-contaner
+        .row(style="min-width:900px")
+            .stream-header-contaner
+                .left-button-box(ng-show="dataFlag")
+                    .stream-title
+                        span {{selectSignals[0].model.name}}
+                    .btn.stream-btn.play-pause-button(ng-click='chartPlayPause()')
+                        img(ng-src="{{getComponentPath('image/play.png')}}")
+                        span 播放/暂停
+                    .btn.stream-btn.cancle-button(ng-click='chartShowAll()')
+                        img(ng-src="{{getComponentPath('image/all.png')}}")
+                        span 全部展示
+                .text-file-box
+                    .search-legend-classify
+                        .data-select-name(ng-show='streamLegendList.length > 1 || abcSeriesList.length > 1')
+                            span 数据选择:
+                        a.signal-legend-classify.series-selections.dropdown-trigger(href='' data-target='abcSeriesList' data-hover='true'
+                            data-constrain-width='false' data-cover-trigger="false"
+                            md-dropdown ng-show='abcSeriesList.length > 1')
+                            span.left-equip-box {{chartOpts1.currentAbcSeries.name}}
+                            span.right-equip-box
+                                img(ng-src="{{getComponentPath('image/triangle1.png')}}")
+                        ul#abcSeriesList.dropdown-content
+                            li(ng-repeat = '(index, type) in abcSeriesList')
+                                a(ng-href='' ng-click='selectSeriesData(type, index)' style="padding-left: 8px;")
+                                    span {{type.name}}
+                        a.signal-legend-classify.dropdown-trigger(href='' data-target='streamLegendList' data-hover='true'
+                            data-constrain-width='false' data-cover-trigger="false"
+                            md-dropdown ng-show='streamLegendList.length > 1')
+                            span.left-equip-box {{chartOpts1.currentLegends.name}}
+                            span.right-equip-box
+                                img(ng-src="{{getComponentPath('image/triangle1.png')}}")
+                        ul#streamLegendList.dropdown-content
+                            li(ng-repeat = '(index, type) in currentDisplayList')
+                                a(ng-href='' ng-click='selectLegend(type, index)' style="padding-left: 8px;")
+                                    span {{type.name}}
+            .stream-analysis-container1(ng-if='streamType == 1')
+                .left-stream-content(ng-show="dataFlag")
+                    .stream-content-item
+                        span.item-title 采集数据分析
+                        .item-content
+                            span {{chartOpts1.currentLegends.legend1}}
+                    .stream-content-item
+                        span.item-title 最大值
+                        .stream-signal-max-num.item-content
+                            span 当前:{{ currentMinAndMax[1] }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ compareMinAndMax[1] }}
+                    .stream-content-item
+                        span.item-title 最小值
+                        .item-content
+                            span 当前:{{ currentMinAndMax[0] }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ compareMinAndMax[0] }}
+                    .stream-content-item
+                        span.item-title 采集时间
+                        .item-content
+                            span 当前:{{ collectTime }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ collectTime2 }}
+                .stream-card-content2(ng-show="!dataFlag")
+                    .no-title-box
+                        span 暂无数据
+                .stream-card-content1.no-padding(ng-show="dataFlag")
+                    #ss-origin-chart
+            .stream-analysis-container2(ng-if='streamType == 2')
+                .left-stream-content(ng-show="dataFlag")
+                    .stream-content-item
+                        span.item-title 时域数据分析
+                        .item-content
+                            span {{chartOpts1.currentLegends.legend1}}
+                    .stream-content-item
+                        span.item-title 最大值
+                        .item-content
+                            span 当前:{{ currentMinAndMax[0][1] }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ compareMinAndMax[0][1] }}
+                    .stream-content-item
+                        span.item-title 最小值
+                        .item-content
+                            span 当前:{{ currentMinAndMax[0][0] }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ compareMinAndMax[0][0] }}
+                    .stream-content-item
+                        span.item-title 正常数据区间
+                        .stream-signal-arranges.item-content
+                            span {{ chartOpts1.normalDatas[0]}}
+                            .strong-red 注: 超出正常区间的点显示红色
+                    .stream-content-item
+                        span.item-title 采集时间
+                        .item-content
+                            span 当前:{{ collectTime }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ collectTime2 }}
+                .right-stream-content(ng-show="dataFlag")
+                    .stream-content-item
+                        span.item-title 频域数据分析
+                        .item-content
+                            span {{chartOpts1.currentLegends.legend2}}
+                    .stream-content-item
+                        span.item-title 最大值
+                        .item-content
+                            span 当前:{{ currentMinAndMax[1][1] }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ compareMinAndMax[1][1] }}
+                    .stream-content-item
+                        span.item-title 最小值
+                        .item-content
+                            span 当前:{{ currentMinAndMax[1][0] }}
+                        .item-content(ng-if='compareFlag == 2')
+                            span 对比:{{ compareMinAndMax[1][0] }}
+                    .stream-content-item
+                        span.item-title 正常数据区间
+                        .stream-signal-arranges.item-content
+                            span {{ chartOpts1.normalDatas[1] }}
+                .no-stream-data(ng-show="!dataFlag")
+                    .no-title-box
+                        span 暂无数据
+                .stream-card-content1.no-padding(ng-show="dataFlag")
+                    #ss-chart1
+                .stream-card-content2.no-padding(ng-show="dataFlag")
+                    #ss-chart2

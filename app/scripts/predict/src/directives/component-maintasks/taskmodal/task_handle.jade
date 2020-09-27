@@ -1,0 +1,225 @@
+#task-handle-modal.modal.modal-fixed-footer(md-modal, style="width: 80%;max-height:88%;height:90vh;")
+    .modal-content(style="overflow-x:hidden;")
+        style.
+            .confirmtask
+                .workrow{
+                    height: 125px;
+                    border:1px solid #4BA5F8;
+                    margin:0px !important;
+                }
+            .worktd{
+                width:180px;
+                border:solid 1px #20509B;
+            }
+
+        .row
+            .col.s12.m6.l5
+                .nav-flex-grow(ng-show="($root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1) || receiveFlag")
+                    a.waves-effect.waves-light.btn( ng-click='showTaskInfo(1)' title='工作内容'  ng-style='{"background": (workFlag || receiveFlag)?"rgba(0, 188, 212, 0.7)":"#112e69"}')
+                        | 工作内容
+                        i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") speaker_notes
+                .nav-flex-grow(ng-show="!receiveFlag")
+                    a.waves-effect.waves-light.btn( ng-click='showTaskInfo(2)' title='流程详情' ng-style='{"background": detailFlag?"rgba(0, 188, 212, 0.7)":"#112e69"}')
+                        | 流程详情
+                        i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") swap_calls
+
+        .row.confirmtask(ng-show="workFlag || receiveFlag")
+            .container
+                .col.s12.m12.l12
+                        div(style="text-align:center;")
+                            span(style="font-size:14px;") 工单号:
+                            span(style="font-size:18px;margin-left:10px") {{currTask.name}}
+                        div(ng-show="receiveFlag" style="text-align:center;"  )
+                            span.title(style="color:greenyellow") 【当前工单没有指定负责人，点击确认接收工单】
+                        div
+                            span 工作内容
+                                table(style="border:solid 1px #20509B;")
+                                    tr
+                                        td
+                                            span {{checkContent[0].equiptypeName}}
+                                        td(style="padding:0px;")
+                                            table
+                                                tr
+                                                    td.worktd
+                                                        span {{checkContent[0].equips[0].equipmentName}}
+                                                    td
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span {{checkContent[0].equips[0].value[0].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[0].equips[0].value[0].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[0].equips[0].value[0].checked' ng-change="checkedChange(checkContent[0].equips[0].equipmentName+checkContent[0].equips[0].value[0].name,checkContent[0].equips[0].value[0].checked)")
+                                                                    span
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span {{checkContent[0].equips[0].value[1].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[0].equips[0].value[1].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[0].equips[0].value[1].checked' ng-change="checkedChange(checkContent[0].equips[0].equipmentName+checkContent[0].equips[0].value[1].name,checkContent[0].equips[0].value[1].checked)")
+                                                                    span
+                                                tr
+                                                    td.worktd
+                                                        span {{checkContent[0].equips[1].equipmentName}}
+                                                    td
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span {{checkContent[0].equips[1].value[0].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[0].equips[1].value[0].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[0].equips[1].value[0].checked' ng-change="checkedChange(checkContent[0].equips[1].equipmentName+checkContent[0].equips[1].value[0].name,checkContent[0].equips[1].value[0].checked)")
+                                                                    span
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span {{checkContent[0].equips[1].value[1].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[0].equips[1].value[1].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[0].equips[1].value[1].checked' ng-change="checkedChange(checkContent[0].equips[1].equipmentName+checkContent[0].equips[1].value[1].name,checkContent[0].equips[1].value[1].checked)")
+                                                                    span
+                                    tr
+                                        td
+                                            span {{checkContent[1].equiptypeName}}
+                                        td(style="padding:0px;")
+                                            table
+                                                tr
+                                                    td.worktd
+                                                        span {{checkContent[1].equips[0].equipmentName}}
+                                                    td
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[1].equips[0].value[0].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[1].equips[0].value[0].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[1].equips[0].value[0].checked' ng-change="checkedChange(checkContent[1].equips[0].equipmentName+checkContent[1].equips[0].value[0].name,checkContent[1].equips[0].value[0].checked)")
+                                                                    span
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[1].equips[0].value[1].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[1].equips[0].value[1].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[1].equips[0].value[1].checked' ng-change="checkedChange(checkContent[1].equips[0].equipmentName+checkContent[1].equips[0].value[1].name,checkContent[1].equips[0].value[1].checked)")
+                                                                    span
+                                                tr
+                                                    td.worktd
+                                                        span {{checkContent[1].equips[1].equipmentName}}
+                                                    td
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[1].equips[1].value[0].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[1].equips[1].value[0].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[1].equips[1].value[0].checked' ng-change="checkedChange(checkContent[1].equips[1].equipmentName+checkContent[1].equips[1].value[0].name,checkContent[1].equips[1].value[0].checked)")
+                                                                    span
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[1].equips[1].value[1].name}}:
+                                                                span(style="margin-left:10px;") {{checkContent[1].equips[1].value[1].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[1].equips[1].value[1].checked' ng-change="checkedChange(checkContent[1].equips[1].equipmentName+checkContent[1].equips[1].value[1].name,checkContent[1].equips[1].value[1].checked)")
+                                                                    span
+                                    tr
+                                        td
+                                            span {{checkContent[2].equiptypeName}}
+                                        td(style="padding:0px;")
+                                            table
+                                                tr
+                                                    td.worktd
+                                                        span {{checkContent[2].equips[0].equipmentName}}
+                                                    td
+                                                        div
+                                                            .col.s8.m8.l6(style="text-align:center;")
+                                                                span {{checkContent[2].equips[0].value || "-"}}
+                                                            .col.s4.m4.l6(style="text-align:left;")
+                                                                label
+                                                                    input.filled-in(type="checkbox" ng-model='checkContent[2].equips[0].checked' ng-change="checkedChange(checkContent[2].equips[0].equipmentName,checkContent[2].equips[0].checked)")
+                                                                    span
+                                    tr
+                                        td
+                                            span {{checkContent[3].equiptypeName}}
+                                        td(style="padding:0px;")
+                                            table
+                                                tr
+                                                    td.worktd(style="text-align:right")
+                                                        span(style="margin-right:2.3rem") {{checkContent[3].equips[0].equipmentName}}
+                                                        label
+                                                            input.filled-in(type="checkbox" ng-model='checkContent[3].equips[0].checked' ng-change="checkedChange(checkContent[3].equips[0].equipmentName,checkContent[3].equips[0].checked)")
+                                                            span
+                                                    td
+                                                        .col.s8.m8.l6(style="text-align:center;")
+                                                            span(style="margin-right:2.3rem") &nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[3].equips[1].equipmentName}}
+                                                        .col.s4.m4.l6(style="text-align:left;")
+                                                            label
+                                                                input.filled-in(type="checkbox" ng-model='checkContent[3].equips[1].checked' ng-change="checkedChange(checkContent[3].equips[1].equipmentName,checkContent[3].equips[1].checked)")
+                                                                span
+                                                tr
+                                                    td.worktd(style="text-align:right")
+                                                        span(style="margin-right:2.3rem") {{checkContent[3].equips[2].equipmentName}}
+                                                        label
+                                                            input.filled-in(type="checkbox" ng-model='checkContent[3].equips[2].checked' ng-change="checkedChange(checkContent[3].equips[2].equipmentName,checkContent[3].equips[2].checked)")
+                                                            span
+                                                    td
+                                                        .col.s8.m8.l6(style="text-align:center;")
+                                                            span(style="margin-right:2.3rem") &nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[3].equips[3].equipmentName}}
+                                                        .col.s4.m4.l6(style="text-align:left;")
+                                                            label
+                                                                input.filled-in(type="checkbox" ng-model='checkContent[3].equips[3].checked' ng-change="checkedChange(checkContent[3].equips[3].equipmentName,checkContent[3].equips[3].checked)")
+                                                                span
+                                                tr
+                                                    td.worktd(style="text-align:right")
+                                                        span(style="margin-right:2.3rem") {{checkContent[3].equips[4].equipmentName}}
+                                                        label
+                                                            input.filled-in(type="checkbox" ng-model='checkContent[3].equips[4].checked' ng-change="checkedChange(checkContent[3].equips[4].equipmentName,checkContent[3].equips[4].checked)")
+                                                            span
+                                                    td
+                                                        .col.s8.m8.l6(style="text-align:center;")
+                                                            span(style="margin-right:2.3rem") &nbsp;&nbsp;&nbsp;&nbsp;{{checkContent[3].equips[5].equipmentName}}
+                                                        .col.s4.m4.l6(style="text-align:left;")
+                                                            label
+                                                                input.filled-in(type="checkbox" ng-model='checkContent[3].equips[5].checked' ng-change="checkedChange(checkContent[3].equips[5].equipmentName,checkContent[3].equips[5].checked)")
+                                                                span
+                                    tr
+                                        td
+                                            span 工作反馈情况
+                                        td(style="padding:0px;border:solid 1px #20509B;")
+                                            textarea.validate(type='text',placeholder="无反馈情况" , ng-model='currTask.memo', required style="border: solid 0px #0652a2;height:100px;width:100%;overflow-y:auto;color:white;padding-top:10px;" )
+
+        .row.confirmtask(ng-show="detailFlag")
+            div(ng-show="!receiveFlag")
+                task-timeline(controller="",parameters="{datas:current}")
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li(ng-show="receiveFlag")
+                        a(href='', ng-click='acceptWorkSheet()', title='接收工单')
+                            i.material-icons.left email
+                            span.hide-on-med-and-down 接收工单
+                    li(ng-show="$root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1  ")
+                        a(href='', ng-click='handleTaskOper("approval")', title='批准')
+                            i.material-icons.left done
+                            span.hide-on-med-and-down 批准
+                    li(ng-show="$root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1")
+                        a(href='', ng-click='handleTaskOper("reject")', title='拒绝')
+                            i.material-icons.left pan_tool
+                            span.hide-on-med-and-down 拒绝
+                    li(ng-show="$root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1")
+                        a(href='', ng-click='handleTaskOper("cancel")', title='取消')
+                            i.material-icons.left cancel
+                            span.hide-on-med-and-down 取消
+                    //li(ng-show="$root.user.user == selectNode.manager.id")
+                    //    a(href='', ng-click='handleTaskOper("forward")', title='转发')
+                    //        i.material-icons.left rotate_90_degrees_ccw
+                    //        span.hide-on-med-and-down 转发
+
+                    ul.right
+                        li
+                            a.modal-action.modal-close(href='')
+                                i.material-icons.right close
+                                span.hide-on-med-and-down 关闭

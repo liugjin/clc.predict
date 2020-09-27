@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>关闭 icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="设备详情---部件详情弹窗" transform="translate(-838.000000, -262.000000)" fill="#CDD5DE">
+            <g id="弹窗" transform="translate(531.000000, 249.000000)">
+                <g id="标题" transform="translate(0.000000, 7.000000)">
+                    <path d="M312,11 L312,5 C312,4.44771525 312.447715,4 313,4 C313.552285,4 314,4.44771525 314,5 L314,11 L320,11 C320.552285,11 321,11.4477153 321,12 C321,12.5522847 320.552285,13 320,13 L314,13 L314,19 C314,19.5522847 313.552285,20 313,20 C312.447715,20 312,19.5522847 312,19 L312,13 L306,13 C305.447715,13 305,12.5522847 305,12 C305,11.4477153 305.447715,11 306,11 L312,11 Z" id="关闭-icon" transform="translate(313.000000, 12.000000) rotate(-315.000000) translate(-313.000000, -12.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,48 @@
+{
+  "id": "frequency-header",
+  "name": "变频器首页头部",
+  "type": "FrequencyHeaderDirective",
+  "desc": {
+    "author": "bingo",
+    "comment": "变频器首页头部",
+    "version": {
+      "0.0.1": [
+        "初始化"
+      ],
+      "0.0.2": [
+        "增加字段breadcrumbs，是否展示站点面包屑",
+        "@bingo"
+      ]
+    }
+  },
+  "group": "框架组件",
+  "parameters": [
+    {
+      "id": "title",
+      "type": "string",
+      "value": "",
+      "desc": "标题"
+    },
+    {
+      "id": "subtitle",
+      "type": "string",
+      "value": "",
+      "desc": "副标题"
+    },
+    {
+      "id": "breadcrumbs",
+      "type": "bool",
+      "value": "",
+      "desc": "是否显示站点面包屑"
+    }
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [
+    "station-breadcrumbs"
+  ],
+  "css": "",
+  "version": "0.0.2"
+}

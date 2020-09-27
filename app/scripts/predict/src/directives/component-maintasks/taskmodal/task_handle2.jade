@@ -1,0 +1,69 @@
+#task-handle-modal.modal.modal-fixed-footer(md-modal, style="width: 80%;max-height:88%;height:90vh;")
+    .modal-content(style="overflow-x:hidden;")
+        style.
+            .confirmtask
+            .workrow{
+                height: 125px;
+                border:1px solid #4BA5F8;
+                margin:0px !important;
+            }
+            .worktd{
+                width:180px;
+                border:solid 1px #20509B;
+            }
+
+        .row
+            .col.s12.m6.l5
+                .nav-flex-grow(ng-show="($root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1) || receiveFlag")
+                    a.waves-effect.waves-light.btn( ng-click='showTaskInfo(1)' title='工作内容'  ng-style='{"background": (workFlag || receiveFlag)?"rgba(0, 188, 212, 0.7)":"#112e69"}')
+                        | 工作内容
+                        i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") speaker_notes
+                .nav-flex-grow(ng-show="!receiveFlag")
+                    a.waves-effect.waves-light.btn( ng-click='showTaskInfo(2)' title='流程详情' ng-style='{"background": detailFlag?"rgba(0, 188, 212, 0.7)":"#112e69"}')
+                        | 流程详情
+                        i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") swap_calls
+
+        .row.confirmtask(ng-show="workFlag || receiveFlag")
+            .container
+                .col.s12.m12.l12
+                    div(style="text-align:center;")
+                        span(style="font-size:14px;") 工单号:
+                        span(style="font-size:18px;margin-left:10px") {{currTask.name}}
+                    div(ng-show="receiveFlag" style="text-align:center;"  )
+                        span.title(style="color:greenyellow") 【当前工单没有指定负责人，点击确认接收工单】
+                    div
+                        span 工作内容
+                            div(id="detail-table")
+        .row.confirmtask(ng-show="detailFlag")
+            div(ng-show="!receiveFlag")
+                task-timeline(controller="",parameters="{datas:current}")
+    .modal-footer.modal-nav
+        nav
+            .nav-wrapper
+                ul
+                    li(ng-show="receiveFlag")
+                        a(href='', ng-click='acceptWorkSheet()', title='接收工单')
+                            i.material-icons.left email
+                            span.hide-on-med-and-down 接收工单
+                    li(ng-show="$root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1  ")
+                        a(href='', ng-click='handleTaskOper("approval")', title='批准')
+                            i.material-icons.left done
+                            span.hide-on-med-and-down 批准
+                    li(ng-show="$root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1")
+                        a(href='', ng-click='handleTaskOper("reject")', title='拒绝')
+                            i.material-icons.left pan_tool
+                            span.hide-on-med-and-down 拒绝
+                    li(ng-show="$root.user.user == selectNode.manager.id && selectedTask.phase.progress != 1")
+                        a(href='', ng-click='handleTaskOper("cancel")', title='取消')
+                            i.material-icons.left cancel
+                            span.hide-on-med-and-down 取消
+                    //li(ng-show="$root.user.user == selectNode.manager.id")
+                    //    a(href='', ng-click='handleTaskOper("forward")', title='转发')
+                    //        i.material-icons.left rotate_90_degrees_ccw
+                    //        span.hide-on-med-and-down 转发
+
+                    ul.right
+                        li
+                            a.modal-action.modal-close(href='')
+                                i.material-icons.right close
+                                span.hide-on-med-and-down 关闭

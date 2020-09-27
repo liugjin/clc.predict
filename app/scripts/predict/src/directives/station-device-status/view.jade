@@ -1,0 +1,24 @@
+.content
+    .species-box
+        .species-title
+            .city
+                img(ng-src="{{getComponentPath('images/city.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+                span.title {{station.model.name}}
+            span
+        .species
+            .type-box.box-bac1
+                .box
+                    .number {{station.model.runNumber}}
+                    .type-name 运行设备
+            .type-box.box-bac2
+                .box
+                    .number {{station.model.offLineNumber}}
+                    .type-name 离线设备
+            .type-box.box-bac3
+                .box
+                    .number {{station.model.alarmNumber}}
+                    .type-name 告警设备
+            .type-box.box-bac4
+                .box
+                    .number {{station.model.forecastNumber}}
+                    .type-name 预测设备

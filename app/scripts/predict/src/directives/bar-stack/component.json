@@ -1,0 +1,26 @@
+{
+	"id": "bar-stack",
+	"name": "BarStack控件",
+	"type": "BarStackDirective",
+	"desc": {
+		"author": "Youge",
+		"comment": "自定义组件",
+		"version": {
+			"0.0.1": ["初始化"],
+			"0.0.2": ["修改中文标签---James"],
+			"0.0.3": ["适配新的数据格式", "@youge"],
+			"0.0.4": ["增加名称参数，点击事件", "@James"]
+		}
+	},
+	"group": "功能组件",
+	"parameters": [
+
+	],
+	"interact": {
+		"pubs": [],
+		"subs": []
+	},
+	"deps": [],
+	"css": "",
+	"version": "0.0.4"
+}

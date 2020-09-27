@@ -1,0 +1,42 @@
+{
+  "id": "header",
+  "name": "Header控件",
+  "type": "HeaderDirective",
+  "desc": {
+    "author":"Billy",
+    "desc":"框架头部，包含告警信息",
+    "version":{
+      "0.0.1":[
+        "集成告警"
+      ],
+      "0.0.2":[
+        "修复标题显示错误"
+      ],
+      "0.0.3":[
+        "集成菜单栏控制"
+      ],
+      "0.0.4":[
+        "修改header图标"
+      ],
+      "0.0.5":[
+        "region,新增ng-if=$root.user"
+      ],
+      "0.0.6":[
+        "region,新增订阅3D组件的3dgameover事件"
+      ],
+      "0.0.7":[
+        "新增逻辑，避免每次切换页面都重新计算告警数据", "@david"
+      ]
+    }
+  },
+  "group": "框架组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": ["3dgameover"]
+  },
+  "css": "",
+  "version": "0.0.7"
+}

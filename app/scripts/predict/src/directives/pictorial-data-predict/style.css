@@ -1,0 +1,94 @@
+.webui-popover-inner .close {
+  color: #f2f2f2 !important; }
+
+.webui-popover-inner .webui-popover-content tr {
+  border-bottom: none; }
+
+.webui-popover-inverse .webui-popover-title {
+  background-color: transparent;
+  border-bottom: 1px solid #f2f2f2; }
+
+pictorial-data-predict .type-button {
+  display: flex;
+  width: 100%;
+  height: 4vh;
+  border-radius: 4px;
+  margin-bottom: 0.2rem;
+  background-color: rgba(5, 17, 52, 0.6);
+  border-bottom: 1px solid #004fa0;
+  cursor: pointer;
+  font-size: 0.875rem; }
+  pictorial-data-predict .type-button .type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    padding: 0 0.3rem; }
+  pictorial-data-predict .type-button .type span {
+    margin-left: 4px; }
+  pictorial-data-predict .type-button .selected {
+    background: rgba(1, 166, 255, 0.7);
+    color: #000; }
+    pictorial-data-predict .type-button .selected img {
+      filter: invert(0); }
+  pictorial-data-predict .type-button .number {
+    font-family: 'DIN'; }
+
+pictorial-data-predict .img-type {
+  width: 1.25rem;
+  height: 1.25rem;
+  filter: invert(1); }
+
+pictorial-data-predict .device-details {
+  width: 100%;
+  height: 16.5vh;
+  border-radius: 4px;
+  padding: 0 0.8rem; }
+  pictorial-data-predict .device-details .device-list {
+    width: 100%;
+    max-height: 16.5vh;
+    overflow-y: auto; }
+    pictorial-data-predict .device-details .device-list img {
+      margin: 0.2rem;
+      width: 24px;
+      height: 24px; }
+    pictorial-data-predict .device-details .device-list img:hover {
+      filter: grayscale(100%) drop-shadow(indigo 0 0) saturate(10) brightness(5) !important; }
+
+#equipment-template {
+  height: 100%;
+  width: 100%;
+  padding: 3% 16px 0;
+  display: flex;
+  flex-direction: column; }
+  #equipment-template .equipment-template-header {
+    font-size: 18px;
+    display: flex;
+    height: 20%;
+    justify-content: space-between; }
+    #equipment-template .equipment-template-header .close {
+      cursor: pointer; }
+  #equipment-template .equipment-info {
+    height: 60%;
+    display: flex;
+    justify-content: flex-start; }
+    #equipment-template .equipment-info .deviceSignalsBox {
+      width: 31%;
+      height: 80%;
+      margin: 0 1.165%;
+      border: 1px solid #00A7FF;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #equipment-template .equipment-info .deviceSignalsBox .signalName {
+        font-size: 10px; }
+      #equipment-template .equipment-info .deviceSignalsBox .signalStatus {
+        font-size: 22px; }
+  #equipment-template .deviceForMore {
+    height: 20%;
+    display: flex;
+    justify-content: center; }
+    #equipment-template .deviceForMore a {
+      color: white; }

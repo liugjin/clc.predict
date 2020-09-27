@@ -1,0 +1,40 @@
+.stream-origin-card#streamoriginbox
+    .stream-title-box
+        .left-button-box
+            .stream-title
+                span {{parameters.signalName}}
+            .btn.stream-btn.play-pause-button(ng-click='chartPlayPause()')
+                img(ng-src="{{getComponentPath('image/play.png')}}")
+                span 播放/暂停
+            .btn.stream-btn.cancle-button(ng-click='chartShowAll()')
+                img(ng-src="{{getComponentPath('image/all.png')}}")
+                span 全部展示
+
+    .fullscreen
+        a(ng-click='fullscreen("#streamoriginbox")', title='全屏显示')
+            img(src="res/svg/fullscreen2.svg")
+    .stream-content-box
+        .left-stream-content
+            .stream-content-item
+                span.item-title 采集数据分析
+                .item-content
+                    span {{chartOpts.currentLegends.legend1}}
+            .stream-content-item
+                span.item-title 最大值
+                .stream-signal-max-num.item-content
+                    span {{ currentMinAndMax[1] }}
+            .stream-content-item
+                span.item-title 最小值
+                .stream-signal-min-num.item-content
+                    span {{ currentMinAndMax[0] }}
+            //.stream-content-item
+            //    span.item-title 采集时间
+            //    .stream-signal-min-num
+            //        span {{ collectTime }}
+
+        .stream-card-content1.no-padding
+            #ss-origin-chart
+
+
+
+

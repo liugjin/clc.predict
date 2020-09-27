@@ -1,0 +1,31 @@
+.content#streambox1
+    device-stream-data-signal.stream-data(controller="vm" parameters="{}")
+    .show-3D#graphicFullScreen
+        device-3d-component(ng-if="focus== 2",style="width: 100%;height: 100%;" controller="vm" parameters="{scene:scene}" )
+        //graphic-box(ng-if="focus== 3",style='width: 100%;height: 100%', controller='controller', parameters='{"templateId":templateId,"templateParameters":{},"noBorderStyle":true}')
+        graphic2-box(ng-if="focus== 3",style='width: 100%;height: 100%', controller='controller', parameters='{"templateId":templateId,"templateParameters":{},"noBorderStyle":true}')
+    .switch-box.center
+        ul.switch-ul
+            li(ng-click="clickStation()")
+                .switch-icon.center
+                    img(src="{{getComponentPath('images/return.svg')}}" width="24px" height="24px")
+                .switch-name.center
+                    span 厂区站点
+            li(ng-click='rotate(1)',ng-if="focus== 2")
+                .switch-icon.center
+                    img(src="{{getComponentPath('images/rotate.svg')}}" width="24px" height="24px")
+                .switch-name.center
+                    span 旋转设备
+            li(ng-click='clickTime(2)')
+                .switch-icon.center
+                    img(src="{{getComponentPath('images/open.svg')}}" width="24px" height="24px")
+                .switch-name.center
+                    span {{defaultName}}
+            li(ng-click='clickTime(3)')
+                .switch-icon.center
+                    img(src="{{getComponentPath('images/wire-frame.svg')}}" width="24px" height="24px")
+                .switch-name.center
+                    span 线框设备
+        .fullscreen
+            a(ng-click='fullscreen("#graphicFullScreen")', title='全屏显示')
+                img(src="res/svg/fullscreen2.svg")

@@ -1,0 +1,93 @@
+table(style="border:solid 1px #20509B;")
+    tr
+        th 告警状态
+        td(colspan="4")
+            .table-cell3 普通告警: {{severities1-value}}
+            .table-cell3 重要告警: {{severities2-value}}
+            .table-cell3 紧急告警: {{severities3-value}}
+    tr
+        th(rowspan="2") UPS状态
+        td 1#UPS
+        td(colspan="3")
+            div 状态: {{ups1-alarms}}
+            div 负载容量: {{ups1-loadRate}}
+    tr
+        td 2#UPS
+        td(colspan="3")
+            div 状态: {{ups2-alarms}}
+            div 负载容量: {{ups2-loadRate}}
+    tr
+        th(rowspan="2") 温湿度
+        td 市电
+        td(colspan="3")
+            div 状态: {{distributor-alarms}}
+            div 电压: {{distributor-voltage}}V
+            div 温度: {{distributor-temperature}}℃
+            div 湿度: {{distributor-humidity}}%
+    tr
+        td 电池房
+        td(colspan="3")
+            div 状态: {{battery-alarms}}
+            div 温度: {{battery-temperature}}℃
+            div 湿度: {{battery-humidity}}%
+    tr
+        th 空调状态
+        td(colspan="4")
+            .table-cell1 机房1#空调: {{ac1-status}}
+            .table-cell1 机房2#空调: {{ac2-status}}
+            .table-cell1 机房3#空调: {{ac3-status}}
+            .table-cell1 电池房1#空调: {{dme1-status}}
+            .table-cell1 电池房2#空调: {{dme2-status}}
+    tr
+        th(rowspan="2") 机柜状态
+        td(colspan="4")
+            .table-cell2 一排机柜
+            .table-cell2 二排机柜
+            .table-cell2 三排机柜
+            .table-cell2 四排机柜
+            .table-cell2 五排机柜
+            .table-cell2 六排机柜
+            .table-cell2 七排机柜
+    tr
+        td(colspan="4")
+            .table-cell2
+                div 状态: {{th1-alarms}}
+                div 温度: {{th1-temperature}}℃
+                div 湿度: {{th1-humidity}}%
+            .table-cell2
+                div 状态: {{th2-alarms}}
+                div 温度: {{th2-temperature}}℃
+                div 湿度: {{th2-humidity}}%
+            .table-cell2
+                div 状态: {{th3-alarms}}
+                div 温度: {{th3-temperature}}℃
+                div 湿度: {{th3-humidity}}%
+            .table-cell2
+                div 状态: {{th4-alarms}}
+                div 温度: {{th4-temperature}}℃
+                div 湿度: {{th4-humidity}}%
+            .table-cell2
+                div 状态: {{th5-alarms}}
+                div 温度: {{th5-temperature}}℃
+                div 湿度: {{th5-humidity}}%
+            .table-cell2
+                div 状态: {{th6-alarms}}
+                div 温度: {{th6-temperature}}℃
+                div 湿度: {{th6-humidity}}%
+            .table-cell2
+                div 状态: {{th7-alarms}}
+                div 温度: {{th7-temperature}}℃
+                div 湿度: {{th7-humidity}}%
+    tr
+        th 水浸状态
+        td(colspan="4")
+            .table-cell1 配电区水浸: {{water1-alarms}}
+            .table-cell1 1#空调水浸: {{water2-alarms}}
+            .table-cell1 2#空调水浸: {{water3-alarms}}
+            .table-cell1 3#空调水浸: {{water4-alarms}}
+            .table-cell1 电池房水浸: {{water5-alarms}}
+    tr(style="height: 100px;")
+        th 工作情况反馈
+        td(colspan="4" style="padding:0;")
+            textarea(ng-model="{{comment}}"
+                style="height: 100px;resize: none;color: white;outline: none;" placeholder="无反馈情况")

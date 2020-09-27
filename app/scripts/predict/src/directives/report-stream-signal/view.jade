@@ -1,0 +1,89 @@
+.row.nav-top
+    .col.l2
+        span(style="color:#fff") 高频数据记录
+    .col.l10
+        nav
+            .col.nav-wrapper.nav-wrap-container
+                ul.left
+                    li(ng-show='signals.length')
+                        a.dropdown-trigger(data-target='mysigs' data-hover='true' md-dropdown title='切换信号' style="")
+                            i.material-icons.left view_list
+                            | {{selectSignals[0].model.name}}
+                    li(ng-hide="signals.length")
+                        a(title='选设备切换数据点' style="font-size: 14px")
+                            i.material-icons.left view_list
+                            | 数据列表
+                    ul#mysigs.dropdown-content(style="height:300px;")
+                        li(ng-repeat='sig in signals')
+                            a(ng-href="" ng-click="selectSignal(sig)")
+                                span {{sig.model.name}}
+            .col.right
+                report-query-time.report-query-time.left(controller='controller',parameters='{}')
+                .right-wrapper-box.left
+                    ul
+                        li(style="margin-right:10px;")
+                            .btn.standard-report-btn(ng-click='queryReport()', title='查询')
+                                span.hide-on-med-and-down 查询
+                        li
+                            .btn.standard-report-btn(ng-click='exportReport(headers,garddatas,reportName)', title='导出')
+                                span.hide-on-med-and-down 导出
+
+.row
+    device-tree.col.tree-style.device-tree(controller='controller',parameters='{"checkbox":false,"filter":true,"reportName":"高频数据"}')
+    .col.grid-table-contaner
+        .row(style="min-width:900px")
+            //grid-table.grid-table( controller='controller',parameters='{header:headers,data:garddatas}')
+            table.user-table.new-table
+                thead
+                    tr.border-bottom
+                        th 序号
+                        th 厂区名称
+                        th 设备名称
+                        th 数据名称
+                        th(style='width:500px;') 数据值
+                        th 操作
+                        th 采集时间
+                tbody
+                    tr.border-bottom(ng-repeat="item in garddatas | limitTo: pagination.pageItems * pagination.pageIndex")
+                        td
+                          span {{item.index}}
+                        td
+                          span {{item.stationName}}
+                        td
+                          span {{item.equipmentName}}
+                        td
+                          span {{item.signalName}}
+                        td
+                          textarea.stream-textarea {{item.value}}
+                        td(ng-show='item.stationName !="暂无数据"')
+                            .btn(ng-click='downloadStreamFile(item)')
+                                sapn 下载
+                            .btn(style="margin-left:10px" ng-click='lookStreamChart(item)' data-target='stream-chart-modal')
+                                span 查看
+                        td
+                          span {{item.sampleTime}}
+            .col.l12.eventpagination
+                div(style="flex:1;")
+                .valign-wrapper(style='flex:2;')
+                    div(style="margin: 0 auto;")
+                        ul.pagination.center(ng-show='pagination.pageCount > 1')
+                            li.page-button(ng-class='{disabled: pagination.page <= 1, "waves-effect": pagination.page > 1}', ng-click='queryPage("previous")')
+                                a(href='')
+                                    i.material-icons(style="margin-top:4px;") chevron_left
+                            li.page-button(ng-class='{active: page == pagination.page, "waves-effect": page != pagination.page}', ng-repeat='page in pagination.pages', ng-click='queryPage(page)')
+                                a(href='')
+                                    | {{(($index == 1 && pagination.page > 4)||($index == pagination.pages.length-2 && pagination.page < pagination.pageCount-3)) ? "..":page}}
+                            li.last.page-button(ng-class='{disabled: pagination.page >= pagination.pageCount, "waves-effect": pagination.page < pagination.pageCount}', ng-click='queryPage("next")')
+                                a(href='')
+                                    i.material-icons(style="margin-top:1px;") chevron_right
+                div(style='flex:1;')
+
+#stream-chart-modal.modal.modal-fixed-footer(md-modal,style="width: 1400px;height:800px;margin-top:100px;")
+    .modal-content(style="height:100% !important;padding:0 !important;")
+        .closepart(style="position:absolute;right:5px;top:15px;z-index:999;")
+            div(style="width:30px;height:30px;line-height:30px;display:block;text-align:center;cursor:pointer;" ng-click="hidemodal()")
+                span.white-text(style="font-size:22px;" ng-click="hidemodal()")
+                    img(ng-src="{{getComponentPath('images/close.png')}}")
+        .video(style="display:block;height:100%;width:100%")
+            stream-curve-look(ng-if='chartModal == 2' controller='vm' parameters='{streamSignal:currentItem.signal,signalName:currentItem.signalName,value:currentItem.value,sampleTime:currentItem.sampleTime,clickFlag:clickFlag}')
+            stream-origin-curve-look(ng-if='chartModal == 1' controller='vm' parameters='{streamSignal:currentItem.signal,signalName:currentItem.signalName,value:currentItem.value,sampleTime:currentItem.sampleTime,clickFlag:clickFlag}')

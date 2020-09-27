@@ -1,0 +1,24 @@
+{
+  "id": "calendar-bar",
+  "name": "CalendarBar控件",
+  "type": "CalendarBarDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": [],
+      "0.0.2": ["增加文字提示"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.2"
+}

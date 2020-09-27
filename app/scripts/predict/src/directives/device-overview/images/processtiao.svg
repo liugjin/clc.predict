@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>告警比例@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,30 C6.71572875,30 0,23.2842712 0,15 C0,6.71572875 6.71572875,0 15,0 C23.2842712,0 30,6.71572875 30,15 C30,23.2842712 23.2842712,30 15,30 Z M15,24.1666667 C20.0626102,24.1666667 24.1666667,20.0626102 24.1666667,15 C24.1666667,9.93738979 20.0626102,5.83333333 15,5.83333333 C9.93738979,5.83333333 5.83333333,9.93738979 5.83333333,15 C5.83333333,20.0626102 9.93738979,24.1666667 15,24.1666667 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="站点地图" transform="translate(-1830.000000, -178.000000)">
+            <g id="站点设备数量" transform="translate(1440.000000, 105.000000)">
+                <g id="华新水泥设备总的设备" transform="translate(21.000000, 60.000000)">
+                    <g id="告警比例" transform="translate(369.000000, 13.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#00A7FF" xlink:href="#path-1"></use>
+                        <polygon id="矩形" fill="#FF4938" mask="url(#mask-2)" points="15 -3.33333333 33.3333333 -3.33333333 33.3333333 4.16666667 15 14.1666667"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

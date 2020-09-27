@@ -1,0 +1,136 @@
+style.
+    input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown{
+        box-shadow:0 1px 0 0 #0050A0;
+    }
+    [type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        z-index: 0;
+        border: 2px solid #FFFFFFFF;
+        border-radius: 1px;
+        margin-top: 3px;
+        -webkit-transition: .2s;
+        transition: .2s;
+    }
+    [type="checkbox"]+span:not(.lever){
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.9rem;
+        user-select: none;
+    }
+    ul.fancytree-container{
+        height:100% !important;
+    }
+    .tree{
+        height:43vh;
+    }
+.row.user-groups(style="height: 93vh;")
+
+    .row(style="height: 76px;line-height: 5;background-color: rgba(26, 69, 162, 0.4);")
+        .usergroups-title 故障任务配置
+
+    .row.usergroups-content(style="height: calc(100% - 96px);background-color: rgba(26, 69, 162, 0.4);margin: 10px;padding: 0;overflow-y:auto !important;overflow-x:hidden !important;")
+        <!-- 右上角 点击按钮 --!>
+        //.col.s12(style="height: 76px;padding: 18px;margin-bottom: 24px;")
+        //    a.btn.right.usergroups-button(ng-repeat="(index1, btn) in textinfo.btns" ng-click="btnClick(index1)" ng-show="btn.show") {{btn.title}}
+        <!-- 左下角 值班信息 --!>
+        .col.s6.m4.l4(style="margin-top:50px;padding-right:50px;")
+            .row(style="padding: 0 0px;")
+                .row
+                    .col.s3(style="ext-align: left;margin-bottom: 40px;line-height: 3;font-size: 0.9rem;color: #fcf5e8;padding: 0;text-align:center;") 流程信息
+                    .col.s9(style="min-height: 600px;border: 1px solid #0050A0;padding: 0;")
+                        .col.s12(style="padding: 0;background: #112d69;height: 40px;line-height: 3;text-align: left;")
+                            .col.s2
+                            .col.s5 流程ID
+                            .col.s5 流程名称
+                        .col.s12.item-selects(style="padding: 0;text-align: left;" ng-repeat="(index3, processItem) in processList"
+                        ng-click="selectProcess(index3, processItem)" ng-style="{'background':selectNodeId==index3?'#356bde':''}")
+                            .col.s2.item-select
+                                i.material-icons.left(style="margin-right: 7px;font-size: 1.3rem;line-height:30px;") access_alarms
+                            .col.s5.item-select
+                                span {{processItem.process || '--'}}
+                            .col.s5.item-select
+                                span {{processItem.name || '--'}}
+
+                .row
+                    .col.s12(style="padding-top: 10px;")
+                        a.btn.right.usergroups-button(ng-repeat="(index1, btn) in textinfo.btns" ng-click="btnClick(index1)" ng-show="btn.show") {{btn.title}}
+
+        <!-- 右下角 表单信息 --!>
+        .col.s12.m8.l8(style="padding: 0 0 0 20px;margin-top:50px;")
+            <!-- 上四行 --!>
+            .row.usergroups-list
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title 流程ID
+                    .col.l9(style="padding: 0;")
+                        input.list-input(ng-model="groupInfo.process" ng-show="editState")
+                        input.list-input(ng-model="groupInfo.process" ng-show="!editState" disabled="disabled" style="cursor: default;background: rgba(75,166,248,0.2);")
+                .col.s6(style="height: 56px;padding: 0;overflow:auto;")
+                    .col.l3.list-title 流程名称
+                    .col.l9(style="padding: 0;")
+                        input.list-input(ng-model="groupInfo.name")
+            .row.usergroups-list
+                .col.s6(style="padding: 0;")
+                    .col.l3.list-title 站点
+                    .col.l9.cool-content(style="padding-left: 0;border: 1px solid #0050A0 !important;height: 168px;width:65%;!important;")
+
+                        md-switch(ng-model='allStationFlag', label-off='定制', label-on='全部',style="margin:0 0 .75rem .75rem;"  ng-change="selectAllstations()")
+                        .station-panel(style="padding-left:.75rem;" id="recurestationid" )
+
+                .col.s6(style="padding: 0;")
+                    .col.l3.list-title 设备类型
+                    .col.l9.cool-content(style="padding: 0;border: 1px solid #0050A0 !important;height: 168px;width:65%;!important")
+                        md-switch(ng-model='allEquipTypeFlag', label-off='定制', label-on='全部',style="margin:.75rem;" ng-change="selectAllequiptypes()")
+                        .station-panel(style="padding-left:.75rem;")
+                            .repeat-label(ng-repeat="equipmentTypeItem in equipmentTypes")
+                                md-checkbox(ng-model='allEquipTypeCheckFlags[equipmentTypeItem.model.type]', id='station-{{equipmentTypeItem.model.type}}',ng-change="", ng-disabled='allEquipTypeFlag', with-gap=false, filled-in=true label='{{equipmentTypeItem.model.name}}')
+            .row.usergroups-list(style="margin-top:10px;")
+                .col.s6(style="padding: 0;")
+                    .col.l3.list-title 故障类型
+                    .col.l9.cool-content(style="padding: 0;border: 1px solid #0050A0 !important;height: 168px;width:65%;!important")
+                        md-switch(ng-model='allEventTypeFlag', label-off='定制', label-on='全部',style="margin:.75rem;" ng-change="selectAlleventeypes()" )
+                        .station-panel(style="padding-left:.75rem;")
+                            .repeat-label(ng-repeat="eventTypeItem in eventTypeList")
+                                md-checkbox(ng-model='allEventTypeCheckFlags[eventTypeItem.model.type]', id='eventtype-{{eventTypeItem.model.type}}',ng-change="", ng-disabled='allEventTypeFlag', with-gap=false, filled-in=true label='{{eventTypeItem.model.name}}')
+                .col.s6(style="height: 168px;padding: 0;")
+                    .col.l3.list-title 描述
+                    .col.l9(style="padding: 0;height:100%")
+                        textarea(ng-model="groupInfo.desc",style="width:86%;height:100%;resize: none;border: 1px solid #0050A0 !important;cursor: pointer;color: white;padding: 5px;")
+
+            <!-- 班组成员增减 --!>
+            .row.usergroups-list(style="margin-top:20px;")
+                .col.s6(ng-repeat="(index7, member) in memberList" style="height: 56px;padding: 0;")
+                    .col.l3.list-title
+                        span(ng-show="index7 == 0") 班组成员
+                    .col.l9(style="padding: 0;")
+                        input.list-input(style="float:left;cursor:default;text-align: center;background: rgba(75,166,248,0.2);" readonly="readonly" value="{{member.name}}")
+                        div(ng-click="updateMember(index7)"
+                        style="color: #4AC0FFFF;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin-top: 10px;margin-left: 3px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") close
+                .col.s6(style="height: 56px;padding: 0;")
+                    .col.l3.list-title(ng-show="memberList.length == 0") 班组成员
+                    .col.l3.list-title(ng-hide="memberList.length == 0")
+                    .col.l9(style="height: 40px;padding: 10px 0;" ng-hide="showAddSelect")
+                        div(ng-click="showAddSelect=true"
+                        style="color: white;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin: 1px 7px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") add
+                        span 新添成员
+                    .col.l9(style="height: 40px;padding: 0;" ng-show="showAddSelect")
+                        select.browser-default.filled-in.list-input.list-select(ng-model="groupInfo.addUser" style="float:left" ng-change="updateMember(groupInfo.addUser)")
+                            option(value="") --请选择--
+                            option(value="{{user.value}}" ng-repeat="(index8, user) in userList") {{user.name}}
+                        div(ng-click="showAddSelect=false"
+                        style="color: #4AC0FFFF;height: 19px;width: 18px;border: 1px solid;border-radius: 13px;margin: 10px 0px 0 3px;cursor: pointer;float:left")
+                            i.material-icons(style="font-size:16px;") close
+                        i.material-icons.list-icon(style="top: -20px;") arrow_drop_down
+
+
+

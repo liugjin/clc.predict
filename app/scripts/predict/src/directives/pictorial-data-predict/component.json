@@ -1,0 +1,23 @@
+{
+  "id": "pictorial-data-predict",
+  "name": "PictorialDataPredict控件",
+  "type": "PictorialDataPredictDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["基于david的pictorial-data组件修改，用于预测性运维项目"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

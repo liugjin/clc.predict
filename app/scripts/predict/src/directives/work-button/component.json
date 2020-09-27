@@ -1,0 +1,35 @@
+{
+  "id": "work-button",
+  "name": "WorkButton控件",
+  "type": "WorkButtonDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": ["初步完成"],
+      "0.0.2": ["提交测试", "@youge"],
+      "0.0.3": ["1.样式调整；2.进程阻断；3.打印页面页眉页脚修改", "@youge"],
+      "0.0.4": ["1.排序；2.content数据格式判断；3.css修改", "@youge"],
+      "0.0.5": ["content数据格式适应修改", "@youge"],
+      "0.0.6": ["content数据格式适应修改", "@youge"],
+      "0.0.7": ["打印排序及工单内容解析bug", "@youge"],
+      "0.0.8": ["解析字段问题", "@youge"],
+      "0.0.9": ["修改字符显示", "@youge"],
+      "0.1.0": ["细节调整", "@youge"],
+      "0.1.1": ["2019-08-07：根据组件 mobile-order-handle和mobile-order-info 格式变更", "@youge"],
+      "0.1.2": ["2019-08-08：打印增添告警状态的信息", "@youge"],
+      "0.1.3": ["2019-08-08：css调整保证一页能打印五个表", "@youge"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.1.3"
+}

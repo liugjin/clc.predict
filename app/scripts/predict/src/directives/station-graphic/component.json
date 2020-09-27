@@ -1,0 +1,28 @@
+{
+  "id": "station-graphic",
+  "name": "站点组态组件",
+  "type": "StationGraphicDirective",
+  "desc": {
+    "author": "david",
+    "comment": "通过导航条切换显示站点组态图",
+    "version": {
+        "0.0.1": [
+          "当站点配置有组态时，能显示出站点的组态内容"
+        ],
+        "0.0.2": [
+          "更新页面标准化样式","@Albert"
+        ]
+    }
+  },
+  "group": "模块组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["station-breadcrumbs", "graphic-box"],
+  "css": "",
+  "version": "0.0.2"
+}

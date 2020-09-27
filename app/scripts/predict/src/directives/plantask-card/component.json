@@ -1,0 +1,24 @@
+{
+	"id": "plantask-card",
+	"name": "PlantaskCard控件",
+	"type": "PlantaskCardDirective",
+	"desc": {
+		"author": "Youge",
+		"comment": "自定义组件",
+		"version": {
+			"0.0.1": ["初始化"],
+			"0.0.2": ["增加数据逻辑处理---James"],
+			"0.0.3": ["替换组件", "@youge"],
+			"0.0.4": ["增加明细表", "@youge"]
+		}
+	},
+	"group": "功能组件",
+	"parameters": [],
+	"interact": {
+		"pubs": [],
+		"subs": []
+	},
+	"deps": ["card-border", "bar-line-time", "show-rings","grid-table","task-new-model"],
+	"css": "",
+	"version": "0.0.4"
+}

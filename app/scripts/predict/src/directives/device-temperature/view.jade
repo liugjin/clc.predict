@@ -1,0 +1,7 @@
+.main.centered
+    .realTim-box(ng-repeat="data in signalDataArr")
+        .data-name
+            span {{data.stateName}}
+        .data-parameter
+            span {{data.setValue}}
+                span.unit{{data.unit}}

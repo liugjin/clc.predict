@@ -1,0 +1,47 @@
+.row.task-title.input-list.task-padding
+    label.label-icon
+        i.input-i.material-icons search
+    input.input-item(placeholder="请输入工单号" ng-model="query.taskId")
+    span(style="margin-left: 20px; font-size: 14px;") 完成状态: 
+    select.select-item(style="width: 85px" ng-model="query.state")
+      option(value="") 所有
+      option(value="1") 等待处理
+      option(value="2") 进行中
+      option(value="3") 已结束
+      option(value="4") 拒绝
+      option(value="5") 取消
+    span(style="margin-left: 20px; font-size: 14px;") 优先级:
+    select.select-item(style="width: 72px" ng-model="query.rank")
+      option(value="") 所有
+      option(value="1") 低
+      option(value="2") 中
+      option(value="3") 高
+    span(style="margin-left: 20px; font-size: 14px;") 开始时间:
+    input(
+      id="startInput"
+      class="datepicker input-item"
+      ng-model="query.startTime"
+      ng-change="formatDate('startInput')" 
+      ng-mouseenter="myenter('startInput')"
+      style="padding: 0; text-align: center; width: 160px; margin: 0 13px; border: 1px solid #00D5FF !important;"
+    )
+    span(style="margin-left: 7px; font-size: 14px;") 结束时间:
+    input(
+      id="endInput"
+      class="datepicker input-item"
+      ng-model="query.endTime"
+      ng-change="formatDate('endInput')" 
+      ng-mouseenter="myenter('endInput')"
+      style="padding: 0; text-align: center; width: 160px; margin: 0 13px; border: 1px solid #00D5FF !important;"
+    )
+    .btn.button-item.search-item(ng-click="search()") <label><i class="material-icons">search</i></label>搜索 
+
+.row.task-content
+    task-table(controller="vm" parameters="{}")
+
+#task-modal.modal.modal-fixed-footer(md-modal, style="width: 1200px;")
+  .modal-header(style="text-align: center; font-size: 14px; color: #AAC9F4; margin: 12px 0; font-weight: 300;") 工单号:&nbsp;&nbsp;
+    span(style="font-size: 26px; color: white; ") {{task || '--'}}
+  task-new-model(controller="vm" parameters="{}") 
+
+link(rel="stylesheet" href="/lib/gl-datepicker/styles/glDatePicker.default.css")

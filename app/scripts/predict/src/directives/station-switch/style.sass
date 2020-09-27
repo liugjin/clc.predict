@@ -1,0 +1,44 @@
+station-switch
+    .content
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 100%
+    .switch-box
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 290px
+        height: 80px
+        border-radius: 20px
+        background: rgba(4,18,57,0.7)
+        ul
+            span
+                display: inline-block
+                height: 80px
+                line-height: 80px
+
+                img
+                    position: relative
+                    top: 17px
+            span.second
+                margin-left: 10px
+    .dropdown-content
+        top: -6px
+        background-color: rgba(4,18,57,0.7) !important
+    .dropdown-content li>span,.dropdown-content li>a
+        font-size: 1.2rem
+        padding: 0
+    .defaultimg
+        display: inline-block
+    .hoverimg
+        display: none
+    .dropdown-content li:hover, .dropdown-content li.active
+        background-color: #00A7FF
+        .defaultimg
+            display: none
+        .hoverimg
+            display: inline-block
+    .select-wrapper input.select-dropdown:focus
+        border: none

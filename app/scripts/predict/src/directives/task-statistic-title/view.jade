@@ -1,0 +1,20 @@
+.row.nav-top(style="margin: 0 !important; height: 64px;")
+  .col.s2 
+    span {{title}}
+  .col.s10
+    nav
+      .nav-wrapper
+          .col.s10
+              span {{currdate}}
+              i.material-icons.left today
+          .col.s2.right
+              ul
+                  li
+                      a.dropdown-trigger(data-target='staticdate' data-hover='true' md-dropdown title='切换{{typeName}}')
+                          i.material-icons.left view_list
+                          span(ng-show="staticsType == type.key" ng-repeat="type in typeList") {{type.name}}
+                  ul#staticdate.dropdown-content
+                    li(ng-repeat="type in typeList")
+                      a(ng-href="" ng-click="selectStaticsType(type.key)")
+                        i.material-icons timeline
+                        span {{type.name}}

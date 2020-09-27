@@ -1,0 +1,64 @@
+.row.nav-top
+    .col.s2
+        span(style="font-size: 14px") 设备详情
+    .col.l10
+        nav
+            .nav-wrapper
+                //a.breadcrumb(ng-repeat="parent in parents", href="", data-hover='true', title='{{parent.model.name}}', ng-click="selectParent(parent)" ng-if="parents")
+                //    | {{parent.model.name}}
+                a.breadcrumb.dropdown-trigger(href="", data-target='stations', data-hover='true',  md-dropdown, title='{{station.model.name}}')
+                    | {{station.model.name}}
+                a.breadcrumb.dropdown-trigger(href='', data-target='childrens', data-hover='true', md-dropdown, ng-if="equipments.length>0")
+                    span.active-menu {{equipment.model.name || "--"}}
+
+        ul#stations.dropdown-content
+            li(ng-repeat='sta in stations | filter:{key: "!="+station.key}', ng-class='{active: sta.key == station.key}')
+                a(ng-href='', ng-click='selectStation(sta)')
+                    span {{sta.model.name}}
+
+        ul#childrens.dropdown-content(ng-if="equipments.length>0")
+            li(ng-repeat='equip in equipments')
+                a(ng-href='', ng-click='selectEquipment(equip)')
+                    span {{equip.model.name}}
+
+.row.inventory
+    .col.s10.m10.l12
+        .device-predict
+            device-state.col.l3(controller='vm',parameters='{}')
+            //.col.l12.scene-box(ng-if="focus!= 3")
+            //    facility-3d-component(controller="vm",parameters="{stationId:station.model.station,scene:scene,options:{'hideDataBoxName':true}}",style="width: 100%;height: 100%;")
+            //.col.l9(style="height: 100%" ng-if="focus== 3")
+            //    graphic-box(style='width:86%;height:85%;', controller='vm', parameters='{"templateId":templateId,"templateParameters":templateDatas,"noBorderStyle":true}')
+            //.col.l12.component-box(ng-if="focus== 3")
+            //    .graphic-box
+            //        .scenebtn.scenebtn1
+            //            .push-button(ng-click='clickTime(1)',ng-class='{"ck-time":focus== 1}')
+            //                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //                span {{defaultName}}
+            //            .push-button(ng-click='clickTime(2)',ng-class='{"ck-time":focus== 2}')
+            //                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //                span 自动旋转
+            //            .push-button(ng-click='clickTime(3)',ng-class='{"ck-time":focus== 3}')
+            //                img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //                span 2.5D组态
+            //.col.l12.component-box(ng-if="focus!= 3")
+            //    .scenebtn.scenebtn1
+            //        .push-button(ng-click='clickTime(1)',ng-class='{"ck-time":focus== 1}')
+            //            img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //            span {{defaultName}}
+            //        .push-button(ng-click='clickTime(2)',ng-class='{"ck-time":focus== 2}')
+            //            img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //            span 自动旋转
+            //        .push-button(ng-click='clickTime(3)',ng-class='{"ck-time":focus== 3}')
+            //            img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //            span 2.5D组态
+            //    .scenebtn.scenebtn2
+            //        .push-button1
+            //            img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //            span 右键拖动
+            //        .push-button1
+            //            img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //            span 左键旋转
+            //        .push-button1
+            //            img(ng-src="{{getComponentPath('images/data-open.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //            span 滚动缩放

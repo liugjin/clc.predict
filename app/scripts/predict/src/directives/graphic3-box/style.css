@@ -1,0 +1,39 @@
+graphic3-box .box-hexagon {
+  margin-top: 1rem;
+  width: 100%; }
+  graphic3-box .box-hexagon .box-content {
+    text-align: center;
+    border: 1px solid #044083;
+    color: #ffffff;
+    padding: 0 1rem;
+    background-color: rgba(8, 34, 104, 0.8); }
+  graphic3-box .box-hexagon .webui-popover-title {
+    color: black !important; }
+  graphic3-box .box-hexagon .subtitle {
+    font-size: 0.9rem;
+    margin-left: 0.4rem; }
+  graphic3-box .box-hexagon .box-content .title {
+    height: 2.4rem;
+    font-size: 1.4rem;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 1.6rem; }
+
+graphic3-box .big-box-border-top {
+  background-repeat: no-repeat;
+  background-position-x: -1px;
+  background-size: 101%;
+  border-right: 1px solid #14245A;
+  height: 20px; }
+
+graphic3-box .big-box-border-bottom {
+  background-repeat: no-repeat;
+  background-position-x: -1px;
+  background-size: 101%;
+  border-right: 1px solid #14245A;
+  height: 20px;
+  transform: rotateY(180deg) rotateX(180deg); }
+
+graphic3-box #player {
+  height: 100%; }

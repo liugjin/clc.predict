@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1183px" height="28px" viewBox="0 0 1183 28" version="1.1">
+    
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#1B8CF3" offset="0%"/>
+            <stop stop-color="#1D94FF" stop-opacity="0" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="左边" fill="url(#linearGradient-1)">
+            <path d="M362,9 L373,-1.33226763e-14 L373,2 L364,11 L2.84217094e-14,11 L2.84217094e-14,9 L362,9 Z" id="合并形状"/>
+            <path d="M362,26 L373,17 L373,19 L364,28 L2.84217094e-14,28 L2.84217094e-14,26 L362,26 Z" id="合并形状" transform="translate(186.500000, 22.500000) scale(-1, 1) rotate(-180.000000) translate(-186.500000, -22.500000) "/>
+        </g>
+        <g id="右边" transform="translate(996.500000, 14.000000) scale(-1, -1) translate(-996.500000, -14.000000) translate(810.000000, 0.000000)" fill="url(#linearGradient-1)">
+            <path d="M362,9 L373,-1.33226763e-14 L373,2 L364,11 L2.84217094e-14,11 L2.84217094e-14,9 L362,9 Z" id="合并形状"/>
+            <path d="M362,26 L373,17 L373,19 L364,28 L2.84217094e-14,28 L2.84217094e-14,26 L362,26 Z" id="合并形状" transform="translate(186.500000, 22.500000) scale(-1, 1) rotate(-180.000000) translate(-186.500000, -22.500000) "/>
+        </g>
+    </g>
+</svg>

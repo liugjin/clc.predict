@@ -1,0 +1,132 @@
+.stream-card#streambox
+    .stream-title-box
+        .left-button-box
+            .stream-title
+                span {{parameters.currentName}}
+            .btn.stream-btn.play-pause-button(ng-click='chartPlayPause()')
+                img(ng-src="{{getComponentPath('images/play.png')}}")
+                span 播放/暂停
+            .btn.stream-btn.cancle-button(ng-click='chartShowAll()')
+                img(ng-src="{{getComponentPath('images/all.png')}}")
+                span 全部展示
+            .btn.stream-btn.cancle-button(data-target='stream-predict-modal' ng-click='openModal()')
+                img(ng-src="{{getComponentPath('images/message.png')}}")
+                span 信息反馈
+            .btn.stream-btn.cancle-button(ng-click='downLoadStream()' ng-show="dataFlag")
+                img(ng-src="{{getComponentPath('images/download.png')}}")
+                span 下载
+            .btn.stream-btn.cancle-button(ng-click='originalStream()')
+                span 查看原始数据
+            .btn.stream-btn.cancle-button(ng-click='compare()' style='margin-right: 0 !important')
+                span 对比
+        .text-file-box
+            .search-legend-classify
+                .data-select-name(ng-show='streamLegendList.length > 1 || abcSeriesList.length > 1')
+                    span 数据选择:
+                a.signal-legend-classify.series-selections.dropdown-trigger(href='' data-target='abcSeriesList' data-hover='true'
+                    data-constrain-width='false' data-cover-trigger="false"
+                    md-dropdown ng-show='abcSeriesList.length > 1')
+                    span.left-equip-box {{chartOpts.currentAbcSeries.name}}
+                    span.right-equip-box
+                        img(ng-src="{{getComponentPath('images/triangle1.png')}}")
+                ul#abcSeriesList.dropdown-content
+                    li(ng-repeat = '(index, type) in abcSeriesList')
+                        a(ng-href='' ng-click='selectSeriesData(type, index)' style="padding-left: 8px;")
+                            span {{type.name}}
+                a.signal-legend-classify.dropdown-trigger(href='' data-target='streamLegendList' data-hover='true'
+                    data-constrain-width='false' data-cover-trigger="false"
+                    md-dropdown ng-show='streamLegendList.length > 1')
+                    span.left-equip-box {{chartOpts.currentLegends.name}}
+                    span.right-equip-box
+                        img(ng-src="{{getComponentPath('images/triangle1.png')}}")
+                ul#streamLegendList.dropdown-content
+                    li(ng-repeat = '(index, type) in currentDisplayList')
+                        a(ng-href='' ng-click='selectLegend(type, index)' style="padding-left: 8px;")
+                            span {{type.name}}
+    .fullscreen
+        a(ng-click='fullscreen("#streambox")', title='全屏显示')
+            img(src="res/svg/fullscreen2.svg")
+    .stream-content-box
+        .left-stream-content
+            .stream-content-item
+                span.item-title 时域数据分析
+                .item-content
+                    span {{chartOpts.currentLegends.legend1}}
+            .stream-content-item
+                span.item-title 最大值
+                .stream-signal-max-num.item-content
+                    span {{ currentMinAndMax[0][1] }}
+            .stream-content-item
+                span.item-title 最小值
+                .stream-signal-min-num.item-content
+                    span {{ currentMinAndMax[0][0] }}
+            .stream-content-item
+                span.item-title 正常数据区间
+                .stream-signal-arranges.item-content
+                    span {{ chartOpts.normalDatas[0]}}
+                    .strong-red 注: 超出正常区间的点显示红色
+
+        .right-stream-content
+            .stream-content-item
+                span.item-title 频域数据分析
+                .item-content
+                    span {{chartOpts.currentLegends.legend2}}
+            .stream-content-item
+                span.item-title 最大值
+                .stream-signal-max-num.item-content
+                    span {{ currentMinAndMax[1][1] }}
+            .stream-content-item
+                span.item-title 最小值
+                .stream-signal-min-num.item-content
+                    span {{ currentMinAndMax[1][0] }}
+            .stream-content-item
+                span.item-title 正常数据区间
+                .stream-signal-arranges.item-content
+                    span {{ chartOpts.normalDatas[1] }}
+        .no-stream-data(ng-show="!dataFlag")
+            .no-title-box
+                span 暂无数据
+        .stream-card-content1.no-padding(ng-show="dataFlag")
+            #ss-chart1
+        .stream-card-content2.no-padding(ng-show="dataFlag")
+            #ss-chart2
+
+#stream-predict-modal.modal.modal-fixed-footer(md-modal,style="width: 410px;height:420px;margin-top:10px;")
+    .modal-content(style="height:100% !important;padding:0 !important;")
+        .closepart(style="position:absolute;right:5px;top:15px;z-index:999;")
+            div(style="width:30px;height:30px;line-height:30px;display:block;text-align:center;cursor:pointer;" ng-click="hidemodal()")
+                span.white-text(style="font-size:22px;" ng-click="hidemodal()")
+                    img(ng-src="{{getComponentPath('images/close.png')}}")
+        .modal-title(style="font-size: 18px;padding-left:15px;height: 50px;line-height:50px") 故障预测反馈
+        .submit-form-box
+            .tr-item
+                .left-name
+                    span 故障选择
+                .right-content.search-streamsig-classify
+                    a.signal-stream-classify.dropdown-trigger(href='' data-target='signalDataArr' data-hover='true'
+                        data-constrain-width='false' data-cover-trigger="false"
+                        md-dropdown ng-show='signalDataArr.length > 1')
+                        span.left-equip-box {{submitDatas.currentSignal.name}}
+                        span.right-equip-box
+                            img(ng-src="{{getComponentPath('images/triangle1.png')}}")
+                    ul#signalDataArr.dropdown-content
+                        li(ng-repeat = '(index, type) in signalDataArr')
+                            a(ng-href='' ng-click='selectStreamSig(type, index)' style="padding-left: 8px;")
+                                //i.material-icons.left {{type.check ? 'check' : 'crop_din'}}
+                                span {{type.name}}
+            .tr-item
+                .left-name
+                    span 预测值(0~100)
+                .right-content
+                    input.input-field(id="predict-signal-num" type="number" ng-model="submitDatas.predictNum")
+            .tr-text-item
+                .left-name
+                    span 故障描述
+                .right-content
+                    textarea(id="predict-signal-text" ng-model="submitDatas.predictText")
+            .btn.right.stream-btn(style="margin-right:10px" ng-click="submitMessage()")
+                img(ng-src="{{getComponentPath('images/submit.png')}}")
+                span 提交
+
+
+

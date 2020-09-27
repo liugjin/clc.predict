@@ -1,0 +1,84 @@
+device-temperature .main {
+  height: 244px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-top: 0.75rem; }
+
+device-temperature .centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+device-temperature .position-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+device-temperature .resetButton {
+  line-height: 32px;
+  width: 90%;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #71788a;
+  font-size: 14px; }
+
+device-temperature .name {
+  font-size: 12px; }
+
+device-temperature .ring {
+  margin: 20px auto;
+  width: 8em;
+  height: 8em;
+  position: relative; }
+
+device-temperature .pro {
+  position: absolute;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  border: 6px solid #0ba8b5; }
+
+device-temperature .left {
+  width: 8em;
+  height: 8em;
+  border-radius: 8em;
+  border: 14px solid #0febf3; }
+
+device-temperature .matter {
+  width: 6em;
+  height: 6em; }
+
+device-temperature .temperature {
+  font-size: 24px; }
+
+device-temperature .scope {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+device-temperature .realTim-box {
+  width: 19%;
+  margin-left: 0.25em;
+  height: 30%;
+  padding-bottom: 16%;
+  border-radius: 4px;
+  border: 1px solid #003D7A;
+  background-color: rgba(5, 17, 52, 0.6); }
+
+device-temperature .data-name {
+  width: 100%;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px; }
+
+device-temperature .data-parameter {
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.1rem; }
+
+device-temperature .unit {
+  font-size: 14px;
+  margin-left: 0.2em; }

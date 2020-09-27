@@ -1,0 +1,8 @@
+station-overview-map .row {
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+station-overview-map .dashboard-mobile {
+  width: 100%;
+  height: 92.2vh;
+  margin-top: 0.75rem; }

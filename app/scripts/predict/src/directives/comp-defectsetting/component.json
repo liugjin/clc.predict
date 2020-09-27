@@ -1,0 +1,25 @@
+{
+  "id": "comp-defectsetting",
+  "name": "CompDefectsetting控件",
+  "type": "CompDefectsettingDirective",
+  "desc": {
+    "author": "James",
+    "comment": "故障工单配置",
+    "version": {
+        "0.0.2": [
+          "增加信息有效验证"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.2"
+}

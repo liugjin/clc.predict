@@ -1,0 +1,248 @@
+stream-compare .nav-top report-query-time .report-time li.report-li:nth-of-type(2) {
+  margin: 0 4px; }
+
+stream-compare ul#abcSeriesList {
+  background-color: #02204e;
+  border-radius: 4px;
+  border: 1px solid #00a7ff; }
+  stream-compare ul#abcSeriesList li:hover {
+    background-color: #00a7ff; }
+
+stream-compare ul#streamLegendList {
+  background-color: #02204e;
+  border-radius: 4px;
+  border: 1px solid #00a7ff; }
+  stream-compare ul#streamLegendList li:hover {
+    background-color: #00a7ff; }
+
+stream-compare device-tree .tree {
+  height: 78.7vh; }
+
+stream-compare .device-tree {
+  width: 20%;
+  height: 85%; }
+
+stream-compare .previous-stream .data-select-name {
+  float: left;
+  margin-right: 4px;
+  font-size: 14px; }
+
+stream-compare .previous-stream #previousData {
+  width: 240px; }
+  stream-compare .previous-stream #previousData li {
+    font-size: 16px; }
+
+stream-compare .previous-stream .previous-stream-select:focus {
+  outline: none !important; }
+
+stream-compare .previous-stream .previous-stream-select {
+  margin-top: 0.7rem;
+  margin-right: 20px;
+  padding: 0;
+  background-color: rgba(26, 69, 162, 0.4);
+  border: 1px solid #10ebf4;
+  color: #ffffff;
+  height: 40px;
+  display: inline-block;
+  box-shadow: none; }
+  stream-compare .previous-stream .previous-stream-select span:focus {
+    outline: none !important; }
+  stream-compare .previous-stream .previous-stream-select span {
+    text-align: center;
+    display: inline-block;
+    line-height: 39px;
+    height: 39px; }
+  stream-compare .previous-stream .previous-stream-select .left-equip-box {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-right: 1px solid #10ebf4; }
+  stream-compare .previous-stream .previous-stream-select .right-equip-box {
+    width: 38px;
+    float: right;
+    color: #00d5ff; }
+
+stream-compare .stream-chart-contaner {
+  width: 80%;
+  overflow: auto;
+  height: 84.5vh;
+  background-color: rgba(26, 69, 162, 0.4) !important; }
+  stream-compare .stream-chart-contaner .stream-header-contaner {
+    height: 4rem;
+    width: 100%; }
+    stream-compare .stream-chart-contaner .stream-header-contaner .left-button-box {
+      float: left;
+      height: 100%;
+      padding-top: 15px; }
+      stream-compare .stream-chart-contaner .stream-header-contaner .left-button-box .stream-btn:hover {
+        background: #00a7ff; }
+      stream-compare .stream-chart-contaner .stream-header-contaner .left-button-box .stream-btn {
+        margin-right: 10px;
+        border-radius: 4px;
+        height: 38px !important;
+        border: 1px solid #00a7ff !important; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .left-button-box .stream-btn img {
+          margin-right: 5px;
+          height: 22px;
+          margin-bottom: 2px;
+          vertical-align: middle; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .left-button-box .stream-btn span {
+          font-size: 16px;
+          color: #f4f7ff; }
+      stream-compare .stream-chart-contaner .stream-header-contaner .left-button-box .stream-title {
+        float: left;
+        width: 180px;
+        font-size: 22px;
+        height: 100%;
+        text-align: center; }
+    stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box {
+      float: right;
+      height: 100%; }
+      stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify {
+        height: 38px;
+        margin-top: 15px;
+        font-size: 14px;
+        font-weight: 400;
+        margin-right: 20px; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify #abcSeriesList {
+          width: 160px; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify #abcSeriesList li {
+            font-size: 16px; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify #streamLegendList {
+          width: 200px; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify #streamLegendList li {
+            font-size: 16px; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .data-select-name {
+          margin-right: 10px;
+          height: 40px;
+          line-height: 38px;
+          vertical-align: middle;
+          float: left; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .data-select-name span {
+            font-size: 16px; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .signal-legend-classify:focus {
+          outline: none !important; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .signal-legend-classify {
+          margin-right: 20px;
+          background-color: rgba(26, 69, 162, 0.4);
+          border: 1px solid #00a7ff;
+          border-radius: 4px;
+          color: #ffffff;
+          height: 38px;
+          display: inline-block;
+          box-shadow: none; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .signal-legend-classify span:focus {
+            outline: none !important; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .signal-legend-classify span {
+            text-align: center;
+            display: inline-block;
+            line-height: 38px;
+            height: 38px; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .signal-legend-classify .left-equip-box {
+            width: 160px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+          stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .signal-legend-classify .right-equip-box {
+            width: 38px;
+            float: right;
+            color: #00d5ff; }
+        stream-compare .stream-chart-contaner .stream-header-contaner .text-file-box .search-legend-classify .series-selections .left-equip-box {
+          width: 120px !important; }
+  stream-compare .stream-chart-contaner .stream-analysis-container1 {
+    height: 77vh;
+    width: 100%; }
+    stream-compare .stream-chart-contaner .stream-analysis-container1 .left-stream-content {
+      float: left;
+      height: 100%;
+      width: 15%;
+      padding-left: 1%;
+      padding-top: 2%; }
+    stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-content-item {
+      width: 100%;
+      height: 18%; }
+      stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-content-item .item-title {
+        font-size: 14px;
+        color: #9ca5c1; }
+      stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-content-item .item-content {
+        width: 100%; }
+        stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-content-item .item-content span {
+          font-size: 16px;
+          color: #ebeef7; }
+        stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-content-item .item-content .strong-red {
+          color: red; }
+    stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-card-content2 {
+      width: 80%;
+      float: left;
+      height: 100%; }
+      stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-card-content2 .no-title-box {
+        margin-top: 25%;
+        width: 100%;
+        text-align: center;
+        height: 15%; }
+        stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-card-content2 .no-title-box span {
+          font-size: 18px; }
+    stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-card-content1 {
+      width: 80%;
+      float: left;
+      height: 100%; }
+      stream-compare .stream-chart-contaner .stream-analysis-container1 .stream-card-content1 #ss-origin-chart {
+        display: block;
+        width: 65vw;
+        height: 76vh; }
+  stream-compare .stream-chart-contaner .stream-analysis-container2 {
+    height: 77vh;
+    width: 100%; }
+    stream-compare .stream-chart-contaner .stream-analysis-container2 .left-stream-content {
+      float: left;
+      height: 100%;
+      width: 15%;
+      padding-left: 1%;
+      padding-top: 2%; }
+    stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-content-item {
+      width: 100%;
+      height: 18%; }
+      stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-content-item .item-title {
+        font-size: 14px;
+        color: #9ca5c1; }
+      stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-content-item .item-content {
+        width: 100%; }
+        stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-content-item .item-content span {
+          font-size: 16px;
+          color: #ebeef7; }
+        stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-content-item .item-content .strong-red {
+          color: red; }
+    stream-compare .stream-chart-contaner .stream-analysis-container2 .right-stream-content {
+      float: right;
+      height: 100%;
+      width: 12%;
+      padding-top: 2%; }
+    stream-compare .stream-chart-contaner .stream-analysis-container2 .no-stream-data {
+      width: 70%;
+      float: left;
+      height: 100%; }
+      stream-compare .stream-chart-contaner .stream-analysis-container2 .no-stream-data .no-title-box {
+        margin-top: 25%;
+        width: 100%;
+        text-align: center;
+        height: 15%; }
+        stream-compare .stream-chart-contaner .stream-analysis-container2 .no-stream-data .no-title-box span {
+          font-size: 18px; }
+    stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-card-content1 {
+      width: 70%;
+      float: left;
+      height: 49%; }
+      stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-card-content1 #ss-chart1 {
+        display: block;
+        width: 100%;
+        height: 100%; }
+    stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-card-content2 {
+      width: 70%;
+      float: left;
+      height: 49%;
+      margin-top: 10px; }
+      stream-compare .stream-chart-contaner .stream-analysis-container2 .stream-card-content2 #ss-chart2 {
+        display: block;
+        width: 100%;
+        height: 100%; }

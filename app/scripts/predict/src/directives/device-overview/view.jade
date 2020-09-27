@@ -1,0 +1,20 @@
+
+.content
+    .headerTitle
+        span 站点设备数量
+        span(style="font-size: 14px;margin-left: 10px;") NUMBER OF SITE DEVICES
+    .deviceBodyBox
+        .totalBox
+            .icon.center
+                img(src="{{getComponentPath('images/all-device.svg')}}" width="26px" height="26px")
+            .deviceNum
+                span 华新水泥总的设备
+                span {{allDeviceNumber}}
+            .progressTiao.center
+                img(src="{{getComponentPath('images/processtiao.svg')}}" width="26px" height="26px")
+        ul.typeTotalBox
+            li.totalType(ng-repeat="data in seriesData")
+                .numberBox {{data.model.length < 10 && data.model.length > 0 ?  "0" + data.model.length : data.model.length}}
+                .deviceName {{data.name}}
+                .deviceIcon
+                    img(ng-src="{{data.imgUrl}}")

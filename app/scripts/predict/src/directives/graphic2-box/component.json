@@ -1,0 +1,24 @@
+{
+  "id": "graphic2-box",
+  "name": "组态控件",
+  "type": "Graphic2BoxDirective",
+  "desc": {
+    "author":"hardy",
+    "desc":"组态控件",
+    "version":{
+      "0.0.1":[
+        "原graphic-box组件0.0.9版本基础修改解决tooltip问题","@sheen"
+      ]
+    }
+  },
+  "group": "其它组件",
+  "parameters": [
+    {"id":"templateId","type":"string","value":"datacenter"}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "css": "style='width:56%;'",
+  "version": "0.0.1"
+}

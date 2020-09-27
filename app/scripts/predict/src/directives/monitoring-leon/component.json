@@ -1,0 +1,23 @@
+{
+  "id": "monitoring-leon",
+  "name": "MonitoringLeon控件",
+  "type": "MonitoringLeonDirective",
+  "desc": {
+    "author": "sheen",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["根据leon要求改设备监控页面，右侧设备的按分组过滤平铺 有告警的设备背景红色,左侧树精确到设备报警设备标红，","@sheen"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+    {"id":"filterType", "type":"bool", "value": false, "desc": "用来设置是否过滤掉设备类型的visible为false的设备"}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": ["device-tree-leon", "component-devicemonitor","equipment-property"],
+  "css": "",
+  "version": "0.0.1"
+}

@@ -1,0 +1,144 @@
+//- content
+.modal-content(style="height: calc(100% - 130px) !important; padding: 10px 24px" ng-init="step = 1")
+    //- 工单号
+    //- .row.task-id 工单号:&nbsp;<span style="font-size: 26px;">{{task.task || '--'}}</span>
+    
+    //- tab切换: 工作内容 / 流程详情
+    .row.task-steps(style="font-size: 14px")
+        .col.s1(style="line-height: 5; float: left;")
+            span(title="查看所有" ng-click="updateWorks()" style="cursor: pointer; color: #AAC9F4;") 工作路线:
+        div(ng-repeat="workNode in workRouter" style="width: 110px; padding: 0; float: left;")
+            div(style="height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 5px;direction: rtl; text-align: left;")
+                span(title="{{workNode.name}}") {{workNode.name}}
+            div(style="cursor: pointer;" ng-click="updateWorks(workNode)")
+                img(ng-src="{{workNode.imgurl}}" title="巡检点: {{workNode.signals.join(',')}}" style="margin: 0 10px;")
+
+    //- 工作内容
+    .row(ng-show="step == 1")
+        //- 工作内容 - table
+        .row.task-row(style="margin: 48px 0 12px 0;")
+            .title 工作内容：
+            table.content
+                tr
+                    th 工作状态
+                    th 站点名称
+                    th 设备名称
+                    th 作业项
+                    th 作业项值
+                    th 设备状态
+                    th 作业项阈值
+                    th 故障表象
+                    th 故障原因
+                    th 原因分析
+                    th 损失情况
+                tr(ng-show="works.length == 0") 
+                    td(colspan="11") 暂无数据
+                tr(ng-show="works.length > 0" ng-repeat="(index, work) in works" ng-if="showType == 1") 
+                    td {{work.work_status ? '已处理' : '待处理'}}
+                    td {{work.stationName}}
+                    td {{work.equipName}}
+                    td {{work.signalName || work.eventName}}
+                    td {{subscribeSigVal[work.station + "-" + work.equipment + "-" + work.signal] || work.startValue}}
+
+                    td {{work.status == 0 ? '正常' : '异常'}}
+
+                    td {{work.setvalue}}
+                    
+                    td {{work.defect_representation}}
+                    td {{work.defect_reason}}
+                    td {{work.defect_analysis}}
+                    td {{work.loss_situation}}
+                tr(ng-show="works.length > 0" ng-repeat="(index, work) in works" ng-if="showType == 2") 
+                    td
+                        md-checkbox(ng-model='work.work_status')
+                    td {{work.stationName}}
+                    td {{work.equipName}}
+                    td {{work.signalName || work.eventName}}
+                    td
+                        input(ng-model="work.setvalue" style="height: 24px; margin: 0 5px; width: 40px;" type="number")
+                        span(title="发布信号" ng-click="pubSig(work)") <i class="material-icons top-icon">navigation</i>
+                    td
+                        select(ng-model="work.status" ng-options="c.value as c.name for c in stateOption")
+                        
+                    td {{subscribeSigVal[work.station + "-" + work.equipment + "-" + work.signal] || work.startValue}}
+                    td 
+                        input(ng-model="work.defect_representation" style="height: 24px; margin: 0 5px; width: 60px;")
+                    td 
+                        input(ng-model="work.defect_reason" style="height: 24px; margin: 0 5px; width: 60px;")
+                    td 
+                        input(ng-model="work.defect_analysis" style="height: 24px; margin: 0 5px; width: 60px;")
+                    td 
+                        input(ng-model="work.loss_situation" style="height: 24px; margin: 0 5px; width: 60px;")
+        //- 情况反馈 - table
+        .row.task-row(style="display: inline;")
+            .btn(ng-click="showAdd(1)" style="font-size: 14px;color: white;float: right" ng-if="showType == 2") 新增反馈
+        .row.task-row
+            .title 情况反馈：
+            table.content
+                tr
+                    th 序号
+                    th 内容
+                    th 备注
+                    th 操作
+                tr(ng-show="memos.length == 0") 
+                    td(colspan="4") 暂无数据
+                tr(ng-show="memos.length > 0" ng-repeat="memo in memos track by memo.id") 
+                    td {{memo.id}}
+                    td {{memo.content}}
+                    td {{memo.memo}}
+                    td 
+                        span(ng-if="showType == 2"
+                            title="删除反馈" ng-click="removeMemos(memo)" style="cursor: pointer;") <i class="material-icons" >close</i></span>
+        //- 现场附件
+        .row.task-row(style="display: inline;")
+            .btn(ng-click="showAdd(2)" style="font-size: 14px;color: white;float: right" ng-if="showType == 2") 新增附件
+        .row.task-row
+            .title 现场附件：
+            .content2
+                .file-item(ng-repeat="(i, file) in files")
+                    .title(style="text-align: center;") {{i + 1}}.&nbsp;{{file.name}}
+                    a(ng-click="removeFiles(file)" title="删除该附件" ng-if="showType == 2") 删除
+                    a(title="预览该附件" target="_black" href="{{file.url}}" ng-show="file.url != ''") 预览
+    
+    //- 流程详情
+    .row.col.s12(ng-show="step == 2")
+        task-timeline(controller="vm" parameters="{ datas: task }")
+
+//- footer
+.modal-footer.modal-nav.taskbtns
+    .taskbtn(ng-click="acceptTask(1)" ng-show="showBtns.accept") 接收
+    .taskbtn(ng-click="setTask(1)" ng-show="showBtns.approval") 批准
+    .taskbtn(ng-click="setTask(2)" ng-show="showBtns.reject") 拒绝
+    .taskbtn(ng-click="setTask(3)" ng-show="showBtns.cancel") 撤销
+    .taskbtn(ng-click="saveTask(3)" ng-show="showBtns.save") 保存
+    //.taskbtn(ng-click="close()" style="float: right") 关闭
+    .taskbtn.modal-action.modal-close(ng-click="close()" style="float: right") 关闭
+#task-detail.modal.modal-fixed-footer(md-modal style="width: 100%; background-color: #082268cc;")
+    .modal-content
+        .row(style="text-align: center; margin: 0 0 30px 0; font-size: 14px; font-weight: bold;color: #AAC9F4;") {{detailType == 1 ? '新增反馈' : '文件上传'}}
+        .row.task-row.col.s12(ng-if="detailType == 1" style="margin: 36px 0;")
+            .col.s2
+            .col.s8
+                div(style="float: left; width: 40px;height: 100%; line-height: 2.5; font-size: 14px; color: white;") 内容:
+                input(placeholder="请输入反馈内容"
+                    ng-model="addModel.content" 
+                    style="padding: 0 8px; width: calc(100% - 80px); height: 32px; float: right; margin-bottom: 0px; font-size: 14px;")
+            .col.s2
+        .row.task-row.col.s12(ng-if="detailType == 1" style="margin: 36px 0;")
+            .col.s2
+            .col.s8
+                div(style="float: left; width: 40px;height: 100%; line-height: 2.5; font-size: 14px; color: white;") 备注:
+                input(placeholder="请输入备注"
+                    ng-model="addModel.memo" 
+                    style="padding: 0 8px; width: calc(100% - 80px); height: 32px; float: right; margin-bottom: 0px; font-size: 14px;")
+            .col.s2
+        .row.task-row.col.s12(ng-if="detailType == 2")
+            .col.s2
+            .col.s8(style="display: flex;")
+                div(style="float: left; width: 40px;height: 100%; line-height: 4; font-size: 14px; color: white;") 文件:
+                div(style="width: calc(100% - 40px);")
+                    one-file-uploader(controller="vm" parameters="{ handle: handle }")
+            .col.s2
+    .modal-footer.modal-nav.taskbtns
+        .taskbtn(ng-click="saveAddModel()" style="background: #01a6ff66") 确认
+        .taskbtn(ng-click="closeDetail()" style="float: right") 关闭

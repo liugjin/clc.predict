@@ -1,0 +1,47 @@
+event-startlist table:hover {
+  box-shadow: none !important;
+  outline: none !important; }
+
+event-startlist table {
+  margin-top: 0.75rem;
+  overflow: auto; }
+  event-startlist table thead th {
+    padding: 0 !important; }
+  event-startlist table tbody tr {
+    line-height: 20px !important; }
+    event-startlist table tbody tr td {
+      padding: 1px !important; }
+
+event-startlist .progress {
+  margin: 0 0 0.2rem 0 !important; }
+
+event-startlist .page-button {
+  border: 1px solid #3A85E4;
+  border-radius: 0; }
+  event-startlist .page-button i {
+    margin-top: 1px; }
+
+event-startlist .pagination {
+  position: absolute;
+  bottom: 1rem;
+  margin-left: 24%; }
+  event-startlist .pagination li {
+    height: 32px; }
+    event-startlist .pagination li a {
+      line-height: 36px; }
+
+event-startlist .text-align-left {
+  text-align: left !important; }
+
+@media screen and (width: 1024px) {
+  event-startlist table.new-table {
+    width: 150% !important; }
+    event-startlist table.new-table thead tr th {
+      font-size: 12px; }
+    event-startlist table.new-table tbody tr td {
+      line-height: 15px;
+      font-size: 12px; }
+  event-startlist .pagination {
+    margin-left: 15%; }
+  event-startlist .page-button i {
+    margin-top: 4px; } }

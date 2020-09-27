@@ -1,0 +1,33 @@
+{
+  "id": "pictorial-data-device",
+  "name": "PictorialDataDevice控件",
+  "type": "PictorialDataDeviceDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": [
+        "通过types、templates、signals指定组件要呈现的对应类型、型号的设备，设备的详细信息则按signals里指定的信号呈现，若无signals，则只会呈现设备通讯状态及设备告警数量2个数据",
+        "组件使用示例：pictorial-data(controller='vm', parameters='{types:['aircondition','UPS','environmental'], template:[], signals:['measuring-temperature','measurement-humidity']}')",
+        "点击组件中某个具体设备时，会弹出设备的详情，同时会对外发布一条主题为equipmentId的消息，消息内容是一个json数据，内容格式为:{stationId:'xxx', equipmentId:'yyy'}"
+      ],
+      "0.0.2": ["新增参数hidePopup用来定义是否在点击设备时隐藏弹框信息，未传该参数时，默认为不隐藏"],
+      "0.0.3": [
+        "新增参数size用来定义列表内显示图标的大小，默认为24像素，当size大于39时，图标下面会显示出设备名称",
+        "新增参数link用来定义设备详情链接地址，默认为monitoring",
+        "新增参数nobg用来设置组件是否呈现背景及边框，默认呈现背景和边框"
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

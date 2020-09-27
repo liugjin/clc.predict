@@ -1,0 +1,27 @@
+{
+  "id": "component-line",
+  "name": "ComponentLine控件",
+  "type": "ComponentLineDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": ["@youge"],
+      "0.0.2": ["增加高度，宽度默认值", "@youge"],
+      "0.0.3": ["增加高宽参数，从父组件获取", "@youge"],
+      "0.0.4": ["修复重绘bug", "@youge"],
+      "0.0.5": ["将周模式的按顺序排列", "@region"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.5"
+}

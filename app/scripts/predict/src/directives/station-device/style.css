@@ -1,0 +1,54 @@
+station-device .centerStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+station-device .content {
+  width: 100%;
+  height: 100%; }
+
+station-device .deviceBox {
+  display: flex;
+  justify-content: flex-start;
+  width: 66%;
+  height: 72%;
+  background: rgba(4, 18, 57, 0.7);
+  border-radius: 20px;
+  padding: 2%; }
+
+station-device .swiper-container {
+  width: 100%;
+  height: 100%; }
+
+station-device .swiper-wrapper {
+  width: 100%;
+  height: 100%; }
+
+station-device .deviceList {
+  height: 70%;
+  padding: 2% 1%;
+  border-radius: 12px;
+  background: rgba(0, 167, 255, 0.1);
+  border: 1px solid rgba(0, 167, 255, 0.4); }
+
+station-device .deviceList:hover {
+  background: rgba(0, 167, 255, 0.5);
+  cursor: pointer; }
+
+station-device .deviceIcon {
+  width: 100%;
+  height: 60%;
+  overflow: hidden; }
+
+station-device .material-icons {
+  font-size: 34px; }
+
+station-device .deviconNam {
+  width: 100%;
+  height: 40%;
+  font-size: 16px;
+  color: #F3F6FE; }
+
+station-device .deviconNam span {
+  overflow: hidden;
+  white-space: nowrap; }

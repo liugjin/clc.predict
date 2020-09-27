@@ -1,0 +1,23 @@
+{
+  "id": "station-device-list",
+  "name": "StationDeviceList控件",
+  "type": "StationDeviceListDirective",
+  "desc": {
+    "author": "sheen",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["站点设备列表组件，适用于较少设备的展示，华新项目中放在站点页"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

@@ -1,0 +1,102 @@
+.content
+    .time-button
+        .time(ng-click='clickTime(1)',ng-class='{"ck":1==focus}')
+            //img(ng-show='1!=focus',ng-src="{{getComponentPath('images/d1-1.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //img(ng-show='1==focus',ng-src="{{getComponentPath('images/d1-2.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            span 电机
+            span.number ({{allMotorNumber}}台)
+            //span 台)
+        .time(ng-click='clickTime(2)',ng-class='{"ck":2==focus}')
+            //img(ng-show='2!=focus',ng-src="{{getComponentPath('images/b1-1.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //img(ng-show='2==focus',ng-src="{{getComponentPath('images/b1-2.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            span 变频器
+            span.number ({{allInverterNumber}}台)
+            //span 台)
+        .time(ng-click='clickTime(3)',ng-class='{"ck":3==focus}')
+            //img(ng-show='3!=focus',ng-src="{{getComponentPath('images/b1-1.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //img(ng-show='3==focus',ng-src="{{getComponentPath('images/b1-2.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            span 开关柜
+            span.number ({{allSwitchBoxNumber}}台)
+            //span
+        .time(ng-click='clickTime(4)',ng-class='{"ck":4==focus}')
+            //img(ng-show='4!=focus',ng-src="{{getComponentPath('images/d1-1.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            //img(ng-show='4==focus',ng-src="{{getComponentPath('images/d1-2.svg')}}",style="width: 1.25rem;height: 1.25rem;")
+            span 变压器
+            span.number ({{allConverterNumber}}台)
+            //span 台)
+    .device-details
+        .device-list
+            span.engine-box(ng-show='1==focus',ng-repeat="data in motor" title="{{data.model.name}}",ng-click='clickDevice(data)')
+                img(ng-if='data.model.alarmState == 1',ng-src="{{getComponentPath('images/d-device-alarm.svg')}}",style="width: 24px;height: 24px;")
+                img(ng-if='data.model.alarmState != 1',ng-src="{{getComponentPath('images/d-device.svg')}}",style="width: 24px;height: 24px;")
+            span.engine-box(ng-show='2==focus',ng-repeat="data in inverter" title="{{data.model.name}}",ng-click='clickDevice(data)')
+                img(ng-if='data.model.alarmState == 1',ng-src="{{getComponentPath('images/b-device-alarm.svg')}}",style="width: 24px;height: 24px;")
+                img(ng-if='data.model.alarmState != 1',ng-src="{{getComponentPath('images/b-device.svg')}}",style="width: 24px;height: 24px;")
+            span.engine-box(ng-show='3==focus',ng-repeat="data in switchBox" title="{{data.model.name}}",ng-click='clickDevice(data)')
+                img(ng-if='data.model.alarmState == 1',ng-src="{{getComponentPath('images/b-device-alarm.svg')}}",style="width: 24px;height: 24px;")
+                img(ng-if='data.model.alarmState != 1',ng-src="{{getComponentPath('images/b-device.svg')}}",style="width: 24px;height: 24px;")
+            span.engine-box(ng-show='4==focus',ng-repeat="data in transformer" title="{{data.model.name}}",ng-click='clickDevice(data)')
+                img(ng-if='data.model.alarmState == 1',ng-src="{{getComponentPath('images/d-device-alarm.svg')}}",style="width: 24px;height: 24px;")
+                img(ng-if='data.model.alarmState != 1',ng-src="{{getComponentPath('images/d-device.svg')}}",style="width: 24px;height: 24px;")
+        .state-number
+            .stateNumber-box
+                .number1 {{equipNumData.runningNumber}}
+                .stateName 运行设备
+            .stateNumber-box
+                .number2 {{equipNumData.offlineNumber}}
+                .stateName 离线设备
+            .stateNumber-box
+                .number3 {{equipNumData.alarmNumber}}
+                .stateName 告警设备
+            .stateNumber-box
+                .number4 {{equipNumData.forecastNumber}}
+                .stateName 预测性设备
+        .device-data
+            .device-icon
+                img(ng-show='1==focus',ng-src="{{getComponentPath('images/1.gif')}}",style="height:100%")
+                img(ng-show='2==focus',ng-src="{{getComponentPath('images/2.gif')}}",style="height:100%")
+                img(ng-show='3==focus',ng-src="{{getComponentPath('images/3.gif')}}",style="height:100%")
+                img(ng-show='4==focus',ng-src="{{getComponentPath('images/4.gif')}}",style="height:100%")
+            .device-name
+                .leftDeviceName {{showDeviceData.model.name}}
+                .more-data
+                   a.see-more(ng-href="{{equipDetailUrl}}" ng-class="showDeviceData?'':'disableEquip'") 查看更多
+            .device-data-list
+                .main.centered
+                    .realTim-box(ng-repeat="data in signalDataArr")
+                        .data-name
+                            span {{data.stateName}}
+                        .data-parameter
+                            span {{data.setValue}}
+                            span.unit {{data.unit}}
+                //device-temperature(controller="vm" parameters="{}")
+                //.data-card
+                //    .card-name
+                //        img(ng-src="{{getComponentPath('images/d-device.svg')}}",style="width: 18px;height: 18px;")
+                //        span 运行电流
+                //    .card-data
+                //        span {{showDeviceData.model.current?showDeviceData.model.current:'00'}}
+                //            span.unit A
+                //.data-card
+                //    .card-name
+                //        img(ng-src="{{getComponentPath('images/d-device.svg')}}",style="width: 18px;height: 18px;")
+                //        span 投运时间
+                //    .card-data.card-time
+                //        span {{showDeviceData.model.productionTime?showDeviceData.model.productionTime:showDeviceData.model.newCreatetime}}
+                //            span.unit
+                //.data-card
+                //    .card-name
+                //        img(ng-src="{{getComponentPath('images/d-device.svg')}}",style="width: 18px;height: 18px;")
+                //        span 外部温度
+                //    .card-data
+                //        span {{showDeviceData.model.abroad?showDeviceData.model.abroad:'00'}}
+                //            span.unit ℃
+                //.data-card
+                //    .card-name
+                //        img(ng-src="{{getComponentPath('images/d-device.svg')}}",style="width: 18px;height: 18px;")
+                //        span 内部温度
+                //    .card-data
+                //        span {{showDeviceData.model.within?showDeviceData.model.within:'00'}}
+                //            span.unit ℃
+
+

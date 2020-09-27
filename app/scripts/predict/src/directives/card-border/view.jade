@@ -1,0 +1,14 @@
+.title-line 
+    div.tip-left {{title || '--'}}
+    span.tip-right(
+        md-dropdown data-hover='true'
+        data-target='operations'
+        ng-show="options.length > 0"
+    ) {{buttonText || '查看更多'}}
+.tip-text(ng-show="desc.length > 0")
+    div(ng-repeat="(index, op) in desc" ng-class="{'number': index == 1}") {{op}}
+
+ul#operations.dropdown-content
+    li(ng-repeat='item in options track by item.key')
+        a(ng-href='' ng-click='selectOption(item)')
+            span {{item.val}}

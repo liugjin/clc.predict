@@ -1,0 +1,26 @@
+{
+  "id": "station-map-predict",
+  "name": "StationMapPredict控件",
+  "type": "StationMapPredictDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.1.4": [
+        "站点地图，地图上标识出九段线",
+        "@sheen"
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

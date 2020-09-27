@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oCAAmC;EACjC,gBAAgB,EAAE,OAAoB;;AAGxC,mBAAmB;EACjB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;;AAEb,yBAAyB;EACvB,gBAAgB,EAAE,sBAAqB;;AAEzC,yBAAyB;EACvB,gBAAgB,EAAE,sBAAqB;;AAEzC,iBAAiB;EACf,gBAAgB,EAAE,iCAAgC;;AAEpD,QAAQ;EACN,OAAO,EAAE,IAAI;EACb,uBAAc;IACZ,gBAAgB,EAAE,OAAO;EAC3B,iBAAQ;IACN,KAAK,EAAE,kBAAkB",
+"sources": ["predict.sass"],
+"names": [],
+"file": "predict.css"
+}

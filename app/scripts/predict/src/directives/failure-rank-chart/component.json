@@ -1,0 +1,26 @@
+{
+  "id": "failure-rank-chart",
+  "name": "FailureRankChart控件",
+  "type": "FailureRankChartDirective",
+  "desc": {
+    "author": "foam",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["设备故障率排行"],
+        "0.0.2": ["没有故障设备时正确显示方式"],
+        "0.0.3": ["更新设备故障率排行"],
+        "0.0.4": ["过滤以前删除的设备告警"],
+        "0.0.5": ["修改统计冗余处理、将原来id显示改为名称显示---James"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.5"
+}

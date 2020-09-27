@@ -1,0 +1,25 @@
+{
+  "id": "bar-vertical-stack2",
+  "name": "BarVerticalStack2控件",
+  "type": "BarVerticalStack2Directive",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["初始化", "@youge"],
+        "0.0.2": ["提示文字修改", "@youge"],
+        "0.0.3": ["去掉提示线", "@youge"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.3"
+}

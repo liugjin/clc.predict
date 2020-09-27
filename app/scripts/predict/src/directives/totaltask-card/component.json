@@ -1,0 +1,28 @@
+{
+	"id": "totaltask-card",
+	"name": "TotaltaskCard控件",
+	"type": "TotaltaskCardDirective",
+	"desc": {
+		"author": "Youge",
+		"comment": "自定义组件",
+		"version": {
+			"0.0.1": ["初始化"],
+			"0.0.2": ["增加异常设备---James"],
+			"0.0.3": ["增加切换", "@youge"],
+			"0.0.4": ["数据调整", "@youge"],
+			"0.0.5": ["增加明细表", "@James"],
+			"0.0.6": ["处理异常设备统计bug", "@James"]
+		}
+	},
+	"group": "功能组件",
+	"parameters": [
+
+	],
+	"interact": {
+		"pubs": [],
+		"subs": []
+	},
+	"deps": ["card-border", "bar-stack", "bar-vertical-stack","task-new-model"],
+	"css": "",
+	"version": "0.0.6"
+}

@@ -1,0 +1,31 @@
+link(type='text/css', rel='stylesheet', ng-href='{{getComponentPath("swiper/swiper.min.css")}}')
+.content(style="width:100%")
+    .swiper-container.type-button
+        .swiper-wrapper
+            .swiper-slide.type(ng-repeat="type in types" ng-click='selectType(type)',ng-class='{"selected":type==selectedType}' style="width: auto")
+                img.img-type(ng-src="{{getComponentPath('images/'+type.model.icon+'.svg')}}", onerror="angular.element(this).scope().imgError(this)")
+                span {{type.model.name}}
+                span.number {{devices[type.model.type].length}}个
+    .device-details(ng-style="{'background':parameters.nobg?'none':'rgba(5, 17, 52, 0.6)', 'border':parameters.nobg?'none':'1px solid #003D7A'}")
+        .device-list
+            span.engine-box(ng-repeat="data in devices[selectedType.model.type]", title='{{data.model.name}}')
+                span.center.item(data-title="{{data.model.name}}", popover, data-type='html', data-cache='false', data-trigger='{{parameters.hidePopup || "click"}}', data-closeable='true', data-dismissible='true', template='#equipment-template', data-placement='horizontal', data-width='300', data-height='auto', data-style="inverse")
+                    img(ng-src="{{getComponentPath('images/'+selectedType.model.icon+'.svg')}}" ng-click='selectDevice(data)' ng-style="{'filter':'grayscale(100%)drop-shadow('+getColor(signals[data.model.station+'.'+data.model.equipment].severity.value)+' 0px 0)saturate(10)brightness(5)', 'width': (parameters.size || 24)+'px', 'height': (parameters.size || 24)+'px'}" onerror="angular.element(this).scope().imgError(this)")
+                    span.block.truncate(ng-if="parameters.size>39") {{data.model.name}}
+
+#equipment-template.hide(ng-non-bindable)
+    .equipment-info
+        table.bordered.responsive-table
+            tbody
+                tr.no-border(ng-repeat="(key, signal) in signals[device.model.station+'.'+device.model.equipment]")
+                    td
+                        label {{signal.name}}
+                    td
+                        .truncate(ng-style="{'color':getColor(signal.severity, true)}") {{signal.formatValue}}{{signal.unitName}}
+                tr.no-border
+                    td
+                        label &nbsp;
+                    td.right
+                        a.right.waves-effect.waves-light.btn-flat(ng-href="#/{{parameters.link||'monitoring'}}/{{device.model.user}}/{{device.model.project}}?&station={{device.model.station}}&equipment={{device.model.equipment}}")
+                            span 更多详情
+                            i.material-icons.right fast_forward

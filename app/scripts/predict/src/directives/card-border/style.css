@@ -1,0 +1,29 @@
+card-border {
+  font-family: PingFang SC;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white; }
+  card-border .title-line {
+    height: 3rem; }
+    card-border .title-line .tip-left {
+      display: inline;
+      float: left; }
+    card-border .title-line .tip-right {
+      color: #4ac0ff;
+      font-size: 0.6rem;
+      float: right;
+      cursor: pointer;
+      line-height: 2; }
+  card-border .tip-text {
+    display: flex;
+    font-size: 0.6rem;
+    position: absolute;
+    height: 0;
+    top: 3rem; }
+    card-border .tip-text .number {
+      font-family: DIN Alternate;
+      font-weight: bold;
+      color: #f1c950;
+      font-size: 2rem;
+      line-height: 0;
+      margin: 0 10px; }

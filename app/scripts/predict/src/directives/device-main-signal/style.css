@@ -1,0 +1,121 @@
+device-main-signal .content {
+  width: 100%;
+  height: calc(40% - 0.75rem);
+  padding: 16px;
+  background: #041239;
+  border-radius: 20px;
+  margin-bottom: 0.75rem; }
+
+device-main-signal .center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+device-main-signal .contentTitle {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 11%;
+  padding-bottom: 0.75rem; }
+
+device-main-signal .titleChName {
+  font-size: 18px; }
+
+device-main-signal .titleZhName {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #B4B6BF; }
+
+device-main-signal .objHeader {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  device-main-signal .objHeader .objInfo {
+    width: 66%;
+    height: 80%;
+    background-color: #02204e;
+    border-radius: 4px;
+    border: 1px solid #004e8d;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 16px; }
+    device-main-signal .objHeader .objInfo img {
+      margin-right: 10px;
+      height: 60%; }
+  device-main-signal .objHeader .objInfo span:nth-child(3) {
+    font-size: 1em;
+    margin-left: auto;
+    cursor: pointer; }
+  device-main-signal .objHeader .retHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    background: #00a7ff;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer; }
+  device-main-signal .objHeader .retHome span:nth-child(1) {
+    font-size: 1.5em; }
+
+device-main-signal .checkEquip {
+  width: 100%;
+  height: 65%; }
+
+device-main-signal .deviceSignal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 65%; }
+
+device-main-signal .signalBox {
+  width: 32%;
+  height: 46%;
+  padding: 4%;
+  border: 1px solid #004e8d;
+  border-radius: 4px;
+  background: #02204e;
+  overflow: hidden;
+  cursor: pointer; }
+
+device-main-signal .signalBox:hover {
+  background: rgba(0, 167, 255, 0.5); }
+
+device-main-signal .signalNum {
+  width: 100%;
+  height: 60%;
+  vertical-align: center; }
+
+device-main-signal .signalNum span:nth-child(1) {
+  font-family: 'din';
+  font-size: 28px; }
+
+device-main-signal .signalNum span:nth-child(2) {
+  font-size: 14px;
+  margin-left: 2px; }
+
+device-main-signal .signalName {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center; }
+
+device-main-signal .signalName span:nth-child(1) {
+  font-size: 14px; }
+
+device-main-signal .material-icons {
+  font-size: 20px; }
+
+device-main-signal .spanStyle {
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1; }

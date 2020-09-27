@@ -1,0 +1,22 @@
+.row
+    .col.s12.ops-info-top 运维管理
+    .col.s12.ops-info-center
+        .ops-center-main
+            .ops-center-switch
+                .ops-switch-left
+                    .orderType(ng-click="switchOrderType('all')" ng-class="{ active: switchType=='all'}") 工单概况
+                    .orderType(ng-click="switchOrderType('defect')" ng-class="{ active: switchType=='defect'}") {{defectOrderType}}
+                    .orderType(ng-click="switchOrderType('plan')" ng-class="{ active: switchType=='plan'}") {{planOrderType}}
+                    //- .orderType(ng-click="switchOrderType('general')" ng-class="{ active: switchType=='general'}") 常规任务工单
+                //- .ops-switch-right(ng-click="readMore()") 查看更多
+            .ops-center-info
+                order-situation(controller="controller" parameters="{}")
+        .ops-device-condition
+            .ops-condition-title 设备运行情况
+            device-condition-chart(controller="controller" parameters="{ deviceCount: allDeviceCount, alarmCount: alarmDeviceCount, healthCount: healthDeviceCount }")
+    .col.s12.ops-info-bottom
+        .failure-rank-box
+            .failure-rank-title
+                span 设备故障率排行
+                //- .btn(ng-repeat = "type in equipmentType") {{type.model.name}}
+            failure-rank-chart(controller="controller" parameters="{}")

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.9287 0.00690273178 3.2567 0.00690273178 3.2567 1 0.9287 1"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon">
+            <path d="M9.3926,8.9586 C9.3926,9.6646 8.8206,10.2376 8.1136,10.2376 C7.4076,10.2376 6.8346,9.6646 6.8346,8.9586 C6.8346,8.2526 7.4076,7.6796 8.1136,7.6796 C8.8206,7.6796 9.3926,8.2526 9.3926,8.9586 Z" id="Stroke-1" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10.7686,8.9586 C10.7686,10.4206 9.5836,11.6056 8.1216,11.6056 C6.6596,11.6056 5.4746,10.4206 5.4746,8.9586 C5.4746,7.4966 6.6596,6.3116 8.1216,6.3116 C9.5836,6.3116 10.7686,7.4966 10.7686,8.9586 Z" id="Stroke-3" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M6.6016,6.7931 L6.6016,1.8131" id="Stroke-5" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9.627,6.7809 L9.627,1.8129" id="Stroke-7" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M6.6016,1.8126 C6.6016,0.9766 7.2776,0.2996 8.1136,0.2996" id="Stroke-9" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9.627,1.8126 C9.627,0.9766 8.95,0.2996 8.114,0.2996" id="Stroke-11" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10.7686,8.7321 L15.1866,11.3261" id="Stroke-13" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9.2246,11.3654 L13.6546,13.9354" id="Stroke-15" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M15.1866,11.3263 C15.9076,11.7493 16.1476,12.6763 15.7246,13.3963" id="Stroke-17" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M13.6543,13.9352 C14.3753,14.3582 15.3013,14.1182 15.7243,13.3972" id="Stroke-19" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5.4854,8.7199 L1.0474,11.3259" id="Stroke-21" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M6.9834,11.3488 L2.5794,13.9348" id="Stroke-23" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M1.0469,11.3263 C0.3259,11.7493 0.0859,12.6763 0.5089,13.3963" id="Stroke-25" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M2.5791,13.9352 C1.8581,14.3582 0.9321,14.1182 0.5091,13.3972" id="Stroke-27" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M13.293,6.1842 C13.079,5.6292 12.342,4.7232 11.832,4.3352" id="Stroke-29" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M13.8409,7.9591 C13.8139,7.6291 13.7659,7.4021 13.6539,7.1951" id="Stroke-31" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Group-35" transform="translate(7.000000, 14.176400)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-34"></g>
+                <path d="M0.9287,0.6797 C1.5177,0.7657 2.6687,0.5677 3.2567,0.3137" id="Stroke-33" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+            </g>
+            <path d="M6.1133,14.4625 C6.4143,14.6015 6.6343,14.6705 6.8703,14.6755" id="Stroke-36" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.1656,5.7609 C2.7686,6.2039 2.2956,7.2719 2.1816,7.9019" id="Stroke-38" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M4.4981,4.4665 C4.2161,4.6405 4.0361,4.7855 3.9011,4.9795" id="Stroke-40" stroke="#E2EDF2" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

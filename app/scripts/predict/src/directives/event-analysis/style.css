@@ -1,0 +1,103 @@
+event-analysis a:focus {
+  outline: none !important; }
+
+event-analysis .nav-wrapper span {
+  font-size: 14px; }
+
+event-analysis .chip {
+  background-color: rgba(26, 69, 162, 0.4);
+  color: white;
+  margin: 5.5px; }
+
+event-analysis .chip > img {
+  height: 32px !important;
+  width: 32px !important; }
+
+event-analysis .breadcrumb {
+  color: #ffffff !important; }
+
+event-analysis .box-hexagon {
+  margin-top: .75rem;
+  width: 100%; }
+  event-analysis .box-hexagon .box-content {
+    height: auto;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 1rem;
+    background-color: rgba(26, 69, 162, 0.4); }
+  event-analysis .box-hexagon .box-border-top {
+    background-image: url("~image/big.png~");
+    background-repeat: no-repeat;
+    border-right: 1px solid #00e7ee;
+    height: 20px; }
+  event-analysis .box-hexagon .box-border-bottom {
+    background-image: url("~image/big.png~");
+    background-repeat: no-repeat;
+    border-right: 1px solid #00e7ee;
+    height: 20px;
+    transform: rotateY(180deg) rotateX(180deg); }
+
+event-analysis .no-box-shadow {
+  box-shadow: none; }
+
+event-analysis i.right-2 {
+  float: right;
+  margin-left: 10px; }
+
+event-analysis .card-panel {
+  background-color: rgba(26, 69, 162, 0.4) !important;
+  overflow: hidden;
+  margin: .75rem 0;
+  padding: 0; }
+
+event-analysis .standard-span-alarms-btn:hover {
+  box-shadow: none !important; }
+
+event-analysis .standard-alarms-span-btn {
+  color: #fff !important;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 12px 6px 0 14px;
+  border-radius: 3px;
+  font-size: 14px;
+  overflow: hidden;
+  border: none !important; }
+  event-analysis .standard-alarms-span-btn span {
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: 400; }
+
+event-analysis .event-list-container {
+  margin-top: 0;
+  background-color: rgba(26, 69, 162, 0.4) !important;
+  font-size: 14px;
+  height: 84.2vh;
+  border-radius: 0;
+  overflow: auto; }
+
+event-analysis .event-statistic-chart {
+  height: 48.7vh;
+  width: 100%;
+  display: block; }
+
+event-analysis .card-panel-container {
+  height: 17.6vh;
+  overflow: auto;
+  background-color: rgba(26, 69, 162, 0.4) !important; }
+
+@media screen and (width: 1024px) {
+  event-analysis .event-statistic-chart {
+    height: 42.5vh; }
+  event-analysis .event-list-container {
+    height: 80.8vh; }
+  event-analysis .card-panel-container {
+    height: 17.2vh; }
+  event-analysis .standard-alarms-span-btn {
+    height: 30px;
+    line-height: 30px;
+    margin: 8px 0 0 8px;
+    padding: 0 6px; }
+    event-analysis .standard-alarms-span-btn span {
+      font-size: 12px;
+      margin: 0 !important; } }

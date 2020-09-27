@@ -1,0 +1,23 @@
+{
+  "id": "graphic3-box",
+  "name": "Graphic3Box控件",
+  "type": "Graphic3BoxDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["传超项目里的组态版本放进来排查组态tooltip问题","@sheen"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

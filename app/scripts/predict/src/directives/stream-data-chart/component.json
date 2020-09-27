@@ -1,0 +1,31 @@
+{
+  "id": "stream-data-chart",
+  "name": "StreamDataChart控件",
+  "type": "StreamDataChartDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": [
+          "流式数据线图，目前仅支持实时流式数据显示","@Albert"
+        ],
+        "0.0.2": [
+          "所有操作均在此组件类完成，不需要stream-line组件了","@Albert"
+        ],
+        "0.0.3": [
+          "更新服务器上设备监控页面加载慢的bug","@Albert"
+        ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.3"
+}

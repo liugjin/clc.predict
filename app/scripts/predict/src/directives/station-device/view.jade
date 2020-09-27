@@ -1,0 +1,11 @@
+script(type="text/javascript" ng-href='{{getComponentPath("swiper/swiper.min.js")}}')
+link(type='text/css', rel='stylesheet', ng-href='{{getComponentPath("swiper/swiper.min.css")}}')
+.content.centerStyle
+    ul.deviceBox
+        .swiper-container
+            .swiper-wrapper#swiperBox(style = 'visibility:hidden')
+                li(style="width: calc(23% - 17px);").deviceList.swiper-slide(ng-repeat="data in spliceArr",ng-click="clickDevicn(data)")
+                    .deviceIcon.centerStyle
+                        img.responsive-img(ng-src="{{(data.model.typeImg)}}"  ng-style="{'height':'80%','filter':'drop-shadow('+data.severityColor+' 4000px 0)','transform': 'translateX(-4000px)'}")
+                    .deviconNam.centerStyle(ng-style="{'color':data.severityColor}")
+                        span(title='{{data.model.name}}') {{data.model.name}}

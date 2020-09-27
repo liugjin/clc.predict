@@ -1,0 +1,26 @@
+{
+  "id": "opc-curve",
+  "name": "OpcCurve控件",
+  "type": "OpcCurveDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+        "0.0.1": ["opc信号弹窗组件 实时数据曲线@sheen"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+    {"id": "station", "type": "string", "value": ""},
+    {"id": "equipment", "type": "string", "value": ""},
+    {"id": "signalIds", "type": "object", "value": []},
+    {"id": "colors", "type": "object", "value": []}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

@@ -1,0 +1,83 @@
+bathtub-curve .content {
+  width: 100%;
+  height: calc(40% - 0.75rem);
+  padding: 16px;
+  background: #041239;
+  border-radius: 20px;
+  margin-bottom: 0.75rem; }
+
+bathtub-curve .contentTitle {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 11%;
+  padding-bottom: 0.75rem; }
+
+bathtub-curve .titleChName {
+  font-size: 18px; }
+
+bathtub-curve .titleZhName {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #B4B6BF; }
+
+bathtub-curve .legend {
+  width: 100%;
+  height: 10%; }
+
+bathtub-curve .text {
+  line-height: 24px;
+  margin-bottom: 0.6em;
+  font-size: 18px; }
+
+bathtub-curve .centered {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+bathtub-curve .legend-ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(113, 120, 138, 0.5);
+  border-top: 1px solid #71788a;
+  border-bottom: 1px solid #71788a;
+  margin: 0; }
+
+bathtub-curve .legend-ul li {
+  height: 60%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #71788a; }
+
+bathtub-curve li:last-child {
+  border: none !important; }
+
+bathtub-curve .legend-ico {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; }
+
+bathtub-curve .ico-color1 {
+  border: 4px solid #10ebf4; }
+
+bathtub-curve .ico-color2 {
+  border: 4px solid #0094ff; }
+
+bathtub-curve .ico-color3 {
+  border: 4px solid #f3bc0f; }
+
+bathtub-curve .ico-color4 {
+  border: 4px solid #ff0045; }
+
+bathtub-curve .legend-name {
+  margin-left: 0.6em; }
+
+bathtub-curve #main {
+  width: 100%;
+  height: 75%; }
